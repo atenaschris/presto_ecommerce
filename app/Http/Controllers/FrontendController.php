@@ -18,4 +18,10 @@ class FrontendController extends Controller
         
         return view('add_ads',compact('categories'));
     }
+
+    public function thankyouads()
+    {
+        return view('thank_you_ads');
+    }
+
 }

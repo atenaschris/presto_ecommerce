@@ -21,3 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/','FrontendController@homepage')->name('homepage');
 
 Route::get('/add-ads','FrontendController@add')->name('add.ads');
+
+Route::get('/thank-you-ads','FrontendController@thankyouads')->name('thank.you.ads');
+
+Route::post('/submit','AdvertiseController@submit')->name('submit');
