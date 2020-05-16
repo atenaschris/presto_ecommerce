@@ -35,13 +35,36 @@
           </div>
 
       </div>
-      <div class="row">
+      <div class="row mt-5">
         <div class="col-12">
+          <div class="card-deck">
           @foreach ($last_ads as $ads)
 
-        <h1>{{$ads->title}}</h1>
-              
-          @endforeach
+
+            <div class="card">
+            @if ($ads->img)
+
+            <img src="{{Storage::url($ads->img)}}" class="card-img-top" alt="{{$ads->title}}">
+
+            @else
+
+            <img src="https://via.placeholder.com/150" class="card-img-top" alt="{{$ads->title}}">
+                
+            @endif
+              <div class="card-body">
+              <h5 class="card-title">{{$ads->title}}</h5>
+              <p class="card-text">{{$ads->description}}</p>
+              <p class="card-text">{{$ads->price}}€</p>
+              </div>
+              <div class="card-footer">
+              <small class="text-muted">{{ Carbon\Carbon::parse($ads->created_at)->format('d-m-Y')}}
+              </small>
+              </div>
+            </div>
+
+            
+            @endforeach
+          </div>
         </div>
       </div>
 

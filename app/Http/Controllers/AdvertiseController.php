@@ -19,6 +19,7 @@ class AdvertiseController extends Controller
         $advertise->description = $request->input('description');
         $advertise->category_id = $request->input('category_id');
         $advertise->price = $request->input('price');
+        $advertise->img = $request->file('img')->store('public/img');
         $advertise->user()->associate($user);
         $advertise->save();
 

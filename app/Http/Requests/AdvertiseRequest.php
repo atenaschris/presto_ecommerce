@@ -27,7 +27,9 @@ class AdvertiseRequest extends FormRequest
             "title" => "required",
             "description" => "required",
             "category_id" => "required",
-            "price" => "required"
+            "price" => "required",
+            "img"=>"image|mimes:jpg,png,jpeg,bmp,webp"
+
         ];
     }
 }

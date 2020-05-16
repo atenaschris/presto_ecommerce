@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Advertise extends Model
 {
-    protected $fillable = ["title","description","category_id","price"];
+    protected $fillable = ["title","description","category_id","price","img"];
+    
 
     public function category(){
 
