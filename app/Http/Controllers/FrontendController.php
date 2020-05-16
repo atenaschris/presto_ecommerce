@@ -9,7 +9,10 @@ class FrontendController extends Controller
 {
     public function homepage(){
 
-        return view('homepage');
+        $last_ads = DB::table('advertises')->latest()->take(5)->get();
+
+        return view('homepage',compact('last_ads'));
+        
     }
 
     public function add(){

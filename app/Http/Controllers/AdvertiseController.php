@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Advertise;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\AdvertiseRequest;
 
@@ -20,6 +21,9 @@ class AdvertiseController extends Controller
         $advertise->price = $request->input('price');
         $advertise->user()->associate($user);
         $advertise->save();
+
+        
+
 
         // $advertise = Advertise::create($request->validated());
         return redirect(route('thank.you.ads'));

@@ -33,6 +33,16 @@
              @endif
 
           </div>
+
+      </div>
+      <div class="row">
+        <div class="col-12">
+          @foreach ($last_ads as $ads)
+
+        <h1>{{$ads->title}}</h1>
+              
+          @endforeach
+        </div>
       </div>
   </div>
 
