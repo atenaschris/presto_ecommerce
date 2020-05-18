@@ -20,6 +20,10 @@ class FrontendController extends Controller
         
     }
 
+    public function ad_details($id){
+        $ad = Advertise::find($id);
+        return view('ad_details',compact('ad'));
+    }
 
 
 }

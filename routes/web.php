@@ -25,3 +25,5 @@ Route::get('/add-ads','AdvertiseController@add')->name('add.ads');
 Route::get('/submit/thank-you-ads','AdvertiseController@thankyouads')->name('thank.you.ads');
 
 Route::post('/submit','AdvertiseController@submit')->name('submit');
+
+Route::get('/ads/detail/{id}/{title}','FrontendController@ad_details')->name('ad.details');
