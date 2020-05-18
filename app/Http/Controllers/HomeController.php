@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Advertise;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\AdvertiseRequest;
 
 class HomeController extends Controller
 {
@@ -25,4 +29,7 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+   
+
 }
