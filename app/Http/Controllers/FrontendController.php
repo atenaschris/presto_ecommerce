@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Advertise;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -9,9 +11,12 @@ class FrontendController extends Controller
 {
     public function homepage(){
 
-        $last_ads = DB::table('advertises')->latest()->take(5)->get();
-      
-        return view('homepage',compact('last_ads'));
+        // $last_ads = DB::table('advertises')->latest()->take(5)->get();
+
+       $ads = Advertise::orderBy('id','desc')->take(5)->get();
+        // $ads = Advertise::all();
+        
+        return view('homepage',compact('ads'));
         
     }
 

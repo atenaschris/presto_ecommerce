@@ -41,8 +41,9 @@ class AdvertiseController extends Controller
     public function add(){
         
         
-        $categories = DB::table('categories')->select('id','name')->get();
-        return view('add_ads',compact('categories'));
+        
+        
+        return view('add_ads');
     }
     
     public function thankyouads()

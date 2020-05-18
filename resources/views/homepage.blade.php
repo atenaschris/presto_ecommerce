@@ -17,20 +17,16 @@
     </div>
   </header>
 
+
   <div class="container my-5">
       <div class="row">
           <div class="col-12 text-center">
-             @if (Auth::user())
+      
 
             
              <a href="{{route('add.ads')}}"  class="btn btn-primary btn-lg shadow-none">Pubblica il tuo annuncio</a>
                  
-             @else
-                 
-             <a href="{{route('home')}}"  class="btn btn-primary btn-lg shadow-none">Pubblica il tuo annuncio</a>
-             
-                 
-             @endif
+            
 
           </div>
 
@@ -38,31 +34,33 @@
       <div class="row mt-5">
         <div class="col-12">
           <div class="card-deck">
-          @foreach ($last_ads as $ads)
+            @foreach ($ads as $ad)
 
 
-            <div class="card">
-            @if ($ads->img)
+              <div class="card">
+                @if ($ad->img)
 
-            <img src="{{Storage::url($ads->img)}}" class="card-img-top" alt="{{$ads->title}}">
+                <img src="{{Storage::url($ad->img)}}" class="card-img-top" alt="{{$ad->title}}">
 
-            @else
+                @else
 
-            <img src="https://via.placeholder.com/150" class="card-img-top" alt="{{$ads->title}}">
-                
-            @endif
-              <div class="card-body">
-              <h5 class="card-title">{{$ads->title}}</h5>
-              <p class="card-text">{{$ads->description}}</p>
-              <p class="card-text">{{$ads->price}}€</p>
+                <img src="https://via.placeholder.com/150" class="card-img-top" alt="{{$ad->title}}">
+                    
+                @endif
+                <div class="card-body">
+                  <h5 class="card-title">{{$ad->title}}</h5>
+                  <p class="card-text">{{$ad->description}}</p>
+                  <p class="card-text">{{$ad->price}}€</p>
+                  <p class="card-text">{{$ad->user->name}}</p>
+                </div>
+                <div class="card-footer">
+                  <small>{{ $ad->category->name }}</small>
+                  <small class="text-muted">{{ Carbon\Carbon::parse($ad->created_at)->format('d-m-Y')}}
+                  </small>
+                </div>
               </div>
-              <div class="card-footer">
-              <small class="text-muted">{{ Carbon\Carbon::parse($ads->created_at)->format('d-m-Y')}}
-              </small>
-              </div>
-            </div>
 
-            
+              
             @endforeach
           </div>
         </div>

@@ -7,14 +7,14 @@
     <div class="col-12">
       <div>
         @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
+        <div class="alert alert-danger">
+          <ul>
             @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
+            <li>{{ $error }}</li>
             @endforeach
-        </ul>
-    </div>
-@endif
+          </ul>
+        </div>
+        @endif
       </div>
       <form method="post" action="{{route('submit')}}" enctype="multipart/form-data">
         @csrf
@@ -27,9 +27,9 @@
           <label for="category">Scegli la categoria</label>
           <select class="form-control" name="category_id" id="category">
             @foreach ($categories as $category)
-
-          <option value="{{$category->id}}">{{$category->name}}</option>
-                
+            
+              <option value="{{$category->id}}">{{$category->name}}</option>
+            
             @endforeach
           </select>
         </div>
@@ -46,15 +46,15 @@
           <input type="file" class="form-control" name="img"  id="image">
         </div>
         <div class="text-center">
-
+          
           <button type="submit" class="btn btn-dark btn-lg w-100">
             Pubblica
           </button>
-
+          
         </div>
-       
+        
       </form>
-
+      
     </div>
   </div>
 </div>
