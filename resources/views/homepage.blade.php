@@ -26,7 +26,7 @@
             @foreach ($ads as $ad)
             <div class="col-8 mb-4">
                @php
-                   $title = str_replace(' ', '-', $ad->title);
+                   $title = strtolower(str_replace(' ', '-', $ad->title));
                @endphp
                 <a class="custom-link" href="{{route('ad.details',['id'=>$ad->id,'title'=>$title])}}">
                     <div class="card h-100 featured-card">
