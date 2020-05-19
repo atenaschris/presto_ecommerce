@@ -24,15 +24,19 @@
             <li>
               <img src="https://via.placeholder.com/150x150" alt="" class="img-fluid img-slider">
             </li>
+
             <li>
               <img src="https://via.placeholder.com/150x150" alt="" class="img-fluid img-slider">
             </li>
+
             <li>
               <img src="https://via.placeholder.com/150x150" alt="" class="img-fluid img-slider">
             </li>
+
             <li>
               <img src="https://via.placeholder.com/150x150" alt="" class="img-fluid img-slider">
             </li>
+
             <li>
               <img src="https://via.placeholder.com/150x150" alt="" class="img-fluid img-slider">
             </li>
@@ -74,14 +78,21 @@
           
           
           <div class="col-12 my-4 p-0 pl-4">
-            <button class="btn btn-primary"><svg class="bi bi-bag" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" d="M14 5H2v9a1 1 0 001 1h10a1 1 0 001-1V5zM1 4v10a2 2 0 002 2h10a2 2 0 002-2V4H1z" clip-rule="evenodd"/>
-              <path d="M8 1.5A2.5 2.5 0 005.5 4h-1a3.5 3.5 0 117 0h-1A2.5 2.5 0 008 1.5z"/>
-            </svg>
-            Contatta il venditore</button>
-            <span class="mx-2"><a href=""><svg class="bi bi-heart-fill text-danger" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-              <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" clip-rule="evenodd"/>
-            </svg></a></span>
+            <button class="btn btn-primary">
+              <svg class="bi bi-bag" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M14 5H2v9a1 1 0 001 1h10a1 1 0 001-1V5zM1 4v10a2 2 0 002 2h10a2 2 0 002-2V4H1z" clip-rule="evenodd"/>
+                <path d="M8 1.5A2.5 2.5 0 005.5 4h-1a3.5 3.5 0 117 0h-1A2.5 2.5 0 008 1.5z"/>
+              </svg>
+              Contatta il venditore
+            </button>
+
+            <span class="mx-2">
+              <a href="">
+                <svg class="bi bi-heart-fill text-danger" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" clip-rule="evenodd"/>
+                </svg>
+              </a>
+            </span>
           </div>
           
           
@@ -95,7 +106,9 @@
             </div> 
             <div class="col-8 my-2">
               <p class="font-weight-bold">Annuncio pubblicato da:</p>
-              <a href=""><p class="h6">{{ $ad->user->name }}</p></a>
+              <a href="">
+                <p class="h6">{{ $ad->user->name }}</p>
+              </a>
             </div>
           </div>
           
