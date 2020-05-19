@@ -9,17 +9,33 @@
         <div class="collapse navbar-collapse text-center" id="mainNavbar">
             <ul class="navbar-nav  mt-4 mt-md-0 mx-0 mx-md-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="#">Categoria 1<span class="sr-only">(current)</span></a>
+                    <a class="nav-link disabled text-dark" href="#">Chi siamo<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="#">Categoria 2</a>
+                    <a class="nav-link disabled text-dark" href="#">Cosa facciamo</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="#">Categoria 3</a>
+                    <a class="nav-link disabled text-dark" href="#">Team</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="#">Categoria 4</a>
-                </li>
+                
+
+                            <li class="nav-item dropdown no-shadow">
+                                <a class="nav-link dropdown-toggle no-shadow" href="#" id="categoryDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Categorie
+                                </a>
+                                <div class="dropdown-menu"     aria-labelledby="categoryDropdown">
+                                    @foreach ($categories as $category)
+                                
+                                        <a href="{{route('category.ads',['id'=>$category->id,'name'=>$category->name])}}" class="dropdown-item" >{{$category->name}}</a>
+            
+                                    @endforeach
+                                </div>
+                              </li>
+
+                       
+                         
+                        
+                
             </ul>
             <ul class="navbar-nav ml-auto">
 

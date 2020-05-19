@@ -11511,3 +11511,7 @@ footer {
   }
 }
 
+.no-shadow:focus {
+  box-shadow: none !important;
+}
+

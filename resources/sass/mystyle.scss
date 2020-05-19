@@ -8,6 +8,7 @@
     width: 100px;
     height: 30px;
     margin-top: 5px;
+    
     .search {
         position: absolute;
         margin: auto;
@@ -548,4 +549,7 @@ footer{
       }
   }
 
+  .no-shadow:focus{
+      box-shadow:none !important;
+  }
 //fine css Pasquale
