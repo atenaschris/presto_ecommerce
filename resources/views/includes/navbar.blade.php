@@ -17,22 +17,25 @@
                 <li class="nav-item">
                     <a class="nav-link disabled text-dark" href="#">Team</a>
                 </li>
-                <li class="nav-item">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="categoriesdropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Categorie
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="categoriesdropdown">
+                
 
-                            @foreach ($categories as $category)
+                            <li class="nav-item dropdown no-shadow">
+                                <a class="nav-link dropdown-toggle no-shadow" href="#" id="categoryDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                  Categorie
+                                </a>
+                                <div class="dropdown-menu"     aria-labelledby="categoryDropdown">
+                                    @foreach ($categories as $category)
                                 
-                        <a href="{{route('category.ads',['id'=>$category->id,'name'=>$category->name])}}" class="dropdown-item" >{{$category->name}}</a>
+                                        <a href="{{route('category.ads',['id'=>$category->id,'name'=>$category->name])}}" class="dropdown-item" >{{$category->name}}</a>
+            
+                                    @endforeach
+                                </div>
+                              </li>
 
-                            @endforeach
+                       
                          
-                        </div>
-                      </div>
-                </li>
+                        
+                
             </ul>
             <ul class="navbar-nav ml-auto">
 
