@@ -9,6 +9,8 @@ $(document).ready(function() {
     let logo = document.querySelector("#logo");
     let logoName = document.querySelector(".title-name");
     let navLinks = document.querySelectorAll(".nav-link");
+   
+    
 
     document.addEventListener("scroll", () => {
         let scrolled = pageYOffset;
@@ -17,18 +19,17 @@ $(document).ready(function() {
                 logo.style.width = "50px";
                 logoName.classList.add("d-none");
                 navbar.classList.remove("py-4");
-                navLinks.forEach(element => {
-                    element.classList.add("d-none");
-                });
+              
             } else {
                 logo.style.width = "80px";
                 logoName.classList.remove("d-none");
-                navLinks.forEach(element => {
-                    element.classList.remove("d-none");
-                });
+              
             }
         }
     });
+
+    
+    
 
     $(".slider-for").slick({
         slidesToShow: 1,

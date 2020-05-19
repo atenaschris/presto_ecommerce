@@ -1,13 +1,13 @@
 @extends('layouts.app')
 @section('content')
 <div class="container-fluid mt-5 py-5">
-    <div class="row rounded shadow-lg">
+    <div class="row ">
       
       
       <div class="col-10 col-lg-7 py-3 px-1 px-md-3 offset-0 offset-md-1 offset-lg-0 px-lg-5 justify-content-center text-center">
         <div class="slick-carousel text-center">
           <div class="slider-for p-0">
-            <img src="https://via.placeholder.com/150x150" alt="" class="img-fluid img-slider">
+          <img src="{{Storage::url($ad->img)}}" alt="" class="img-fluid img-slider">
             <img src="https://via.placeholder.com/150x150" alt="" class="img-fluid img-slider">
             <img src="https://via.placeholder.com/150x150" alt="" class="img-fluid img-slider">
             <img src="https://via.placeholder.com/150x150" alt="" class="img-fluid img-slider">
@@ -18,7 +18,7 @@
         <div class="slick-carousel d-none d-md-block">
           <ul class="slider-nav p-0">
             <li>
-              <img src="https://via.placeholder.com/150x150" alt="" class="img-fluid img-slider">
+              <img src="{{Storage::url($ad->img)}}" alt="" class="img-fluid img-slider">
             </li>
             
             <li>
@@ -123,7 +123,7 @@
       <hr class="w-100">
       
       
-      <div class="col-12 text-center">
+      {{-- <div class="col-12 text-center">
         <p class="h3">Ti potrebbero piacere...</p>
       </div>
       
@@ -195,7 +195,7 @@
             </li>
           </ul>
         </div>
-      </div> 
+      </div>  --}}
       
       
       

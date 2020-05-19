@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class Categories extends Seeder
+class CategoriesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,7 +12,7 @@ class Categories extends Seeder
      */
     public function run()
     {
-        $categories=['sedie','tavoli','lampadari','elettrodomestici','tappeti','giardinaggio','cucine','bagno','garage','piscina'];
+        $categories=['auto','informatica','fotografia','elettrodomestici','arredamento','giardinaggio','musiche e film','sports','telefonia','nautica'];
          foreach ($categories as $category) {
             DB::table('categories')->insert([
 

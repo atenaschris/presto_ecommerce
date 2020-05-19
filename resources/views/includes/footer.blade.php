@@ -3,8 +3,8 @@
       <div class="row">
         <div class="container">
           <div class="row justify-content-center">
-            <div class="col-12 col-md-4 text-center"><img src="/media/logo-white.png" class="pr-2" width="80"
-                alt="logo footer"><span class="h3 title-name text-white">dino.it</span></div>
+            <div class="col-12 col-md-4 text-center"><img src="/media/logo.png" class="pr-2" width="80"
+                alt="logo footer"><span class="h3 title-name text-white">presto.it</span></div>
             <div class="col-8 col-md-4">
               <ul class="custom-list text-white p-0 m-3 text-center text-md-left">
                 <a class="custom-link" href="">
@@ -58,7 +58,7 @@
           <hr class="border-color-white">
           <div class="row">
             <div class="col-12">
-              <p class="text-center text-muted"><small>Made with ❤️ in dino.it</small></p>
+              <p class="text-center text-muted"><small>Made with ❤️ in presto.it</small></p>
             </div>
           </div>
         </div>

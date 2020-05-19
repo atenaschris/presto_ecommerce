@@ -37300,15 +37300,9 @@ $(document).ready(function () {
         logo.style.width = "50px";
         logoName.classList.add("d-none");
         navbar.classList.remove("py-4");
-        navLinks.forEach(function (element) {
-          element.classList.add("d-none");
-        });
       } else {
         logo.style.width = "80px";
         logoName.classList.remove("d-none");
-        navLinks.forEach(function (element) {
-          element.classList.remove("d-none");
-        });
       }
     }
   });
@@ -37372,8 +37366,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\minfa\wa\presto_fruttariani\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\minfa\wa\presto_fruttariani\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\39327\wa\presto_fruttariani\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\39327\wa\presto_fruttariani\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -7,7 +7,7 @@
     <div class="container h-100">
         <div class="d-flex h-100 text-center align-items-center">
             <div class="w-100 text-white">
-                <h1 class="display-3">Gino.it</h1>
+                <h1 class="display-3">Presto.it</h1>
                 <p class="lead mb-0">Soldi sotto il cuscino con Gino</p>
             </div>
         </div>
@@ -44,7 +44,7 @@
                             <div class="card-body d-flex flex-column">
                                 <h5 class="card-title">{{ $ad->title }}</h5>
                                 <p class="card-text">{{substr($ad->description, 0, 30)}}...</p>
-                                <p class="card-price mt-auto">{{ $ad->price }}€</p>  
+                                <p class="card-price mt-auto h6 font-weight-bold text-primary">{{ $ad->price }}€</p>  
                             </div>
                             
                         </div>

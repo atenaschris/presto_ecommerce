@@ -17,12 +17,17 @@
         
 
         <div class="col-12 col-lg-8 offset-lg-2">
+         
             @foreach ($ads as $ad)
+
+            @php
+                    $title = str_replace(' ', '-', $ad->title);
+            @endphp
 
             <div class="horizzontal-card mt-5 mt-md-0 mb-5">
                 <div class="row">
                     <div class="col-12 col-md-5">
-                        <a class="custom-link" href="#">
+                    <a class="custom-link" href="{{route('ad.details',['id'=>$ad->id,'title'=>$title])}}">
                             @if ($ad->img)
 
                             <img class="img-fluid corner-radius" src="{{Storage::url($ad->img)}}"

@@ -1,7 +1,7 @@
-<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light py-2 py-md-4 mt-2 mt-md-0 sticky-top stop-flickering">
+<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light py-2  mt-2 mt-md-0 sticky-top stop-flickering">
     <div class="container">
-        <a class="navbar-brand" href="{{ route('homepage') }}"> <img id="logo" class="pr-2" width="80px" src="/media/logo.png"
-                alt="logo"><span class="h3 title-name">dino.it</span></a>
+        <a class="navbar-brand no-shadow" href="{{ route('homepage') }}"> <img id="logo" class="pr-2" width="80px" src="/media/logo.png"
+                alt="logo"><span class="h3 title-name">presto.it</span></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar"
             aria-expanded="false" aria-label="Toggle navigation">
             <span> <i class="fas fa-bars"></i> </span>
@@ -53,8 +53,11 @@
                     @endif
                 @else
                     <li class="nav-item dropdown">
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle no-shadow" href="#" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre> <svg class="bi bi-person-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+                              </svg>
+                              
                             {{ Auth::user()->name }} <span class="caret"></span>
                         </a>
 
