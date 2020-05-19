@@ -1,4 +1,4 @@
-<footer class="px-5 pt-5">
+<footer class="px-5 pt-5 mt-5 ">
     <div class="container-fluid">
       <div class="row">
         <div class="container">
@@ -23,15 +23,23 @@
             </div>
             <div class="col-12 col-md-4">
               <h5 class="mb-2 text-white text-center text-md-left">Iscrivi alla newsletter</h5>
-              <form>
+              <form action="{{ route('newsletter') }}" method="POST">
+                @csrf
                 <div class="row">
-                  <div class="col-8"><input type="email" class="form-control" id="footerInputEmail1"></div>
-                  <div class="col-4 pl-md-0"><button type="submit" class="btn btn-reverse">Iscriviti</button></div>
+                  <div class="col-8">
+                    <input type="email" class="form-control" id="footerInputEmail1" name="email">
+                  </div>
+                  <div class="col-4 pl-md-0">
+                    <button type="submit" class="btn btn-reverse">Iscriviti</button>
+                  </div>
                 </div>
                 <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1"><small class="text-white">Accetto al trattamento
-                      dei dati</small></label>
+             
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1" name="checkbox">
+                  <label class="form-check-label" for="exampleCheck1">
+                    <small class="text-white">Accetto al trattamento
+                      dei dati</small>
+                  </label>
                 </div>
               </form>
               <div class="row">
