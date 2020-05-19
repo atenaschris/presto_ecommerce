@@ -1,4 +1,4 @@
-<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light py-2 py-md-4 mt-2 mt-md-0 sticky-top">
+<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light py-2 py-md-4 mt-2 mt-md-0 sticky-top stop-flickering">
     <div class="container">
         <a class="navbar-brand" href="{{ route('homepage') }}"> <img id="logo" class="pr-2" width="80px" src="/media/logo.png"
                 alt="logo"><span class="h3 title-name">dino.it</span></a>
@@ -6,7 +6,7 @@
             aria-expanded="false" aria-label="Toggle navigation">
             <span> <i class="fas fa-bars"></i> </span>
         </button>
-        <div class="collapse navbar-collapse text-center" id="mainNavbar">
+        <div class="collapse navbar-collapse text-center " id="mainNavbar">
             <ul class="navbar-nav  mt-4 mt-md-0 mx-0 mx-md-auto">
                 <li class="nav-item">
                     <a class="nav-link disabled text-dark" href="#">Chi siamo<span class="sr-only">(current)</span></a>

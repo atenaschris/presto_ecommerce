@@ -11076,8 +11076,8 @@ a.text-dark:focus {
 }
 
 :root {
-  --main-color: #0F5450;
-  --secondary-color: #75CC53;
+  --main-color: #0f5450;
+  --secondary-color: #75cc53;
   --input-padding-x: 1.5rem;
   --input-padding-y: 0.75rem;
 }
@@ -11104,11 +11104,21 @@ h6 {
 }
 
 #navbar {
-  transition: 0.3s;
+  transition: 1000ms;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
 }
 
 #logo {
-  transition: 0.3s;
+  transition: 1000ms;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+
+.stop-flickering {
+  -webkit-backface-visibility: hidden !important;
+          backface-visibility: hidden !important;
+  transform: translateZ(0) scale(1, 1) !important;
 }
 
 .title-name {
@@ -11136,7 +11146,7 @@ h6 {
 }
 
 .btn-reverse {
-  color: #FFF;
+  color: #fff;
   background-color: var(--secondary-color);
   font-weight: 500;
   border: 2px solid;
@@ -11146,7 +11156,7 @@ h6 {
 
 .btn-reverse:hover {
   color: var(--main-color);
-  background-color: #FFF;
+  background-color: #fff;
   font-weight: 500;
   border: 2px solid;
   border-color: var(--main-color);
@@ -11156,7 +11166,7 @@ h6 {
 .btn-orange:hover {
   background-color: var(--main-color) !important;
   border-color: var(--main-color);
-  color: #FFF;
+  color: #fff;
 }
 
 .colored-border {
@@ -11164,7 +11174,7 @@ h6 {
 }
 
 .initialForm {
-  background-color: #FFF;
+  background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 10px 24px 0 rgba(0, 0, 0, 0.1);
 }
@@ -11211,7 +11221,7 @@ header {
 .custom-jumbo {
   border-radius: 10px !important;
   border: 5px solid var(--secondary-color);
-  background-color: #FFF;
+  background-color: #fff;
   color: var(--main-color);
   padding-top: 30px;
   padding-bottom: 30px;
@@ -11222,7 +11232,7 @@ header {
   border: 5px solid var(--secondary-color);
   border-left: 0;
   border-right: 0;
-  background-color: #FFF;
+  background-color: #fff;
   color: var(--main-color);
   padding-top: 30px;
   padding-bottom: 30px;
@@ -11316,7 +11326,7 @@ footer {
 }
 
 .custom-text-checkbox {
-  background-color: #F1F1F1;
+  background-color: #f1f1f1;
 }
 
 .filter-bar {
@@ -11433,7 +11443,7 @@ footer {
 }
 
 .form-label-group input:not(:placeholder-shown) {
-  padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
+  padding-top: calc( var(--input-padding-y) + var(--input-padding-y) * (2 / 3) );
   padding-bottom: calc(var(--input-padding-y) / 3);
 }
 

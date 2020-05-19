@@ -37284,52 +37284,52 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /***/ (function(module, exports) {
 
 $(document).ready(function () {
-  $('#signInModal').on('shown.bs.modal', function () {
-    $('#signInEmaiInput').trigger('focus');
+  $("#signInModal").on("shown.bs.modal", function () {
+    $("#signInEmaiInput").trigger("focus");
   }); // menu
 
-  var navbar = document.getElementById('navbar');
-  var logo = document.querySelector('#logo');
-  var logoName = document.querySelector('.title-name');
-  var navLinks = document.querySelectorAll('.nav-link');
+  var navbar = document.getElementById("navbar");
+  var logo = document.querySelector("#logo");
+  var logoName = document.querySelector(".title-name");
+  var navLinks = document.querySelectorAll(".nav-link");
   document.addEventListener("scroll", function () {
     var scrolled = pageYOffset;
 
     if (window.innerWidth > 1000) {
       if (scrolled > 5) {
-        logo.style.width = '50px';
-        logoName.classList.add('d-none');
-        navbar.classList.remove('py-4');
+        logo.style.width = "50px";
+        logoName.classList.add("d-none");
+        navbar.classList.remove("py-4");
         navLinks.forEach(function (element) {
-          element.classList.add('d-none');
+          element.classList.add("d-none");
         });
       } else {
-        logo.style.width = '80px';
-        logoName.classList.remove('d-none');
+        logo.style.width = "80px";
+        logoName.classList.remove("d-none");
         navLinks.forEach(function (element) {
-          element.classList.remove('d-none');
+          element.classList.remove("d-none");
         });
       }
     }
   });
-  $('.slider-for').slick({
+  $(".slider-for").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
     fade: true,
-    asNavFor: '.slider-nav'
+    asNavFor: ".slider-nav"
   });
-  $('.slider-nav').slick({
+  $(".slider-nav").slick({
     slidesToShow: 3,
     slidesToScroll: 1,
-    asNavFor: '.slider-for',
+    asNavFor: ".slider-for",
     arrows: true,
     centerMode: true,
     focusOnSelect: true
   });
-  $('.center').slick({
+  $(".center").slick({
     centerMode: true,
-    centerPadding: '60px',
+    centerPadding: "60px",
     slidesToShow: 3,
     focusOnSelect: true,
     responsive: [{
@@ -37337,7 +37337,7 @@ $(document).ready(function () {
       settings: {
         arrows: true,
         centerMode: true,
-        centerPadding: '60px',
+        centerPadding: "60px",
         slidesToShow: 1
       }
     }, {
@@ -37345,7 +37345,7 @@ $(document).ready(function () {
       settings: {
         arrows: false,
         centerMode: true,
-        centerPadding: '60px',
+        centerPadding: "60px",
         slidesToShow: 1
       }
     }]
@@ -37372,8 +37372,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\39327\wa\presto_fruttariani\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\39327\wa\presto_fruttariani\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\minfa\wa\presto_fruttariani\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\minfa\wa\presto_fruttariani\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
