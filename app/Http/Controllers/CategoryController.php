@@ -3,11 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Category;
+use App\Advertise;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
  
+    public function category_ads($id,$name)
+    {
+        $ads =Advertise::where('category_id','=',$id)->paginate(5);
+
+        $categoryname = ucfirst($name);
+           
+            
+
+       
+        return view('category_ads',compact('ads','categoryname'));
+    }
   
 
 

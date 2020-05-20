@@ -47,17 +47,7 @@ class AdvertiseController extends Controller
         return view('add_ads');
     }
 
-    public function category_ads($id,$name)
-    {
-        $ads =DB::table('advertises')->where('category_id','=',$id)->get();
-
-        $categoryname = ucfirst($name);
-           
-            
-
-       
-        return view('category_ads',compact('ads','categoryname'));
-    }
+  
     
     public function thankyouads()
     {

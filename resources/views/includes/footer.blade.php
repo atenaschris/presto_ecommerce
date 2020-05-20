@@ -30,7 +30,7 @@
               @error('email')
               <div class="alert alert-danger">{{ $message }}</div>
               @enderror
-              @if(Auth::user())
+              
               <form action="{{ route('newsletter') }}" method="POST">
                 @csrf
                 <div class="row">
@@ -52,10 +52,10 @@
                 </form>
                 
                     
-                @else
-               <a href="{{ route('register') }}" class="text-danger pb-2">Devi essere loggato per registrarti alla newsletter</a>     
+                
+                
                
-                @endif
+            
                 <div class="row">
                   <div class="col-12">
                     <div class="text-center text-md-left">

@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\NewsletterRequest;
 
 class NewsletterController extends Controller
+
+
 {
     function newsletter(NewsletterRequest $request)
     {   $newsletter=new Newsletter();

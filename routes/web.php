@@ -28,7 +28,7 @@ Route::post('/submit','AdvertiseController@submit')->name('submit');
 
 Route::get('/ads/detail/{id}/{title}','FrontendController@ad_details')->name('ad.details');
 
-Route::get('/category-ads/{id}/{name}','AdvertiseController@category_ads')->name('category.ads');
+Route::get('/category-ads/{id}/{name}','CategoryController@category_ads')->name('category.ads');
 
 Route::get('/newsletter/thank-you', 'NewsletterController@thankyounewsletter'
     
