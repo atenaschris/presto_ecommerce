@@ -1,6 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+
+@if (session('access.denied.revisor.only'))
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h2>Errore.</h2>
+        </div>
+    </div>
+</div>
+
+@endif
 {{-- HEADER --}}
 <header>
     <div class="overlay"></div>
@@ -14,6 +26,7 @@
     </div>
 </header>
 {{-- FINE HEADER --}}
+
 
 
 {{-- START CARD --}}

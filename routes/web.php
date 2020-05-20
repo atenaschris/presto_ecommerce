@@ -18,6 +18,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/home/revisor', 'RevisorController@revisorhome')->name('revisor.home');
+
 Route::get('/','FrontendController@homepage')->name('homepage');
 
 Route::get('/add-ads','AdvertiseController@add')->name('add.ads');
