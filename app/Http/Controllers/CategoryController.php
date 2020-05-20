@@ -11,7 +11,7 @@ class CategoryController extends Controller
  
     public function category_ads($id,$name)
     {
-        $ads =Advertise::where('category_id','=',$id)->paginate(5);
+        $ads =Advertise::where('is_accepted', true)->where('category_id','=',$id)->paginate(5);
 
         $categoryname = ucfirst($name);
            

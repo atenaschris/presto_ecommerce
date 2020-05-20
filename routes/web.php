@@ -18,8 +18,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/home/revisor', 'RevisorController@revisorhome')->name('revisor.home');
-
 Route::get('/','FrontendController@homepage')->name('homepage');
 
 Route::get('/add-ads','AdvertiseController@add')->name('add.ads');
@@ -39,3 +37,13 @@ Route::get('/newsletter/thank-you', 'NewsletterController@thankyounewsletter'
 Route::post('/newsletter','NewsletterController@newsletter'
     
 )->name('newsletter');
+
+// Revisor Routes
+
+Route::get('/revisor', 'RevisorController@index')->name('revisor.home');
+
+Route::post('/revisor/ad/{id}/accepted', 'RevisorController@accepted')->name('revisor.accepted');
+
+Route::post('/revisor/ad/{id}/rejected', 'RevisorController@rejected')->name('revisor.rejected');
+
+
