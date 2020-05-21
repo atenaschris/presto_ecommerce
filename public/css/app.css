@@ -10934,6 +10934,10 @@ a.text-dark:focus {
   }
 }
 
+a:focus {
+  box-shadow: none !important;
+}
+
 .container-custom {
   position: relative;
   width: 100px;
@@ -11076,8 +11080,8 @@ a.text-dark:focus {
 }
 
 :root {
-  --main-color: #2556E2;
-  --secondary-color: #D2E8FF;
+  --main-color: #2556e2;
+  --secondary-color: #d2e8ff;
   --input-padding-x: 1.5rem;
   --input-padding-y: 0.75rem;
 }
@@ -11524,5 +11528,13 @@ footer {
 
 .no-shadow:focus {
   box-shadow: none !important;
+}
+
+.slick-slide {
+  height: 200px;
+}
+
+.slick-slide img {
+  height: 200px;
 }
 

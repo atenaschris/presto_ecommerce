@@ -4,9 +4,9 @@
 
 @if (session('revisor.request.submit'))
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-12 alert alert-success">
+            <div class="col-12 alert font-weight-light alert-success">
                 <h4>La tua richiesta è stata sottomessa con successo.</h4>
             </div>
         </div>
@@ -16,7 +16,7 @@
 
 @if (session('access.denied.revisor.only'))
 
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <h2>Errore.</h2>
@@ -43,16 +43,17 @@
 
 {{-- START CARD --}}
 <div class="container my-5">
-    <div class="row mt-4">
+    <div class="row mt-4 ">
         <div class="col-12 col-md-6 col-lg-5">
             <h3 class="h5 text-blue"><i class="far fa-star"></i> Ecco gli ultimi annunci</h3>
             <hr class="mb-4">
         </div>
     </div>
-    <div class="row m-0">
-        <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 justify-content-center">
-            @foreach ($ads as $ad)
-            <div class="col-8 mb-4">
+  
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 justify-content-center ">
+            @foreach ($ads as $ad) 
+            <div class="col mb-4 ">
                 @php
                 $title = str_replace(' ', '-', $ad->title);
                 @endphp
@@ -75,9 +76,9 @@
                     </div>
                 </a>
             </div>
-            @endforeach
-        </div>
+        @endforeach
     </div>
+   
 </div>
 {{-- END_CARD --}}
 

@@ -37311,6 +37311,7 @@ $(document).ready(function () {
     slidesToScroll: 1,
     arrows: false,
     fade: true,
+    mobileFirst: true,
     asNavFor: ".slider-nav"
   });
   $(".slider-nav").slick({
@@ -37318,12 +37319,14 @@ $(document).ready(function () {
     slidesToScroll: 1,
     asNavFor: ".slider-for",
     arrows: true,
+    mobileFirst: true,
     centerMode: true,
     focusOnSelect: true
   });
   $(".center").slick({
     centerMode: true,
     centerPadding: "60px",
+    mobileFirst: true,
     slidesToShow: 3,
     focusOnSelect: true,
     responsive: [{
@@ -37331,6 +37334,7 @@ $(document).ready(function () {
       settings: {
         arrows: true,
         centerMode: true,
+        mobileFirst: true,
         centerPadding: "60px",
         slidesToShow: 1
       }
@@ -37339,6 +37343,7 @@ $(document).ready(function () {
       settings: {
         arrows: false,
         centerMode: true,
+        mobileFirst: true,
         centerPadding: "60px",
         slidesToShow: 1
       }
@@ -37366,8 +37371,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/mdb/wa/presto_fruttariani/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/mdb/wa/presto_fruttariani/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\Users\minfa\wa\presto_fruttariani\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\Users\minfa\wa\presto_fruttariani\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

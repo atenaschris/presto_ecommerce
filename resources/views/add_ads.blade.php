@@ -25,8 +25,8 @@
       <form method="post" action="{{route('submit')}}" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
-          <label for="title">Titolo</label>
-          <input type="text" class="form-control" name="title"  id="title" placeholder="inserisci il titolo dell'annuncio">
+          <label for="title">Titolo <span class="small text-muted">(Massimo 15 caratteri)</span></label>
+          <input type="text" class="form-control" name="title"  id="title" placeholder="inserisci il titolo dell'annuncio "maxlength="15">
         </div>
 
         {{-- Category --}}

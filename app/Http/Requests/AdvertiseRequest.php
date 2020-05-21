@@ -24,7 +24,7 @@ class AdvertiseRequest extends FormRequest
     public function rules()
     {
         return [
-            "title" => "required",
+            "title" => "required|max:15",
             "description" => "required",
             "category_id" => "required",
             "price" => "required",
