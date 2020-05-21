@@ -192,9 +192,9 @@
 
 
                         {{-- tab rifiutati --}}
-                        <div class="tab-pane fade show active" id="pills-rejected" role="tabpanel" aria-labelledby="pills-rejected-tab">
+                        <div class="tab-pane fade" id="pills-rejected" role="tabpanel" aria-labelledby="pills-rejected-tab">
                             @foreach ($ads as $ad)
-                                @if (!$ad->is_accepted)
+                                @if (! $ad->is_accepted)
                                     @php
                                     $title = str_replace(' ', '-', $ad->title);
                                     @endphp
