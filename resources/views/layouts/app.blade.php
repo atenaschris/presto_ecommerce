@@ -23,8 +23,8 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 </head>
 
-<body>
-    <div id="app">
+<body class="h-100">
+    <div id="app" >
         @include('includes.navbar')
         <main>
             @yield('content')

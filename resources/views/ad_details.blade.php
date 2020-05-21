@@ -4,48 +4,48 @@
     <div class="row ">
       
       
-      <div class="col-10 col-lg-7 py-3 px-1 px-md-3 offset-0 offset-md-1 offset-lg-0 px-lg-5 justify-content-center text-center">
+      <div class="col-12 col-lg-6 ">
         <div class="slick-carousel text-center">
           <div class="slider-for p-0">
-          <img src="{{Storage::url($ad->img)}}" alt="" class="img-fluid img-slider">
-            <img src="https://via.placeholder.com/150x150" alt="" class="img-fluid img-slider">
-            <img src="https://via.placeholder.com/150x150" alt="" class="img-fluid img-slider">
-            <img src="https://via.placeholder.com/150x150" alt="" class="img-fluid img-slider">
-            <img src="https://via.placeholder.com/150x150" alt="" class="img-fluid img-slider">
-            <img src="https://via.placeholder.com/150x150" alt="" class="img-fluid img-slider">
+              <img src="https://picsum.photos/300/150" alt="" class="img-fluid img-slider">
+              <img src="https://picsum.photos/300/150" alt="" class="img-fluid img-slider">
+              <img src="https://picsum.photos/300/150" alt="" class="img-fluid img-slider">
+              <img src="https://picsum.photos/300/150" alt="" class="img-fluid img-slider">
+              <img src="https://picsum.photos/300/150" alt="" class="img-fluid img-slider">
+              <img src="https://picsum.photos/300/150" alt="" class="img-fluid img-slider">
           </div>
         </div> 
-        <div class="slick-carousel d-none d-md-block">
+        <div class="slick-carousel  d-none d-md-block">
           <ul class="slider-nav p-0">
             <li>
-              <img src="{{Storage::url($ad->img)}}" alt="" class="img-fluid img-slider">
+              <img src="https://picsum.photos/300/150" alt="" class="img-fluid img-slider">
             </li>
             
             <li>
-              <img src="https://via.placeholder.com/150x150" alt="" class="img-fluid img-slider">
+              <img src="https://picsum.photos/300/150" alt="" class="img-fluid img-slider">
             </li>
 
             <li>
-              <img src="https://via.placeholder.com/150x150" alt="" class="img-fluid img-slider">
+              <img src="https://picsum.photos/300/150" alt="" class="img-fluid img-slider">
             </li>
 
             <li>
-              <img src="https://via.placeholder.com/150x150" alt="" class="img-fluid img-slider">
+              <img src="https://picsum.photos/300/150" alt="" class="img-fluid img-slider">
             </li>
 
             <li>
-              <img src="https://via.placeholder.com/150x150" alt="" class="img-fluid img-slider">
+              <img src="https://picsum.photos/300/150" alt="" class="img-fluid img-slider">
             </li>
 
             <li>
-              <img src="https://via.placeholder.com/150x150" alt="" class="img-fluid img-slider">
+              <img src="https://picsum.photos/300/150" alt="" class="img-fluid img-slider">
             </li>
           </ul>
         </div> 
       </div>
       
 
-      <div class="col-12 col-lg-5">
+      <div class="col-12 col-lg-6">
         <div class="row">
           
           <div class="col-12 my-3">

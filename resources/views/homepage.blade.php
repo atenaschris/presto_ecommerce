@@ -2,15 +2,27 @@
 
 @section('content')
 
-@if (session('access.denied.revisor.only'))
+@if (session('revisor.request.submit'))
 
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <h2>Errore.</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 alert alert-success">
+                <h4>La tua richiesta è stata sottomessa con successo.</h4>
+            </div>
         </div>
     </div>
-</div>
+
+@endif
+
+@if (session('access.denied.revisor.only'))
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2>Errore.</h2>
+            </div>
+        </div>
+    </div>
 
 @endif
 {{-- HEADER --}}
@@ -40,29 +52,29 @@
     <div class="row m-0">
         <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 justify-content-center">
             @foreach ($ads as $ad)
-                <div class="col-8 mb-4">
-                    @php
-                        $title = str_replace(' ', '-', $ad->title);
-                    @endphp
-                    <a class="custom-link" href="{{route('ad.details',['id'=>$ad->id,'title'=>$title])}}">
-                        <div class="card h-100 featured-card">
-
-                            @if ($ad->img)
-                                <img src="{{ Storage::url($ad->img) }}" class="card-img-top featured-card-img"
-                                alt="{{ $ad->title }}">                
-                            @else
-                                <img src="https://via.placeholder.com/200x300" class="card-img-top featured-card-img"
-                                alt="{{ $ad->title }}">
-                            @endif            
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">{{ $ad->title }}</h5>
-                                <p class="card-text">{{substr($ad->description, 0, 30)}}...</p>
-                                <p class="card-price mt-auto h6 font-weight-bold text-primary">{{ $ad->price }}€</p>  
-                            </div>
-                            
+            <div class="col-8 mb-4">
+                @php
+                $title = str_replace(' ', '-', $ad->title);
+                @endphp
+                <a class="custom-link" href="{{route('ad.details',['id'=>$ad->id,'title'=>$title])}}">
+                    <div class="card h-100 featured-card">
+                        
+                        @if ($ad->img)
+                        <img src="{{ Storage::url($ad->img) }}" class="card-img-top featured-card-img"
+                        alt="{{ $ad->title }}">                
+                        @else
+                        <img src="https://via.placeholder.com/200x300" class="card-img-top featured-card-img"
+                        alt="{{ $ad->title }}">
+                        @endif            
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">{{ $ad->title }}</h5>
+                            <p class="card-text">{{substr($ad->description, 0, 30)}}...</p>
+                            <p class="card-price mt-auto h6 font-weight-bold text-primary">{{ $ad->price }}€</p>  
                         </div>
-                    </a>
-                </div>
+                        
+                    </div>
+                </a>
+            </div>
             @endforeach
         </div>
     </div>

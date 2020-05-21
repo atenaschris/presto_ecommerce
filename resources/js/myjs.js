@@ -36,6 +36,7 @@ $(document).ready(function() {
         slidesToScroll: 1,
         arrows: false,
         fade: true,
+        mobileFirst:true,
         asNavFor: ".slider-nav"
     });
     $(".slider-nav").slick({
@@ -43,6 +44,7 @@ $(document).ready(function() {
         slidesToScroll: 1,
         asNavFor: ".slider-for",
         arrows: true,
+        mobileFirst:true,
         centerMode: true,
         focusOnSelect: true
     });
@@ -50,6 +52,7 @@ $(document).ready(function() {
     $(".center").slick({
         centerMode: true,
         centerPadding: "60px",
+        mobileFirst:true,
         slidesToShow: 3,
         focusOnSelect: true,
         responsive: [
@@ -58,6 +61,7 @@ $(document).ready(function() {
                 settings: {
                     arrows: true,
                     centerMode: true,
+                    mobileFirst:true,
                     centerPadding: "60px",
                     slidesToShow: 1
                 }
@@ -67,6 +71,7 @@ $(document).ready(function() {
                 settings: {
                     arrows: false,
                     centerMode: true,
+                    mobileFirst:true,
                     centerPadding: "60px",
                     slidesToShow: 1
                 }

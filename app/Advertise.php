@@ -4,9 +4,13 @@ namespace App;
 
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
+
 
 class Advertise extends Model
 {
+    use SoftDeletes;
+
     protected $fillable = ["title","description","category_id","price","img"];
     
 
@@ -24,4 +28,6 @@ class Advertise extends Model
 
         return Advertise::where('is_accepted',null)->count();
     }
+
+
 }

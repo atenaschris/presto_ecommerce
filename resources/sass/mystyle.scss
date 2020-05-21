@@ -124,6 +124,7 @@
 
 body {
     font-family: "Roboto", sans-serif;
+    min-height: 100vh;
 }
 
 h1,
@@ -313,6 +314,7 @@ background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/s
 
 footer {
     background-color: var(--main-color);
+    
 }
 
 .custom-list {
@@ -563,3 +565,13 @@ footer {
     box-shadow: none !important;
 }
 //fine css Pasquale
+
+
+//slick test
+.slick-slide {
+    height:200px;
+ }
+ 
+ .slick-slide img {
+    height:200px;
+ }

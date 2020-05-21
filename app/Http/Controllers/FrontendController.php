@@ -13,7 +13,7 @@ class FrontendController extends Controller
 
         // $last_ads = DB::table('advertises')->latest()->take(5)->get();
 
-       $ads = Advertise::where('is_accepted', true)->orderBy('id','desc')->take(5)->get();
+       $ads = Advertise::where('is_accepted', true)->orderBy('id','desc')->withTrashed()->take(5)->get();
         // $ads = Advertise::all();
         
         return view('homepage',compact('ads'));

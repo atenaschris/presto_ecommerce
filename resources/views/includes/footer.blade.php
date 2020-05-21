@@ -1,4 +1,4 @@
-<footer class="px-5 pt-5 mt-5 ">
+<footer class="px-5 pt-5 mt-auto">
   <div class="container-fluid">
     <div class="row">
       <div class="container">
@@ -13,8 +13,18 @@
                 <a class="custom-link" href="">
                   <li class="my-2">Cosa facciamo</li>
                 </a>
-                <a class="custom-link" href="">
-                  <li class="my-2">Lavora con noi</li>
+                
+                  @guest
+             
+                 
+                   <a class="custom-link" href="{{route('revisor.request')}}">Lavora con noi</a>
+                  
+                   
+                   @else
+                   @if ( Auth::user()->is_revisor)
+                  
+                   @endif
+                   @endguest
                 </a>
                 <a class="custom-link" href="">
                   <li class="my-2">Diventa partner</li>
@@ -51,11 +61,11 @@
                   </div>
                 </form>
                 
-                    
                 
                 
-               
-            
+                
+                
+                
                 <div class="row">
                   <div class="col-12">
                     <div class="text-center text-md-left">
@@ -68,11 +78,11 @@
                   </div>
                 </div>
               </div>
-              </div>
+            </div>
             <hr class="border-color-white">
             <div class="row">
               <div class="col-12">
-                <p class="text-center text-muted"><small>Made with ❤️ in presto.it</small></p>
+                <p class="text-center text-white"><small>Made with 🍆 in <b>Presto.it</b></small></p>
               </div>
             </div>
           </div>

@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -47,3 +48,11 @@ Route::post('/revisor/ad/{id}/accepted', 'RevisorController@accepted')->name('re
 Route::post('/revisor/ad/{id}/rejected', 'RevisorController@rejected')->name('revisor.rejected');
 
 Route::get('/revisor/request','RequestRevisorController@revisor_request')->name('revisor.request');
+
+Route::post('/revisor/submit','RequestRevisorController@revisor_submit')->name('revisor.submit');
+
+Route::get('/revisor/undo','RevisorController@undo_ads')->name('revisor.undo.ads');
+
+Route::post('/revisor/undo/{id}/accepted','RevisorController@update_accepted')->name('ads.accepted');
+
+Route::post('/revisor/undo/{id}/rejected','RevisorController@update_rejected')->name('ads.rejected');
