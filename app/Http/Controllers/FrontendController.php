@@ -21,7 +21,7 @@ class FrontendController extends Controller
     }
 
     public function ad_details($id){
-        $ad = Advertise::find($id);
+        $ad = Advertise::withTrashed()->find($id);
         return view('ad_details',compact('ad'));
     }
 
