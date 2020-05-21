@@ -19,4 +19,9 @@ class Advertise extends Model
     {
         return $this->belongsTo('App\User');
     }
+
+    static public function toBeRevisionedCount(){
+
+        return Advertise::where('is_accepted',null)->count();
+    }
 }

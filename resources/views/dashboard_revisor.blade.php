@@ -57,14 +57,14 @@
                                         <div class="col-12 col-md-6">
                                             <form action="{{ route('revisor.accepted', ["id" => $ad->id]) }}" method="POST">
                                                 @csrf
-                                                <button type="submit" class="btn btn-success w-100 my-2 my-md-0"><i class="fas fa-check fa-pulse"></i><span
+                                                <button type="submit" class="btn btn-success w-100 my-2 my-md-0"><i class="fas fa-check "></i><span
                                                     class="ml-2">Accetta</span></button> 
                                             </form>    
                                         </div>
                                         <div class="col-12 col-md-6">
                                             <form action="{{ route('revisor.rejected', ["id" => $ad->id]) }}" method="POST">
                                                 @csrf
-                                                <button type="submit" class="btn btn-danger w-100"><i class="fas fa-skull-crossbones fa-pulse"></i><span
+                                                <button type="submit" class="btn btn-danger w-100"><i class="fas fa-skull-crossbones "></i><span
                                                     class="ml-2">Rifiuta</span></button> 
                                             </form>
                                         </div>

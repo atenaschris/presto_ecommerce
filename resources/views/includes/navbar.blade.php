@@ -15,7 +15,7 @@
                     <a class="nav-link disabled text-dark" href="#">Cosa facciamo</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled text-dark" href="#">Team</a>
+                <a class="nav-link disabled text-dark" href="{{route('revisor.request')}}">Lavora con noi</a>
                 </li>
                 
 
@@ -41,6 +41,7 @@
 
                 <!-- Authentication Links -->
                 @guest
+                    
                     <li class="nav-item">
                         <a class="nav-link no-shadow"
                             href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -52,9 +53,24 @@
                         </li>
                     @endif
                 @else
+                @if (Auth::user()->is_revisor)
+
+                <li class="nav-item ">
+                  <a class="no-shadow nav-link" href="{{route('revisor.home')}}">
+                     <span class="badge badge-pill badge-primary">
+                         {{\App\Advertise::toBeRevisionedCount()}}
+                     </span> 
+                  </a>
+                </li>
+                 
+                @endif
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle no-shadow" href="#" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre> <svg class="bi bi-person-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                         
+                                
+                           
+                            <svg class="bi bi-person-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
                               </svg>
                               
@@ -63,7 +79,7 @@
 
                         <div class="dropdown-menu   dropdown-menu-right" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-            document.getElementById('logout-form').submit();">
+                                 document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
                             </a>
 
@@ -73,6 +89,7 @@
                             </form>
                         </div>
                     </li>
+
                 @endguest
                 {{-- <li class="nav-item ">
                     <div class="container-custom">

@@ -46,4 +46,4 @@ Route::post('/revisor/ad/{id}/accepted', 'RevisorController@accepted')->name('re
 
 Route::post('/revisor/ad/{id}/rejected', 'RevisorController@rejected')->name('revisor.rejected');
 
-
+Route::get('/revisor/request','RequestRevisorController@revisor_request')->name('revisor.request');
