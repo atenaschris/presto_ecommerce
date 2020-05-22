@@ -66,7 +66,11 @@ Route::get('/admin-dashboard/all-ads', 'AdminController@allads')->name('admin.al
 Route::get('/admin-dashboard/all-users', 'AdminController@allusers')->name('admin.all.users');
 
 
-Route::post('/admin-dashboard/ad/{id}/accepted', 'AdminController@makerevisor')->name('admin.accepted');
+Route::post('/admin-dashboard/all-request/{id}/accepted', 'AdminController@accepted')->name('request.accepted');
 
-Route::post('/admin-dashboard/ad/{id}/rejected', 'AdminController@makeuser')->name('admin.rejected');
+Route::post('/admin-dashboard/all-request/{id}/rejected', 'AdminController@rejected')->name('request.rejected');
+
+Route::get('/admin-dashboard/all-request', 'AdminController@allrequest')->name('admin.all.request');
+
+Route::post('/admin-dashboard/all-users/{id}/revoked', 'AdminController@revokedPermission')->name('permission.revoked');
 

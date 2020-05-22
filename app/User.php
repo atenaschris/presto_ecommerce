@@ -41,4 +41,10 @@ class User extends Authenticatable
     {
         return $this->hasMany('\App\Advertise');
     }
+
+    static public function requestCount(){
+
+        return User::where('revisor_request', '>', '0')->count();
+    }
+
 }

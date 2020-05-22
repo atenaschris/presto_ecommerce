@@ -10,5 +10,7 @@
 
         <p>Qui la sua  <strong> descrizione: </strong> </p>
         <p>{{ $revisor['description'] }}</p>
+
+        <a href="http://localhost:8000/admin-dashboard/all-request">Vai alla Dashboard!</a>
     </body>
 </html>
