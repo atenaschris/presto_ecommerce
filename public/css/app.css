@@ -10938,6 +10938,10 @@ a:focus {
   box-shadow: none !important;
 }
 
+.a-hover:hover {
+  color: darkblue !important;
+}
+
 .container-custom {
   position: relative;
   width: 100px;

@@ -26,7 +26,7 @@
 
 @endif
 {{-- HEADER --}}
-<header>
+<header class="mt-5 pt-5">
     <div class="overlay"></div>
     <div class="container h-100">
         <div class="d-flex h-100 text-center align-items-center">
