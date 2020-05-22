@@ -11110,20 +11110,10 @@ h6 {
 
 #navbar {
   transition: 1000ms;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
 }
 
 #logo {
   transition: 1000ms;
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-}
-
-.stop-flickering {
-  -webkit-backface-visibility: hidden !important;
-          backface-visibility: hidden !important;
-  transform: translateZ(0) scale(1, 1) !important;
 }
 
 .title-name {

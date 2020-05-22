@@ -1,4 +1,4 @@
-<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light py-2  mt-2 mt-md-0 sticky-top stop-flickering">
+<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light py-2 fixed-top">
     <div class="container">
         <a class="navbar-brand no-shadow" href="{{ route('homepage') }}"> <img id="logo" class="pr-2" width="80px" src="/media/logo.png"
             alt="logo"><span class="h3 title-name">presto.it</span></a>

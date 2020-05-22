@@ -37299,7 +37299,7 @@ $(document).ready(function () {
       if (scrolled > 5) {
         logo.style.width = "50px";
         logoName.classList.add("d-none");
-        navbar.classList.remove("py-4");
+        navbar.classList.remove("py-2");
       } else {
         logo.style.width = "80px";
         logoName.classList.remove("d-none");

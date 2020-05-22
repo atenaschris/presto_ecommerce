@@ -147,18 +147,14 @@ h6 {
 }
 
 #navbar {
-    transition: 1000ms;
-    backface-visibility: hidden;
+    transition: 1000ms;   
 }
 
 #logo {
     transition: 1000ms;
-    backface-visibility: hidden;
+    
 }
-.stop-flickering {
-    backface-visibility: hidden !important;
-    transform: translateZ(0) scale(1, 1) !important;
-}
+
 .title-name {
     color: var(--main-color);
     font-family: "Rubik", sans-serif;
