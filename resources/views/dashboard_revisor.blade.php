@@ -100,11 +100,11 @@
         <div class="col-10">
            
                
-                    <h2 class="h3 text-primary ">
-                        Hai <span class="text-danger">{{\App\Advertise::toBeRevisionedCount()}}</span>
-                        annunci da controllare!
-                      </h2 >
-                    <small class="text-secondary">Let's do it!</small>
+                <h2 class="h3 text-primary ">
+                    Hai <span class="text-danger">{{\App\Advertise::toBeRevisionedCount()}}</span>
+                    annunci da controllare!
+                    </h2 >
+                <small class="text-secondary">Let's do it!</small>
                 
                 @if ($ads)
                     @foreach ($ads as $ad)

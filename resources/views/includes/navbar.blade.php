@@ -54,66 +54,66 @@
                 <!-- Authentication Links -->
                 @guest
                 
-                <li class="nav-item">
-                    <a class="nav-link no-shadow"
-                    href="{{ route('login') }}">{{ __('Login') }}</a>
-                </li>
-                @if(Route::has('register'))
-                <li class="nav-item">
-                    <a class="nav-link no-shadow"
-                    href="{{ route('register') }}">{{ __('Register') }}</a>
-                </li>
-                @endif
+                    <li class="nav-item">
+                        <a class="nav-link no-shadow"
+                        href="{{ route('login') }}">{{ __('Login') }}</a>
+                    </li>
+                    @if(Route::has('register'))
+                    <li class="nav-item">
+                        <a class="nav-link no-shadow"
+                        href="{{ route('register') }}">{{ __('Register') }}</a>
+                    </li>
+                    @endif
                 @else
-                @if (Auth::user()->is_revisor)
-                
-                <li class="nav-item ">
-                    <a class="no-shadow nav-link" href="{{route('revisor.home')}}">
-                        <span class="badge badge-pill badge-primary">
-                            {{\App\Advertise::toBeRevisionedCount()}}
-                        </span> 
-                    </a>
-                </li>
-                
-                @endif
-                <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle no-shadow" href="#" role="button"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                    @if (Auth::user()->is_revisor)
                     
+                        <li class="nav-item ">
+                            <a class="no-shadow nav-link" href="{{route('revisor.home')}}">
+                                <span class="badge badge-pill badge-primary">
+                                    {{\App\Advertise::toBeRevisionedCount()}}
+                                </span> 
+                            </a>
+                        </li>
+                        
+                    @endif
+                    <li class="nav-item dropdown">
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle no-shadow" href="#" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        
+                        
+                        
+                            <svg class="bi bi-person-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
+                            </svg>
+                        
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
                     
+                        <div class="dropdown-menu   dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                            document.getElementById('logout-form').submit();">
+                            {{ __('Logout') }}
+                            </a>
                     
-                    <svg class="bi bi-person-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 100-6 3 3 0 000 6z" clip-rule="evenodd"/>
-                    </svg>
-                    
-                    {{ Auth::user()->name }} <span class="caret"></span>
-                </a>
-                
-                <div class="dropdown-menu   dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
-                </a>
-                
-                <form id="logout-form" action="{{ route('logout') }}"
-                method="POST" style="display: none;">
-                @csrf
-            </form>
-        </div>
-    </li>
+                            <form id="logout-form" action="{{ route('logout') }}"
+                             method="POST" style="display: none;">
+                             @csrf
+                            </form>
+                        </div>
+                    </li>
     
-    @endguest
-    {{-- <li class="nav-item ">
-        <div class="container-custom">
-            <input class="input-custom" type="text" placeholder="Search...">
-            <div class="search"></div>
+                @endguest
+                    {{-- <li class="nav-item ">
+                        <div class="container-custom">
+                            <input class="input-custom" type="text" placeholder="Search...">
+                            <div class="search"></div>
+                        </div>
+                        </li> --}}
+                <li>
+                    <a href="{{ route('add.ads') }}"> <button class=" btn btn-orange my-2 my-sm-0"> <i class="fas fa-plus mr-1"></i> Inserisci
+                        annuncio</button> </a>
+                </li>
+            </ul>
         </div>
-    </li> --}}
-    <li>
-        <a href="{{ route('add.ads') }}"> <button class=" btn btn-orange my-2 my-sm-0"> <i class="fas fa-plus mr-1"></i> Inserisci
-            annuncio</button> </a>
-        </li>
-    </ul>
-</div>
-</div>
+    </div>
 </nav>
