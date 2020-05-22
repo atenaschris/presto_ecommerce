@@ -41,18 +41,22 @@ Route::post('/newsletter','NewsletterController@newsletter'
 
 // Revisor Routes
 
-Route::get('/revisor', 'RevisorController@index')->name('revisor.home');
+Route::get('/revisor-dashboard', 'RevisorController@index')->name('revisor.home');
 
-Route::post('/revisor/ad/{id}/accepted', 'RevisorController@accepted')->name('revisor.accepted');
+Route::post('/revisor-dashboard/ad/{id}/accepted', 'RevisorController@accepted')->name('revisor.accepted');
 
-Route::post('/revisor/ad/{id}/rejected', 'RevisorController@rejected')->name('revisor.rejected');
+Route::post('/revisor-dashboard/ad/{id}/rejected', 'RevisorController@rejected')->name('revisor.rejected');
 
-Route::get('/revisor/request','RequestRevisorController@revisor_request')->name('revisor.request');
+Route::get('/revisor-dashboard/request','RequestRevisorController@revisor_request')->name('revisor.request');
 
-Route::post('/revisor/submit','RequestRevisorController@revisor_submit')->name('revisor.submit');
+Route::post('/revisor-dashboard/submit','RequestRevisorController@revisor_submit')->name('revisor.submit');
 
-Route::get('/revisor/undo','RevisorController@undo_ads')->name('revisor.undo.ads');
+Route::get('/revisor-dashboard/undo','RevisorController@undo_ads')->name('revisor.undo.ads');
 
-Route::post('/revisor/undo/{id}/accepted','RevisorController@update_accepted')->name('ads.accepted');
+Route::post('/revisor-dashboard/undo/{id}/accepted','RevisorController@update_accepted')->name('ads.accepted');
 
-Route::post('/revisor/undo/{id}/rejected','RevisorController@update_rejected')->name('ads.rejected');
+Route::post('/revisor-dashboard/undo/{id}/rejected','RevisorController@update_rejected')->name('ads.rejected');
+
+//Admin routes
+
+Route::get('/admin-dashboard', 'AdminController@index')->name('admin.home');

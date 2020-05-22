@@ -26,7 +26,7 @@
 <body>
     
         @include('includes.navbar')
-        <main>
+        <main class="mt-3 pt-3 mt-sm-5 pt-sm-5">
             @yield('content')
         </main>
         @include('includes.footer')
