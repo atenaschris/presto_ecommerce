@@ -65,3 +65,8 @@ Route::get('/admin-dashboard/all-ads', 'AdminController@allads')->name('admin.al
 
 Route::get('/admin-dashboard/all-users', 'AdminController@allusers')->name('admin.all.users');
 
+
+Route::post('/admin-dashboard/ad/{id}/accepted', 'AdminController@makerevisor')->name('admin.accepted');
+
+Route::post('/admin-dashboard/ad/{id}/rejected', 'AdminController@makeuser')->name('admin.rejected');
+

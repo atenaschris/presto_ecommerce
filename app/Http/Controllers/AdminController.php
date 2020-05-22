@@ -29,6 +29,6 @@ class AdminController extends Controller
     {
         $all_users = User::where('roles', '<', '2')->get();
 
-        return view('admin_all_users');
+        return view('admin_all_users',compact('all_users'));
     }
 }
