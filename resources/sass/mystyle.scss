@@ -150,18 +150,14 @@ h6 {
 }
 
 #navbar {
-    transition: 1000ms;
-    backface-visibility: hidden;
+    transition: 1000ms;   
 }
 
 #logo {
     transition: 1000ms;
-    backface-visibility: hidden;
+    
 }
-.stop-flickering {
-    backface-visibility: hidden !important;
-    transform: translateZ(0) scale(1, 1) !important;
-}
+
 .title-name {
     color: var(--main-color);
     font-family: "Rubik", sans-serif;
@@ -578,3 +574,22 @@ footer {
 .slick-slide img {
     height: 200px;
 }
+
+//test footer
+
+html {
+    height: 100%;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Avoid the IE 10-11 `min-height` bug. */
+  }
+  main {
+    flex: 1 0 auto; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+    
+  }
+  .footer {
+    flex-shrink: 0; /* Prevent Chrome, Opera, and Safari from letting these items shrink to smaller than their content's default minimum size. */
+   
+  }

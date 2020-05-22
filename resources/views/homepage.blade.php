@@ -51,9 +51,9 @@
     </div>
   
 
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 justify-content-center ">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 justify-content-center text-center">
             @foreach ($ads as $ad) 
-            <div class="col mb-4 ">
+            <div class="col mb-4 text-center p-0">
                 @php
                 $title = str_replace(' ', '-', $ad->title);
                 @endphp
@@ -61,10 +61,10 @@
                     <div class="card h-100 featured-card">
                         
                         @if ($ad->img)
-                        <img src="{{ Storage::url($ad->img) }}" class="card-img-top featured-card-img"
+                        <img src="{{ Storage::url($ad->img) }}" class="card-img-top featured-card-img d-block text-center"
                         alt="{{ $ad->title }}">                
                         @else
-                        <img src="https://via.placeholder.com/200x300" class="card-img-top featured-card-img"
+                        <img src="https://via.placeholder.com/200x300" class="card-img-top featured-card-img d-block text-center"
                         alt="{{ $ad->title }}">
                         @endif            
                         <div class="card-body d-flex flex-column">

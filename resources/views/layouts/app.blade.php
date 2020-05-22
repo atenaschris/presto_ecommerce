@@ -23,14 +23,14 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
 </head>
 
-<body class="h-100">
-    <div id="app" >
+<body>
+    
         @include('includes.navbar')
         <main>
             @yield('content')
         </main>
         @include('includes.footer')
-    </div>
+    
     <script src="https://kit.fontawesome.com/a6b5772942.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </body>
