@@ -60,3 +60,8 @@ Route::post('/revisor-dashboard/undo/{id}/rejected','RevisorController@update_re
 //Admin routes
 
 Route::get('/admin-dashboard', 'AdminController@index')->name('admin.home');
+
+Route::get('/admin-dashboard/all-ads', 'AdminController@allads')->name('admin.all.ads');
+
+Route::get('/admin-dashboard/all-users', 'AdminController@allusers')->name('admin.all.users');
+

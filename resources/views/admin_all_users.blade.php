@@ -8,7 +8,7 @@
 @include('includes.dashboard_admin_nav')
 
         <div class="col-10">
-            <h1>dashboard dell'admin</h1>
+            <h1>dashboard dell'admin tutti gli users</h1>
         </div>
     </div>
 </div>    

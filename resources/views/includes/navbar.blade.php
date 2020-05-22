@@ -65,7 +65,7 @@
                     </li>
                     @endif
                 @else
-                    @if (Auth::user()->is_revisor)
+                    @if (Auth::user()->roles == 1)
                     
                         <li class="nav-item ">
                             <a class="no-shadow nav-link" href="{{route('revisor.home')}}">
