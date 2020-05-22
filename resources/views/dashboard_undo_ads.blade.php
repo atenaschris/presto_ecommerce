@@ -2,7 +2,7 @@
 @section('content')
     <div class="container-fluid mt-5 pt-5">
         <div class="row">
-            @include('includes.dashboard_revisor')
+            @include('includes.dashboard_revisor_nav')
 
             {{-- <div class="col-10">
                 <div class="row py-3">
