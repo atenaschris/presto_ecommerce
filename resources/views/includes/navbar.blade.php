@@ -21,13 +21,11 @@
                 </li>  
                 
                 @else
-                @if(Auth::user()->is_revisor==false)
-                     <li class="nav-item ">
-                        <a class="nav-link text-dark" href="{{route('revisor.request')}}">Lavora con noi</a>
-                    </li> 
-                @elseif ( Auth::user()->is_revisor==true)
-               
-                @endif
+                    @if(Auth::user()->roles==0)
+                        <li class="nav-item ">
+                            <a class="nav-link text-dark" href="{{route('revisor.request')}}">Lavora con noi</a>
+                        </li> 
+                    @endif
                 @endguest
                 
                 
