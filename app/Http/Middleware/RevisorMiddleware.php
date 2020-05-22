@@ -10,7 +10,7 @@ class RevisorMiddleware
 
     public function handle($request, Closure $next)
     {
-        if (Auth::user()  &&  Auth::user()->is_revisor) {
+        if (Auth::user()  &&  Auth::user()->roles > 0) {
 
 
             return $next($request);
