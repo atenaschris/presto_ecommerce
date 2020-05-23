@@ -35,7 +35,7 @@
                              @elseif ( $ad->is_accepted == false && $ad->is_accepted != null)
                              <td>Revisionato e Rifiutato</td>                          
                              @else
-                        <td>Non ancora revisionato <br> <a href="{{route('revisor.home')}}">Vai a revisiona..</a> </td> 
+                        <td>Non ancora revisionato <br> <a href="{{route('revisor.to.be.revisioned.ads')}}">Vai a revisiona..</a> </td> 
                              @endif
                              <td>{{ $ad->user->name }}</td>
                              <td><a href="{{route('ad.details',['id'=>$ad->id,'title'=>$uri])}}">Dettaglio</a></td>

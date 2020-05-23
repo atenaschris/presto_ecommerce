@@ -26,7 +26,7 @@ class Advertise extends Model
 
     static public function toBeRevisionedCount(){
 
-        return Advertise::where('is_accepted',null)->count();
+        return Advertise::where('is_accepted',null )->count();
     }
 
     static public function adsCount(){
