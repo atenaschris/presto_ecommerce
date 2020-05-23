@@ -53,13 +53,13 @@
     <div class="slider mt-n5">
         @foreach ($categories as $category)
             
-        <div class="col-md-12" >
-            <a href="#" class="itm seguro" data-tilt>
-                <div class="caption">
-                    <h4>{{ ucfirst($category->name) }}</h4>
-                </div>
-            </a>
-        </div>
+            <div class="col-md-12" >
+                <a href="{{route('category.ads',['id'=>$category->id,'name'=>$category->name])}}" class="itm seguro" data-tilt>
+                    <div class="caption">
+                        <h4>{{ ucfirst($category->name) }}</h4>
+                    </div>
+                </a>
+            </div>
         @endforeach
        
     </div>
