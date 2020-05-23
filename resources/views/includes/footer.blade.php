@@ -50,7 +50,7 @@
                     <input type="email" class="form-control" id="footerInputEmail1" name="email" class="@error('email') is-invalid @enderror">
                   </div>
                   <div class="col-4 pl-md-0">
-                    <button type="submit" class="btn btn-reverse">Iscriviti</button>
+                    <button type="submit" class="btn btn-reverse btn-border">Iscriviti</button>
                   </div>
                 </div>
                 <div class="form-group form-check">
