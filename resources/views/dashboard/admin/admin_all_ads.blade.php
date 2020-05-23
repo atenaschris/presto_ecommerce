@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container-fluid mt-5 pt-5">
+<div class="container-fluid mt-5">
     <div class="row">
 
 @include('includes.dashboard_admin_nav')
@@ -46,7 +46,11 @@
                   @endphp
                 @endforeach
               </table>
+              <div class="col-12">
+                {{$all_ads->links()}}
+            </div>
         </div>
     </div>
-</div>    
+</div> 
+
 @endsection

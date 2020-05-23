@@ -28,7 +28,7 @@ $(document).ready(function() {
         }
     });
 
-    
+
     
 
     $(".slider-for").slick({

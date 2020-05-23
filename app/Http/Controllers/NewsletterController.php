@@ -26,6 +26,6 @@ class NewsletterController extends Controller
     }
     function thankyounewsletter()
     {
-        return view('thank_you_newsletter');
+        return view('thank-you.thank_you_newsletter');
     }
 }

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container-fluid mt-5 pt-5">
+<div class="container-fluid mt-5">
     <div class="row">
 
 
@@ -10,12 +10,12 @@
         @include('includes.dashboard_revisor_nav')
         <div class="col-10">
            
-               `
+               
                 <h2 class="h3 text-primary ">
                     Hai <span class="text-danger">{{\App\Advertise::toBeRevisionedCount()}}</span>
                     annunci da controllare!
                     </h2 >
-                <small class="text-secondary">Let's do it!</small>
+                <p class="text-primary h5 text-weight-bold">Let's do it!</p>
                 
                 @if ($ads)
                     @foreach ($ads as $ad)

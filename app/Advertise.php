@@ -29,5 +29,10 @@ class Advertise extends Model
         return Advertise::where('is_accepted',null)->count();
     }
 
+    static public function adsCount(){
+
+        return Advertise::all()->count();
+    }
+
 
 }

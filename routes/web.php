@@ -43,6 +43,8 @@ Route::post('/newsletter','NewsletterController@newsletter'
 
 Route::get('/revisor-dashboard', 'RevisorController@index')->name('revisor.home');
 
+Route::get('/revisor-dashboard/revisioning/ads', 'RevisorController@revisioning_Ads')->name('revisor.to.be.revisioned.ads');
+
 Route::post('/revisor-dashboard/ad/{id}/accepted', 'RevisorController@accepted')->name('revisor.accepted');
 
 Route::post('/revisor-dashboard/ad/{id}/rejected', 'RevisorController@rejected')->name('revisor.rejected');

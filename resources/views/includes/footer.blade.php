@@ -21,12 +21,10 @@
                   
                    
                    @else
-                   @if(Auth::user()->is_revisor==false)
-                        <li class="nav-item ">
-                           <a class="nav-link text-dark" href="{{route('revisor.request')}}">Lavora con noi</a>
-                       </li> 
-                   @elseif ( Auth::user()->is_revisor==true)
-                  
+                   @if(Auth::user()->roles < 1)
+                       
+                           <a class="custom-link" href="{{route('revisor.request')}}">Lavora con noi</a>
+                       
                    @endif
                    @endguest
                 </a>
@@ -36,7 +34,7 @@
               </ul>
             </div>
             <div class="col-12 col-md-4">
-              <h5 class="mb-2 text-white text-center text-md-left">Iscrivi alla newsletter</h5>
+              <h5 class="mb-2 text-white text-center text-md-left">Iscriviti alla newsletter</h5>
               
               
               
@@ -52,7 +50,7 @@
                     <input type="email" class="form-control" id="footerInputEmail1" name="email" class="@error('email') is-invalid @enderror">
                   </div>
                   <div class="col-4 pl-md-0">
-                    <button type="submit" class="btn btn-reverse">Iscriviti</button>
+                    <button type="submit" class="btn btn-reverse btn-border">Iscriviti</button>
                   </div>
                 </div>
                 <div class="form-group form-check">
