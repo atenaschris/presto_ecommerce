@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Advertise;
-
+use App\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -15,8 +15,10 @@ class FrontendController extends Controller
 
        $ads = Advertise::where('is_accepted', true)->orderBy('id','desc')->withTrashed()->take(5)->get();
         // $ads = Advertise::all();
+        $categories = Category::all();
+       
         
-        return view('public-views.homepage',compact('ads'));
+        return view('public-views.homepage',compact('ads','categories'));
         
     }
 

@@ -37305,49 +37305,78 @@ $(document).ready(function () {
         logoName.classList.remove("d-none");
       }
     }
-  });
-  $(".slider-for").slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
+  }); // $(".slider-for").slick({
+  //     slidesToShow: 1,
+  //     slidesToScroll: 1,
+  //     arrows: false,
+  //     fade: true,
+  //     mobileFirst:true,
+  //     asNavFor: ".slider-nav"
+  // });
+  // $(".slider-nav").slick({
+  //     slidesToShow: 3,
+  //     slidesToScroll: 1,
+  //     asNavFor: ".slider-for",
+  //     arrows: true,
+  //     mobileFirst:true,
+  //     centerMode: true,
+  //     focusOnSelect: true
+  // });
+  // $(".center").slick({
+  //     centerMode: true,
+  //     centerPadding: "60px",
+  //     mobileFirst:true,
+  //     slidesToShow: 3,
+  //     focusOnSelect: true,
+  //     responsive: [
+  //         {
+  //             breakpoint: 992,
+  //             settings: {
+  //                 arrows: true,
+  //                 centerMode: true,
+  //                 mobileFirst:true,
+  //                 centerPadding: "60px",
+  //                 slidesToShow: 1
+  //             }
+  //         },
+  //         {
+  //             breakpoint: 480,
+  //             settings: {
+  //                 arrows: false,
+  //                 centerMode: true,
+  //                 mobileFirst:true,
+  //                 centerPadding: "60px",
+  //                 slidesToShow: 1
+  //             }
+  //         }
+  //     ]
+  // });
+
+  $('.slider').slick({
+    dots: false,
+    infinite: false,
+    slidesToShow: 4,
     arrows: false,
-    fade: true,
-    mobileFirst: true,
-    asNavFor: ".slider-nav"
-  });
-  $(".slider-nav").slick({
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    asNavFor: ".slider-for",
-    arrows: true,
-    mobileFirst: true,
-    centerMode: true,
-    focusOnSelect: true
-  });
-  $(".center").slick({
-    centerMode: true,
-    centerPadding: "60px",
-    mobileFirst: true,
-    slidesToShow: 3,
-    focusOnSelect: true,
+    autoplay: true,
     responsive: [{
-      breakpoint: 992,
+      breakpoint: 600,
       settings: {
-        arrows: true,
-        centerMode: true,
-        mobileFirst: true,
-        centerPadding: "60px",
-        slidesToShow: 1
+        slidesToShow: 3
       }
     }, {
-      breakpoint: 480,
+      breakpoint: 400,
       settings: {
-        arrows: false,
-        centerMode: true,
-        mobileFirst: true,
-        centerPadding: "60px",
-        slidesToShow: 1
+        slidesToShow: 2
       }
     }]
+  });
+  var bottonevendita = document.querySelector('#start-sell');
+  document.addEventListener('scroll', function () {
+    if (window.scrollY > 250) {
+      bottonevendita.classList.add('d-none');
+    } else {
+      bottonevendita.classList.remove('d-none');
+    }
   });
 });
 
@@ -37371,8 +37400,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/pasqualeperfetto/wa/presto_fruttariani/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/pasqualeperfetto/wa/presto_fruttariani/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/mdb/wa/presto_fruttariani/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/mdb/wa/presto_fruttariani/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
