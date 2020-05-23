@@ -51,7 +51,7 @@ class AdvertiseController extends Controller
     
     public function thankyouads()
     {
-        return view('thank_you_ads');
+        return view('thank-you.thank_you_ads');
     }
     
     

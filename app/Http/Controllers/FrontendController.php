@@ -16,13 +16,13 @@ class FrontendController extends Controller
        $ads = Advertise::where('is_accepted', true)->orderBy('id','desc')->withTrashed()->take(5)->get();
         // $ads = Advertise::all();
         
-        return view('homepage',compact('ads'));
+        return view('public-views.homepage',compact('ads'));
         
     }
 
     public function ad_details($id){
         $ad = Advertise::withTrashed()->find($id);
-        return view('ad_details',compact('ad'));
+        return view('public-views.ad_details',compact('ad'));
     }
 
 

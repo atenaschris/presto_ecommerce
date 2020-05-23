@@ -18,7 +18,7 @@ class CategoryController extends Controller
             
 
        
-        return view('category_ads',compact('ads','categoryname'));
+        return view('public-views.category_ads',compact('ads','categoryname'));
     }
   
 

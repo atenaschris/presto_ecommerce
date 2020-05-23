@@ -15,28 +15,28 @@ class AdminController extends Controller
 
     public function index()
     {
-        return view('dashboard_admin');
+        return view('dashboard.admin.dashboard_admin');
     }
 
     public function allads()
     {
-        $all_ads = Advertise::withTrashed()->get();
+        $all_ads = Advertise::withTrashed()->paginate(10);
 
-        return view('admin_all_ads', compact('all_ads'));
+        return view('dashboard.admin.admin_all_ads', compact('all_ads'));
     }
 
     public function allusers()
     {
         $all_users = User::where('roles', '<', '2')->orderBy('roles','desc')->paginate(10);
 
-        return view('admin_all_users',compact('all_users'));
+        return view('dashboard.admin.admin_all_users',compact('all_users'));
     }
     public function allrequest()
     {
           $all_users = User::where('revisor_request', '>', '0')->get();
          
 
-        return view('admin_all_requests',compact('all_users'));
+        return view('dashboard.admin.admin_all_requests',compact('all_users'));
     }
 
     public function accepted($id)

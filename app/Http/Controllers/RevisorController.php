@@ -17,9 +17,9 @@ class RevisorController extends Controller
     
     public function index()
     {
-        $ads = Advertise::where('is_accepted', null)->orderBy('created_at', 'asc')->get();
+       
         
-        return view('dashboard_revisor', compact('ads'));
+        return view('dashboard.revisor.dashboard_revisor');
     }
     public function accepted($id)
     {
@@ -36,14 +36,14 @@ class RevisorController extends Controller
         $ad = Advertise::find($id);
         $ad->is_accepted = $value;
         $ad->save();
-        return redirect(route('revisor.home'));
+        return redirect(route('revisor.to.be.revisioned.ads'));
     }
     
     public function undo_ads(){
         
        $ads = Advertise::where('is_accepted' , "!=",  null)->get();
        
-       return view('dashboard_undo_ads', compact('ads'));
+       return view('dashboard.revisor.dashboard_undo_ads', compact('ads'));
         
     }
 
@@ -65,6 +65,13 @@ class RevisorController extends Controller
         $ad->delete();
         
         return redirect(route('revisor.undo.ads'));
+    }
+
+    public function revisioning_Ads()
+    {
+        $ads = Advertise::where('is_accepted', null)->orderBy('created_at', 'asc')->get();
+        
+        return view('dashboard.revisor.dashboard_revisor_ads', compact('ads')); 
     }
     
 }

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div class="container-fluid mt-5 pt-5">
+<div class="container-fluid mt-5">
     <div class="row">
 
         @include('includes.dashboard_admin_nav')
@@ -17,7 +17,7 @@
                     <th scope="col">Email</th>
                     <th scope="col">Ruolo </th>
                     <th scope="col">RR</th>
-                    <th scope="col">Update del ruolo</th>
+                    <th scope="col">Revoca Permessi</th>
                     </tr>
                 </thead>
                 @php

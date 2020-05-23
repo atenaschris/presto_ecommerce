@@ -2,21 +2,21 @@
 
 @section('content')
 
-<div class="container-fluid mt-5 pt-5">
+<div class="container-fluid mt-5">
     <div class="row">
 
 @include('includes.dashboard_admin_nav')
 
-<div class="col-10">
+<div class="col-12 col-md-10">
     <h1>Tutte le richieste</h1>
-    <table class="table table-hover">
+    <table class="table table-hover table-responsive-md">
         <thead>
             <tr>
               <th scope="col">N.</th>
               <th scope="col">Nome</th>
               <th scope="col">Email</th>
               <th scope="col">RR</th>
-              <th scope="col">Update del ruolo</th>
+              <th class="text-center" scope="col">Diventa Revisore?</th>
             </tr>
           </thead>
           @php
@@ -34,18 +34,23 @@
                 
                 <td>{{$user->revisor_request}}</td>
                 <td>
-                    <form action="{{ route('request.accepted',['id'=>$user->id]) }}" method="POST">
-                        @csrf
-                        <button type="submit" class="btn btn-success btn-sm">
-                            Accetta
-                        </button>
-                    </form>
-                    <form action="{{ route('request.rejected',['id'=>$user->id]) }}" method="POST">
-                        @csrf
-                        <button type="submit" class="btn btn-danger btn-sm">
-                            Rifiuta
-                        </button>
-                    </form>
+                    <div class="form-row">
+                        <div class="col-12 col-md-6 mb-1 mb-md-0"><form action="{{ route('request.accepted',['id'=>$user->id]) }}" method="POST">
+                            @csrf
+                            <button type="submit" class="btn btn-success w-100 text-center">
+                                Accetta
+                            </button>
+                        </form></div>
+                        <div class="col-12 col-md-6"><form action="{{ route('request.rejected',['id'=>$user->id]) }}" method="POST">
+                            @csrf
+                            <button type="submit" class="btn btn-danger w-100 text-center">
+                                Rifiuta
+                            </button>
+                        </form></div>
+                        
+                    
+                </div>
+                
                 </td>
                 </tr>
           </tbody>
