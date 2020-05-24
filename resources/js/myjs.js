@@ -102,4 +102,8 @@ $(document).ready(function() {
             bottonevendita.classList.remove("d-none");
         }
     });
+
+    $('#categoryModal').on('shown.bs.modal', function () {
+        $('#categoryDropdown').trigger('focus')
+      })
 });

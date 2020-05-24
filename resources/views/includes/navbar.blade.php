@@ -29,17 +29,10 @@
                     @endguest
                 
                 
-                <li class="nav-item dropdown no-shadow">
-                    <a class="nav-link dropdown-toggle no-shadow" href="#" id="categoryDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <li class="nav-item dropdown no-shadow" >
+                    <a class="nav-link dropdown-toggle no-shadow" href="#" id="categoryDropdown" role="button"  data-toggle="modal" data-target="#categoryModal">
                         Categorie
                     </a>
-                    <div class="dropdown-menu"     aria-labelledby="categoryDropdown">
-                        @foreach ($categories as $category)
-                        
-                            <a href="{{route('category.ads',['id'=>$category->id,'name'=>$category->name])}}" class="dropdown-item" >{{$category->name}}</a>
-                        
-                        @endforeach
-                    </div>
                 </li>
                 
                 
