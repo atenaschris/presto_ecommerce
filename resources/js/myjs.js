@@ -94,16 +94,5 @@ $(document).ready(function() {
         ]
     });
 
-    let bottonevendita = document.querySelector("#start-sell");
-    document.addEventListener("scroll", () => {
-        if (window.scrollY > 250) {
-            bottonevendita.classList.add("d-none");
-        } else {
-            bottonevendita.classList.remove("d-none");
-        }
-    });
-
-    $('#categoryModal').on('shown.bs.modal', function () {
-        $('#categoryDropdown').trigger('focus')
-      })
+    
 });
