@@ -37367,17 +37367,6 @@ $(document).ready(function () {
       }
     }]
   });
-  var bottonevendita = document.querySelector("#start-sell");
-  document.addEventListener("scroll", function () {
-    if (window.scrollY > 250) {
-      bottonevendita.classList.add("d-none");
-    } else {
-      bottonevendita.classList.remove("d-none");
-    }
-  });
-  $('#categoryModal').on('shown.bs.modal', function () {
-    $('#categoryDropdown').trigger('focus');
-  });
 });
 
 /***/ }),

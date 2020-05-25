@@ -30,7 +30,7 @@ class FrontendController extends Controller
     public function search(Request $request)
     {
         $q = $request->input('q');
-        $searchadvertises = Advertise::search($q)->where('is_accepted', true)->paginate(5);
+        $searchadvertises = Advertise::search($q)->withTrashed()->where('is_accepted', true)->paginate(5);
         
         return view('public-views.search_results',compact('q','searchadvertises'));
     }
