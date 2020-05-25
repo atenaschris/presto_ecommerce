@@ -82,13 +82,18 @@ $(document).ready(function() {
             {
                 breakpoint: 540,
                 settings: {
-                    slidesToShow: 3
+                    slidesToShow: 2,
+                    arrows: true,
+                    autoplay: false
                 }
             },
             {
                 breakpoint: 400,
                 settings: {
-                    slidesToShow: 2
+                    slidesToShow: 1,
+                    arrows: true,
+                    autoplay: false
+
                 }
             }
         ]
