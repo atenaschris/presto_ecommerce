@@ -70,7 +70,7 @@ return [
     |
     */
 
-    'soft_delete' => false,
+    'soft_delete' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -92,9 +92,9 @@ return [
         'storage'  => storage_path(), //place where the index files will be stored
         'fuzziness' => true,
         'fuzzy' => [
-            'prefix_length' => 3,
+            'prefix_length' => 2,
             'max_expansions' => 50,
-            'distance' => 3
+            'distance' => 2
         ],
         'asYouType' => false,
         'searchBoolean' => true,
