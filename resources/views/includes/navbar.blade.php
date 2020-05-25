@@ -134,12 +134,7 @@
 
 
 
-                    {{-- <li class="nav-item ">
-                        <div class="container-custom">
-                            <input class="input-custom" type="text" placeholder="Search...">
-                            <div class="search"></div>
-                        </div>
-                    </li> --}}
+                
                 <li>
                     <a href="{{ route('add.ads') }}"> 
                         <button class=" btn btn-announcement my-2 my-sm-0 ml-4"> <i class="fas fa-plus mr-1"></i> Inserisci

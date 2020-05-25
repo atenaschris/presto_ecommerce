@@ -5,11 +5,34 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Laravel\Scout\Searchable;
 
 
 class Advertise extends Model
 {
+    use Searchable;
     use SoftDeletes;
+
+    public $asYouType = true;
+
+    /**
+     * Get the indexable data array for the model.
+     *
+     * @return array
+     */
+    public function toSearchableArray()
+    {
+        
+        $array = [
+            'id' => $this->id,
+            'title' => $this->title ,
+            'description' => $this->description ,
+        ];
+        
+        // Customize array...
+
+        return $array;
+    }
 
     protected $fillable = ["title","description","category_id","price","img"];
     

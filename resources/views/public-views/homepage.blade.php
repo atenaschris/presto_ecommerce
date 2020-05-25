@@ -35,6 +35,7 @@
                     <h1 class="main-title">presto.it</h1>
                     <p class="lead mb-0 mt-4">Make your happiness!</p>
                 </div>
+                @include('includes.search_results')
             </div>
             <div class="col-12 col-md-6">
                 <div class="homepage-above-img">

@@ -19,6 +19,8 @@ Auth::routes();
 
 Route::get('/user-dashboard', 'HomeController@index')->name('user.home');
 
+Route::get('/search-results','FrontendController@search')->name('search');
+
 Route::get('/','FrontendController@homepage')->name('homepage');
 
 Route::get('/add-ads','AdvertiseController@add')->name('add.ads');
