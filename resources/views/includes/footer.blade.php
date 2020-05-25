@@ -50,11 +50,11 @@
             
             <form action="{{ route('newsletter') }}" method="POST">
               @csrf
-              <div class="row">
-                <div class="col-8">
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-8 ">
                   <input type="email" class="form-control" id="footerInputEmail1" name="email" class="@error('email') is-invalid @enderror">
                 </div>
-                <div class="col-4 pl-md-0">
+                <div class="col-4 col-md-4 pl-md-0 mt-3 mt-md-0 p-0">
                   <button type="submit" class="btn btn-reverse btn-border">Iscriviti</button>
                 </div>
               </div>
