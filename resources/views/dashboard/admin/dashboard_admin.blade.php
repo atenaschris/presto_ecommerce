@@ -7,7 +7,7 @@
 
 @include('includes.dashboard_admin_nav')
 
-        <div class="col-10">
+        <div class="col-12 col-md-10">
             <h1>dashboard dell'admin</h1>
         </div>
     </div>

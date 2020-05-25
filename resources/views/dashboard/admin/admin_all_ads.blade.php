@@ -7,9 +7,9 @@
 
 @include('includes.dashboard_admin_nav')
 
-        <div class="col-10">
+        <div class="col-12 col-md-10">
             <h1>Tutti gli annunci</h1>
-            <table class="table table-hover">
+            <table class="table table-hover table-responsive-md">
                 <thead>
                     <tr>
                       <th scope="col">N.</th>

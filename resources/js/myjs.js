@@ -73,7 +73,7 @@ $(document).ready(function() {
     });
 
     $(".slider").slick({
-        dots: false,
+        dots: true,
         infinite: false,
         slidesToShow: 4,
         arrows: false,
@@ -84,7 +84,7 @@ $(document).ready(function() {
                 settings: {
                     slidesToShow: 2,
                     arrows: true,
-                    autoplay: false
+                    autoplay: true
                 }
             },
             {
@@ -92,7 +92,7 @@ $(document).ready(function() {
                 settings: {
                     slidesToShow: 1,
                     arrows: true,
-                    autoplay: false
+                    autoplay: true
 
                 }
             }
