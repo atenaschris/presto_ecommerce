@@ -3,9 +3,10 @@
 namespace App;
 
 
+use Laravel\Scout\Searchable;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Laravel\Scout\Searchable;
 
 
 class Advertise extends Model
@@ -55,6 +56,11 @@ class Advertise extends Model
     static public function adsCount(){
 
         return Advertise::all()->count();
+    }
+
+    static public function userPublishedAdsCount(){
+
+        return Advertise::where('user_id','=',Auth::user()->id)->count();
     }
 
 

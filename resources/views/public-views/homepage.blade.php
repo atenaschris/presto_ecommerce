@@ -32,7 +32,7 @@
             <div class="row align-items-sm-bottom align-items-center">
                 <div class="col-12 col-md-6">
                     <div class="text-white">
-                        <h1 class="main-title">presto.it</h1>
+                        <h1 class="main-title">Presto.it</h1>
                         <p class="lead mb-0 mt-4">Make your happiness!</p>
                     </div>
                     @include('includes.search_results')
