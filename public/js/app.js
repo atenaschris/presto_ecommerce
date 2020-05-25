@@ -37358,12 +37358,16 @@ $(document).ready(function () {
     responsive: [{
       breakpoint: 540,
       settings: {
-        slidesToShow: 3
+        slidesToShow: 2,
+        arrows: true,
+        autoplay: false
       }
     }, {
       breakpoint: 400,
       settings: {
-        slidesToShow: 2
+        slidesToShow: 1,
+        arrows: true,
+        autoplay: false
       }
     }]
   });
@@ -37389,8 +37393,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/mdb/wa/presto_fruttariani/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/mdb/wa/presto_fruttariani/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/pasqualeperfetto/wa/presto_fruttariani/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/pasqualeperfetto/wa/presto_fruttariani/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
