@@ -37352,14 +37352,14 @@ $(document).ready(function () {
   //     ]
   // });
 
-  $('.slider').slick({
+  $(".slider").slick({
     dots: false,
     infinite: false,
     slidesToShow: 4,
     arrows: false,
     autoplay: true,
     responsive: [{
-      breakpoint: 600,
+      breakpoint: 540,
       settings: {
         slidesToShow: 3
       }
@@ -37370,13 +37370,16 @@ $(document).ready(function () {
       }
     }]
   });
-  var bottonevendita = document.querySelector('#start-sell');
-  document.addEventListener('scroll', function () {
+  var bottonevendita = document.querySelector("#start-sell");
+  document.addEventListener("scroll", function () {
     if (window.scrollY > 250) {
-      bottonevendita.classList.add('d-none');
+      bottonevendita.classList.add("d-none");
     } else {
-      bottonevendita.classList.remove('d-none');
+      bottonevendita.classList.remove("d-none");
     }
+  });
+  $('#categoryModal').on('shown.bs.modal', function () {
+    $('#categoryDropdown').trigger('focus');
   });
 });
 
@@ -37400,8 +37403,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/mdb/wa/presto_fruttariani/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/mdb/wa/presto_fruttariani/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/pasqualeperfetto/wa/presto_fruttariani/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/pasqualeperfetto/wa/presto_fruttariani/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

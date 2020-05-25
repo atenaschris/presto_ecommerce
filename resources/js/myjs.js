@@ -9,8 +9,6 @@ $(document).ready(function() {
     let logo = document.querySelector("#logo");
     let logoName = document.querySelector(".title-name");
     let navLinks = document.querySelectorAll(".nav-link");
-   
-    
 
     document.addEventListener("scroll", () => {
         let scrolled = pageYOffset;
@@ -19,17 +17,12 @@ $(document).ready(function() {
                 logo.style.width = "50px";
                 logoName.classList.add("d-none");
                 navbar.classList.remove("py-2");
-              
             } else {
                 logo.style.width = "80px";
                 logoName.classList.remove("d-none");
-              
             }
         }
     });
-
-
-    
 
     // $(".slider-for").slick({
     //     slidesToShow: 1,
@@ -79,41 +72,38 @@ $(document).ready(function() {
     //     ]
     // });
 
-    $('.slider').slick({
-           dots: false,
-           infinite: false,
-                 slidesToShow: 4,
-           arrows: false,
-                    autoplay: true,
-           responsive: [{
-             breakpoint: 600,
-             settings: {
-                           slidesToShow: 3
-             }
-           },{
-              breakpoint: 400,
-              settings: {
-                 slidesToShow: 2
-              }
-           }]
-       });
+    $(".slider").slick({
+        dots: false,
+        infinite: false,
+        slidesToShow: 4,
+        arrows: false,
+        autoplay: true,
+        responsive: [
+            {
+                breakpoint: 540,
+                settings: {
+                    slidesToShow: 3
+                }
+            },
+            {
+                breakpoint: 400,
+                settings: {
+                    slidesToShow: 2
+                }
+            }
+        ]
+    });
 
-       let bottonevendita = document.querySelector('#start-sell');
-       document.addEventListener('scroll', () => {
-           if (window.scrollY > 250) {
-               bottonevendita.classList.add('d-none')
-               
-           } else {
-            bottonevendita.classList.remove('d-none') 
-           }
-       })
+    let bottonevendita = document.querySelector("#start-sell");
+    document.addEventListener("scroll", () => {
+        if (window.scrollY > 250) {
+            bottonevendita.classList.add("d-none");
+        } else {
+            bottonevendita.classList.remove("d-none");
+        }
+    });
 
-
-
-
-
-    
+    $('#categoryModal').on('shown.bs.modal', function () {
+        $('#categoryDropdown').trigger('focus')
+      })
 });
-
-
-
