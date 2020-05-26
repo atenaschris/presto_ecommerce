@@ -44,7 +44,7 @@ return [
     'annuncidarevisionare'=>'Anuncios para ser revisonados',
     'annuncipubblicati'=>'Anuncios publicados',
     'lavoraconnoi'=>'Trabaja con nosotros',
-    'inscriviti'=>'Subscribete'   , 
+    'iscriviti'=>'Subscribete'   , 
     'allanewsletter'=>'a la newsletter', 
     'dati'=>'Acepto el tratamiento de mis datos',
     'categorie'=>'Categorias', 
