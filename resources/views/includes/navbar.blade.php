@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse text-center " id="mainNavbar">
             <ul class="navbar-nav  mt-4 mt-md-0 mx-0 mx-md-auto">
                 <li class="nav-item">
-                    <a class="nav-link disabled text-dark" href="#">Chi siamo<span class="sr-only">(current)</span></a>
+                <a class="nav-link disabled text-dark" href="#">{{__('ui.chisiamo')}}<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled text-dark" href="#">Cosa facciamo</a>
@@ -84,7 +84,7 @@
                                         {{ Auth::user()->name }}</span> <span class="caret"></span>
                                  </a>
                 
-                                <div class="dropdown-menu   dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <div class="dropdown-menu dropdown-menu2  dropdown-menu-right" aria-labelledby="navbarDropdown">
                     
                     
                     
@@ -170,13 +170,33 @@
 
 
 
-                
+                        
                 <li>
                     <a href="{{ route('add.ads') }}"> 
                         <button class=" btn btn-announcement my-2 my-sm-0 ml-4"> <i class="fas fa-plus mr-1"></i> Inserisci
                         annuncio</button> 
                     </a>
                 </li>
+               
+                <li>
+                      
+                    <div class="dropdown show ml-3 mt-1">
+                        <a id="languages" class="btn btn-sm dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          IT <span class="flag-icon flag-icon-it"> </span>
+                        </a>
+                      
+                        <div class="dropdown-menu dropdown-menu2 dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+
+                         @include('includes.formlanguages',['lang'=>'it','nation'=>'it'])
+                         @include('includes.formlanguages',['lang'=>'es','nation'=>'es'])
+                         @include('includes.formlanguages',['lang'=>'gb','nation'=>'gb'])
+                            
+                         
+                        </div>
+                      </div>
+
+                </li>
+              
             </ul>
 </div>
 </div>

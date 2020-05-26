@@ -718,6 +718,19 @@ footer {
 
 .no-shadow:focus {
     box-shadow: none !important;
+    border-color:transparent;
+}
+
+#languages:focus {
+    border-color: transparent !important;
+    outline: 0 !important;
+   
+}
+
+.dropdown-menu2{
+    min-width: 0rem !important;
+    padding:0px !important;
+
 }
 
 //fine css Pasquale

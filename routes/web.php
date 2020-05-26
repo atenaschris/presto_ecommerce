@@ -83,3 +83,6 @@ Route::post('/admin-dashboard/all-users/{id}/revoked', 'AdminController@revokedP
  Route::get('/user-dashboard/ads', 'UserController@ads')->name('user.all.ads');
 
  
+ //lenguages routes
+
+ Route::post('/{locale}','FrontEndController@locale')->name('locale');

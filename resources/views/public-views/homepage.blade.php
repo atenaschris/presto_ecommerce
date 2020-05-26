@@ -33,7 +33,7 @@
                 <div class="col-12 col-md-6">
                     <div class="text-white">
                         <h1 class="main-title">Presto.it</h1>
-                        <p class="lead mb-0 mt-4">Make your happiness!</p>
+                    <p class="lead mb-0 mt-4">{{__('ui.welcome')}}</p>
                     </div>
                     @include('includes.search_results')
                 </div>

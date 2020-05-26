@@ -35,6 +35,12 @@ class FrontendController extends Controller
         return view('public-views.search_results',compact('q','searchadvertises'));
     }
 
+    public function locale($locale)
+    {
+        session()->put('locale',$locale);
+        return redirect()->back();
+    }
+
 
 
 
