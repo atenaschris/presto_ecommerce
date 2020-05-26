@@ -7,7 +7,7 @@
 
 @include('includes.dashboard_revisor_nav')
 
-        <div class="col-10">
+        <div class="col-12 col-md-10">
             <h1>dashboard del revisore</h1>
         </div>
     </div>

@@ -1,7 +1,7 @@
 <nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light py-2 fixed-top">
     <div class="container">
         <a class="navbar-brand no-shadow" href="{{ route('homepage') }}"> <img id="logo" class="pr-2" width="80px" src="/media/logo.png"
-            alt="logo"><span class="h3 title-name">presto.it</span></a>
+            alt="logo"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar"
             aria-expanded="false" aria-label="Toggle navigation">
             <span> <i class="fas fa-bars"></i> </span>
@@ -96,6 +96,18 @@
                                                     <span class="sr-only">unread notifies</span>
                                             </button>
                                         </a>
+                                        <a href="{{ route('revisor.to.be.revisioned.ads') }}" target="_blank" rel="noopener noreferrer" class="dropdown-item">
+                                            
+                                                Annunci da Revisionare 
+                                                    
+                                            </button>
+                                        </a>
+                                        <a href="{{ route('revisor.undo.ads') }}" target="_blank" rel="noopener noreferrer" class="dropdown-item">
+                                            
+                                            Annunci Revisionati 
+                                                
+                                        </button>
+                                    </a>
                     
                                     @elseif(Auth::user()->roles == 2)
                                             <a href="{{ route('admin.home') }}" target="_blank" rel="noopener noreferrer" class="dropdown-item">
@@ -104,11 +116,35 @@
                                                      <span class="sr-only">unread notifies</span>
                                                 </button>
                                             </a>
+                                            <a href="{{ route('admin.all.ads') }}" target="_blank" rel="noopener noreferrer" class="dropdown-item">
+                                               
+                                                    Tutti gli annunci 
+                                                     
+                                                </button>
+                                            </a>
+                                            <a href="{{ route('admin.all.users') }}" target="_blank" rel="noopener noreferrer" class="dropdown-item">
+                                                
+                                                    Tutti gli utenti 
+                                                     
+                                                </button>
+                                            </a>
+                                            <a href="{{ route('admin.all.request') }}" target="_blank" rel="noopener noreferrer" class="dropdown-item">
+                                                
+                                                    Richieste 
+                                                     
+                                                </button>
+                                            </a>
                                     @elseif(Auth::user()->roles == 0)
                                     <a href="{{ route('user.home') }}" target="_blank" rel="noopener noreferrer" class="dropdown-item">
                                         <button type="button" class="btn background-main-color text-white">
-                                            Dashboard <span class="badge badge-light">3</span>
+                                            Dashboard <span class="badge badge-light">{{\App\Advertise::userPublishedAdsCount()}}</span>
                                              <span class="sr-only">unread notifies</span>
+                                        </button>
+                                    </a>
+                                    <a href="{{ route('user.all.ads') }}" target="_blank" rel="noopener noreferrer" class="dropdown-item">
+                                        
+                                            Annunci Pubblicati 
+                                            
                                         </button>
                                     </a>
                                     @endif

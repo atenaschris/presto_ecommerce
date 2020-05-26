@@ -8,7 +8,7 @@
 
 
         @include('includes.dashboard_revisor_nav')
-        <div class="col-10">
+        <div class="col-12 col-md-10">
            
                
                 <h2 class="h3 text-primary ">

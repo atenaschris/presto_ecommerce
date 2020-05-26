@@ -73,7 +73,7 @@ $(document).ready(function() {
     });
 
     $(".slider").slick({
-        dots: false,
+        dots: true,
         infinite: false,
         slidesToShow: 4,
         arrows: false,
@@ -82,13 +82,18 @@ $(document).ready(function() {
             {
                 breakpoint: 540,
                 settings: {
-                    slidesToShow: 3
+                    slidesToShow: 2,
+                    arrows: true,
+                    autoplay: true
                 }
             },
             {
                 breakpoint: 400,
                 settings: {
-                    slidesToShow: 2
+                    slidesToShow: 1,
+                    arrows: true,
+                    autoplay: true
+
                 }
             }
         ]

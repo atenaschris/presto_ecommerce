@@ -32,7 +32,7 @@
             <div class="row align-items-sm-bottom align-items-center">
                 <div class="col-12 col-md-6">
                     <div class="text-white">
-                        <h1 class="main-title">presto.it</h1>
+                        <h1 class="main-title">Presto.it</h1>
                         <p class="lead mb-0 mt-4">Make your happiness!</p>
                     </div>
                     @include('includes.search_results')
@@ -156,18 +156,18 @@
     </div>
 </header>
 
-
-
 {{-- FINE HEADER --}}
+
+
 <div class="container">
     <div class="slider mt-n5">
         @foreach ($categories as $category)
         
         <div class="col-md-12">
-            <a href="{{route('category.ads',['id'=>$category->id,'name'=>$category->name])}}" class="itm seguro"
+            <a href="{{route('category.ads',['id'=>$category->id,'name'=>$category->name])}}" class="itm seguro custom-link text-white"
                 data-tilt>
                 <div class="caption">
-                    <h4>{{ ucfirst($category->name) }}</h4>
+                    <p class="m-0">{{ ucfirst($category->name) }}</p>
                 </div>
             </a>
         </div>
@@ -175,8 +175,6 @@
         
     </div>
 </div>
-
-
 
 {{-- START CARD --}}
 <div class="container mb-5">
@@ -190,7 +188,7 @@
     
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 ">
         @foreach ($ads as $ad)
-        <div class="col mb-4 ">
+        <div class="col mb-4 card-home">
             @php
             $title = str_replace(' ', '-', $ad->title);
             @endphp
@@ -201,7 +199,7 @@
                     <img src="{{ Storage::url($ad->img) }}" class="card-img-top featured-card-img "
                     alt="{{ $ad->title }}">
                     @else
-                    <img src="https://via.placeholder.com/200x300" class="card-img-top featured-card-img"
+                    <img src="https://via.placeholder.com/200x300" class="card-img-top featured-card-img card-img-home"
                     alt="{{ $ad->title }}">
                     @endif
                     <div class="card-body d-flex flex-column">
@@ -228,14 +226,13 @@
     
 </div>
 {{-- END_CARD --}}
-@if (Auth::user())
+
 <a href="{{ route('add.ads') }}" target="_blank" rel="noopener noreferrer"><button id="start-sell"
-    class="da-btn-secondary btn-mobile ">Inizia a vendere</button></a>
-    @else
-    <a href="{{ route('login') }}" target="_blank" rel="noopener noreferrer"><button id="start-sell"
-        class="da-btn-secondary btn-mobile ">Inizia a vendere</button></a>
-        @endif
+    class="da-btn-secondary btn-mobile btn-success">Inizia a vendere</button></a>
+
         @push('homepage-scripts')
+       <script>
+           
         let bottonevendita = document.querySelector("#start-sell");
         document.addEventListener("scroll", () => {
             if (window.scrollY > 250) {
@@ -248,6 +245,9 @@
         $('#categoryModal').on('shown.bs.modal', function () {
             $('#categoryDropdown').trigger('focus')
         })
+       
+       </script> 
+    
         @endpush
         
         @endsection

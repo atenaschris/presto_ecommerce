@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-Route::get('/user-dashboard', 'HomeController@index')->name('user.home');
+
 
 Route::get('/search-results','FrontendController@search')->name('search');
 
@@ -77,4 +77,9 @@ Route::post('/admin-dashboard/all-request/{id}/rejected', 'AdminController@rejec
 Route::get('/admin-dashboard/all-request', 'AdminController@allrequest')->name('admin.all.request');
 
 Route::post('/admin-dashboard/all-users/{id}/revoked', 'AdminController@revokedPermission')->name('permission.revoked');
+ // user routes
 
+ Route::get('/user-dashboard', 'UserController@index')->name('user.home');
+ Route::get('/user-dashboard/ads', 'UserController@ads')->name('user.all.ads');
+
+ 
