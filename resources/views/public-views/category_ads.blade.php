@@ -56,16 +56,12 @@
                             </p>
                         </a>
                         <div class="row mt-2">
-                            <div class="col-12 col-md-6">
-                                <div class="my-2 text-center"><i class="far fa-eye text-blue"></i><span
-                                        class="ml-2 small text-danger">32 persone stanno guardando</span></div>
-                            </div>
-                            <div class="col-12 col-md-6">
+                          
+                            <div class="col-12 offset-md-6 col-md-6">
                                 <button class="btn btn-reverse w-100"><i class="far fa-comment-dots "></i><span
-                                        class="ml-2 "><a class="text-white a-hover text-decoration-none" href="mailto:{{ $ad->user->email}}">Contatta il venditore</a></span></button>
+                                        class="ml-2 "><a class="text-white a-hover text-decoration-none" href="mailto:{{ $ad->user->email}}">{{ __('ui.contattailvenditore') }}</a></span></button>
                                 <button class="btn btn-blue-border w-100 my-2 d-md-none"><i
-                                        class="far fa-grin-stars"></i><span class="ml-2">Visualizza
-                                        prodotto</span></button>
+                                        class="far fa-grin-stars"></i><span class="ml-2">{{ __('ui.visualizzaprodotto') }}</span></button>
                             </div>
                         </div>
                     </div>

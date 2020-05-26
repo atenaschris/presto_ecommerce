@@ -7,7 +7,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 alert font-weight-light alert-success">
-            <h4>La tua richiesta è stata sottomessa con successo.</h4>
+            <h4>{{ __('ui.richiestarevisore') }}</h4>
         </div>
     </div>
 </div>
@@ -18,11 +18,12 @@
 
 <div class="container-fluid">
     <div class="row">
-        <div class="col-12">
-            <h2>Errore.</h2>
+        <div class="col-12 alert font-weight-light alert-success">
+            <h4>{{ __('ui.alertpermessi') }}</h4>
         </div>
     </div>
 </div>
+
 
 @endif
 {{-- HEADER --}}
@@ -180,7 +181,7 @@
 <div class="container mb-5">
     <div class="row mt-4 ">
         <div class="col-12 col-md-6 col-lg-5">
-            <h3 class="h5 text-blue"><i class="far fa-star"></i> Ecco gli ultimi annunci</h3>
+            <h3 class="h5 text-blue"><i class="far fa-star"></i> {{ __('ui.ultimiannunci') }}</h3>
             <hr class="mb-4">
         </div>
     </div>
@@ -228,7 +229,7 @@
 {{-- END_CARD --}}
 
 <a href="{{ route('add.ads') }}" target="_blank" rel="noopener noreferrer"><button id="start-sell"
-    class="da-btn-secondary btn-mobile btn-success">Inizia a vendere</button></a>
+    class="da-btn-secondary btn-mobile btn-success">{{ __('ui.iniziaavendere') }}</button></a>
 
         @push('homepage-scripts')
        <script>

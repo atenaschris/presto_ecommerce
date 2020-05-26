@@ -8,16 +8,16 @@
         @include('includes.dashboard_admin_nav')
 
         <div class="col-12 col-md-10">
-            <h1>Tutti gli utenti</h1>
+            <h1>{{ __('ui.tuttigliutenti') }}</h1>
             <table class="table table-hover table-responsive-md">
                 <thead>
                     <tr>
                     <th scope="col">N.</th>
-                    <th scope="col">Nome</th>
+                    <th scope="col">{{ __('ui.nome') }}</th>
                     <th scope="col">Email</th>
-                    <th scope="col">Ruolo </th>
+                    <th scope="col">{{ __('ui.ruolo') }} </th>
                     <th scope="col">RR</th>
-                    <th scope="col">Revoca Permessi</th>
+                    <th scope="col">{{ __('ui.revocapermessi') }}</th>
                     </tr>
                 </thead>
                 @php
@@ -33,9 +33,9 @@
                             <td>{{ $user->name }} <b>(#ID: {{ $user->id }})</b></td>
                             <td>{{ $user->email}}</td>
                         @if ($user->roles ==0)
-                        <td>Utente</td>
+                        <td>{{ __('ui.utente') }}</td>
                         @elseif($user->roles==1)
-                        <td>Revisore</td>
+                        <td>{{ __('ui.revisore') }}</td>
                             
                         @endif
                         <td>{{$user->revisor_request}}</td>
@@ -44,7 +44,7 @@
                             <form action="{{ route('permission.revoked',['id'=> $user->id]) }}" method="POST">
                                 @csrf
                                 <button type="submit" class="btn btn-danger">
-                                    Revoca
+                                    {{ __('ui.revoca') }}
                                 </button>
                             </form>  
                             @endif

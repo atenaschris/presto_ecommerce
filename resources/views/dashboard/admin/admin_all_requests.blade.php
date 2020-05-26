@@ -8,15 +8,15 @@
 @include('includes.dashboard_admin_nav')
 
 <div class="col-12 col-md-10">
-    <h1>Tutte le richieste</h1>
+    <h1>{{ __('ui.tuttelerichieste') }}</h1>
     <table class="table table-hover table-responsive-md">
         <thead>
             <tr>
               <th scope="col">N.</th>
-              <th scope="col">Nome</th>
+              <th scope="col">{{ __('ui.nome') }}</th>
               <th scope="col">Email</th>
               <th scope="col">RR</th>
-              <th class="text-center" scope="col">Diventa Revisore?</th>
+              <th class="text-center" scope="col">{{ __('ui.diventarevisore') }}</th>
             </tr>
           </thead>
           @php
@@ -38,13 +38,13 @@
                         <div class="col-12 col-md-6 mb-1 mb-md-0"><form action="{{ route('request.accepted',['id'=>$user->id]) }}" method="POST">
                             @csrf
                             <button type="submit" class="btn btn-success w-100 text-center">
-                                Accetta
+                                {{ __('ui.accetta') }}
                             </button>
                         </form></div>
                         <div class="col-12 col-md-6"><form action="{{ route('request.rejected',['id'=>$user->id]) }}" method="POST">
                             @csrf
                             <button type="submit" class="btn btn-danger w-100 text-center">
-                                Rifiuta
+                                {{ __('ui.rifiuta') }}
                             </button>
                         </form></div>
                         

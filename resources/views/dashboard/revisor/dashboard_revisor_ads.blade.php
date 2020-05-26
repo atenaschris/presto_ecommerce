@@ -12,8 +12,8 @@
            
                
                 <h2 class="h3 text-primary ">
-                    Hai <span class="text-danger">{{\App\Advertise::toBeRevisionedCount()}}</span>
-                    annunci da controllare!
+                    {{ __('ui.hai') }} <span class="text-danger">{{\App\Advertise::toBeRevisionedCount()}}</span>
+                    {{ __('ui.annuncidacontrollare') }}!
                     </h2 >
                 <p class="text-primary h5 text-weight-bold">Let's do it!</p>
                 
@@ -43,8 +43,8 @@
                                         <h5 class="card-title">{{$ad->title}}</h5>
                                         <small class="card-text">{{ $ad->category->name }}</small>
                                         <p class="card-text">{{$ad->description}}</p>
-                                        <p>Annuncio pubblicato da {{ $ad->user->name }}</p>
-                                        <p class="card-text h5">Prezzo: <span
+                                        <p>{{ __('ui.pubblicatoda') }} {{ $ad->user->name }}</p>
+                                        <p class="card-text h5">{{ __('ui.prezzo') }}: <span
                                                 class="h4 text-primary font-weight-bold">{{ $ad->price }}€</span></p>
                                     </div>
                                     {{-- <ul class="list-group list-group-flush">
@@ -75,7 +75,7 @@
                                             <form action="{{ route('revisor.accepted', ["id" => $ad->id]) }}" method="POST">
                                                 @csrf
                                                 <button type="submit" class="btn btn-success w-100 my-2 my-md-0"><i
-                                                        class="fas fa-check "></i><span class="mr-2">Accetta</span>
+                                                        class="fas fa-check "></i><span class="mr-2">{{ __('ui.accetta') }}</span>
                                                 </button>
                                             </form>
                                         </div>
@@ -84,7 +84,7 @@
                                                 @csrf
                                                 <button type="submit" class="btn btn-danger w-100"><i
                                                         class="fas fa-skull-crossbones "></i><span
-                                                        class="mr-2">Rifiuta</span>
+                                                        class="mr-2">{{ __('ui.rifiuta') }}</span>
                                                 </button>
                                             </form>
                                         </div>
@@ -95,7 +95,7 @@
                     @endforeach
                 @else
                     
-                    <h2>Non hai annunci da revisionare!</h2>
+                    <h2>{{ __('ui.nonhaiannunci') }}!</h2>
                             
                 @endif
                 

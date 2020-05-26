@@ -25,13 +25,13 @@
       <form method="post" action="{{route('submit')}}" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
-          <label for="title">Titolo <span class="small text-muted">(Massimo 30 caratteri)</span></label>
-          <input type="text" class="form-control" name="title"  id="title" placeholder="inserisci il titolo dell'annuncio "maxlength="30">
+          <label for="title">{{ __('ui.titolo') }} <span class="small text-muted">(Max 30)</span></label>
+          <input type="text" class="form-control" name="title"  id="title" placeholder="{{ __('ui.titolo') }} "maxlength="30">
         </div>
 
         {{-- Category --}}
         <div class="form-group">
-          <label for="category">Scegli la categoria</label>
+          <label for="category">{{ __('ui.categorie') }}</label>
           <select class="form-control" name="category_id" id="category">
             @foreach ($categories as $category)
             
@@ -43,26 +43,26 @@
 
         {{-- Price --}}
         <div class="form-group">
-          <label for="price">Inserisci il prezzo</label>
-          <input type="number" min="0"  class="form-control" name="price"  id="price" placeholder="Esempio 300">
+          <label for="price">{{ __('ui.prezzo') }}</label>
+          <input type="number" min="0"  class="form-control" name="price"  id="price" placeholder="300">
         </div>
 
         {{-- Description --}}
         <div class="form-group">
-          <label for="description"> Descrivi il tuo prodotto</label>
+          <label for="description"> {{ __('ui.descrizione') }}</label>
           <textarea class="form-control" name="description" id="description" rows="3"></textarea>
         </div>
 
         {{-- Image --}}
         <div class="form-group">
-          <label for="img">Imagine</label>
+          <label for="img">{{ __('ui.immagini') }}</label>
           <input type="file" class="form-control" name="img"  id="image">
         </div>
         {{-- BUTTON --}}
         <div class="text-center">
           
           <button id="addSuccess" type="submit" class="btn btn-dark btn-lg w-100" onmouseover="play_aud()">
-            Pubblica
+            {{ __('ui.pubblica') }}
           </button>
           
           

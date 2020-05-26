@@ -14,12 +14,12 @@
                     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                         <li class="nav-item" role="presentation">
                             <a class="nav-link active" id="pills-accepted-tab" data-toggle="pill" href="#pills-accepted" role="tab"
-                                aria-controls="pills-accepted" aria-selected="true">Accettati</a>
+                                aria-controls="pills-accepted" aria-selected="true">{{ __('ui.accettati') }}</a>
                         </li>
 
                         <li class="nav-item" role="presentation">
                             <a class="nav-link" id="pills-rejected-tab" data-toggle="pill" href="#pills-rejected" role="tab"
-                                aria-controls="pills-rejected" aria-selected="false">Rifiutati</a>
+                                aria-controls="pills-rejected" aria-selected="false">{{ __('ui.rifiutati') }}</a>
                         </li>
                 
                     </ul>
@@ -55,8 +55,8 @@
                                                     <h5 class="card-title">{{$ad->title}}</h5>
                                                     <small class="card-text">{{ $ad->category->name }}</small>
                                                     <p class="card-text">{{$ad->description}}</p>
-                                                    <p>Annuncio pubblicato da {{ $ad->user->name }}</p>
-                                                    <p class="card-text h5">Prezzo: <span
+                                                    <p>{{ __('ui.pubblicatoda') }} {{ $ad->user->name }}</p>
+                                                    <p class="card-text h5">{{ __('ui.prezzo') }}: <span
                                                             class="h4 text-primary font-weight-bold">{{ $ad->price }}€</span></p>
                                                 </div>
                                                 {{-- <ul class="list-group list-group-flush">
@@ -88,8 +88,8 @@
                                                         <form action="{{ route('ads.rejected', ["id" => $ad->id]) }}" method="post">
                                                             @csrf
                                                             <button type="submit" class="btn btn-danger w-100"><i
-                                                                    class="fas fa-skull-crossbones "></i><span class="mr-2">Rifiuta
-                                                                    ora</span></button>
+                                                                    class="fas fa-skull-crossbones "></i><span class="mr-2">{{ __('ui.rifiuta') }}
+                                                                    </span></button>
                                                         </form>
                                                     </div>
                                                 </div>
@@ -129,8 +129,8 @@
                                                     <h5 class="card-title">{{$ad->title}}</h5>
                                                     <small class="card-text">{{ $ad->category->name }}</small>
                                                     <p class="card-text">{{$ad->description}}</p>
-                                                    <p>Annuncio pubblicato da {{ $ad->user->name }}</p>
-                                                    <p class="card-text h5">Prezzo: <span
+                                                    <p>{{ __('ui.pubblicatoda') }} {{ $ad->user->name }}</p>
+                                                    <p class="card-text h5">{{ __('ui.prezzo') }}: <span
                                                             class="h4 text-primary font-weight-bold">{{ $ad->price }}€</span></p>
                                                 </div>
                                                 {{-- <ul class="list-group list-group-flush">
@@ -161,9 +161,9 @@
                                                     <div class="col-12 col-md-6">
                                                         <form action="{{ route('ads.accepted', ["id" => $ad->id]) }}" method="post">
                                                             @csrf
-                                                            <label for="gotoaccepted">Cambia da Rifiutato ad Accettato</label>
+                                                            
                                                             <button type="submit" class="btn btn-success w-100 my-2 my-md-0"><i
-                                                                    class="fas fa-check gotoaccepted"></i><span class="mr-2"></span>Accetta Ora</button>
+                                                                    class="fas fa-check gotoaccepted"></i><span class="mr-2"></span>{{ __('ui.accetta') }}</button>
                                                         </form>
                                                     </div>
                                                 </div>
@@ -179,7 +179,7 @@
                 @else
               
                         
-                    <h2>Non ci sono annunci da modificare!</h2>
+                    <h2>{{ __('ui.nonhaiannunci') }}</h2>
                         
                  
             

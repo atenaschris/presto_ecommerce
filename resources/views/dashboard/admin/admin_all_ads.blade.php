@@ -8,14 +8,14 @@
 @include('includes.dashboard_admin_nav')
 
         <div class="col-12 col-md-10">
-            <h1>Tutti gli annunci</h1>
+            <h1>{{ __('ui.tuttigliannunci') }}</h1>
             <table class="table table-hover table-responsive-md">
                 <thead>
                     <tr>
                       <th scope="col">N.</th>
-                      <th scope="col">Titolo</th>
+                      <th scope="col">{{ __('ui.titolo') }}</th>
                       <th scope="col">Status</th>
-                      <th scope="col">Autore</th>
+                      <th scope="col">{{ __('ui.autore') }}</th>
                       <th scope="col">Link</th>
                     </tr>
                   </thead>
@@ -31,14 +31,14 @@
                              <th scope="row">{{ $counter }}</th>                     
                              <td>{{ $ad->title }} <b>(#ID: {{ $ad->id }})</b></td>
                              @if ($ad->is_accepted)
-                             <td>Revisionato e Accettato</td>
+                             <td>{{ __('ui.reveacc') }}</td>
                              @elseif ( $ad->is_accepted == false && $ad->is_accepted != null)
-                             <td>Revisionato e Rifiutato</td>                          
+                             <td>{{ __('ui.reverif') }}</td>                          
                              @else
-                        <td>Non ancora revisionato <br> <a href="{{route('revisor.to.be.revisioned.ads')}}">Vai a revisiona..</a> </td> 
+                        <td>{{ __('ui.nonrev') }}<br> <a href="{{route('revisor.to.be.revisioned.ads')}}">{{ __('ui.vaiarevisiona') }}..</a> </td> 
                              @endif
                              <td>{{ $ad->user->name }}</td>
-                             <td><a href="{{route('ad.details',['id'=>$ad->id,'title'=>$uri])}}">Dettaglio</a></td>
+                             <td><a href="{{route('ad.details',['id'=>$ad->id,'title'=>$uri])}}">{{ __('ui.dettaglio') }}</a></td>
                         </tr>
                   </tbody>
                   @php

@@ -11,30 +11,28 @@
                   <li class="my-2">Chi siamo</li>
                 </a>
                 <a class="custom-link" href="">
-                  <li class="my-2">Cosa facciamo</li>
+                  <li class="my-2">{{ __('ui.chisiamo') }}</li>
                 </a>
                 
                 @guest
                 
                 
-                <a class="custom-link" href="{{route('revisor.request')}}">Lavora con noi</a>
+                <a class="custom-link" href="{{route('revisor.request')}}">{{ __('ui.lavoraconnoi') }}</a>
                 
                 
                 @else
                 @if(Auth::user()->roles < 1)
                 
-                <a class="custom-link" href="{{route('revisor.request')}}">Lavora con noi</a>
+                <a class="custom-link" href="{{route('revisor.request')}}">{{ __('ui.lavoraconnoi') }}</a>
                 
                 @endif
                 @endguest
               </a>
-              <a class="custom-link" href="">
-                <li class="my-2">Diventa partner</li>
-              </a>
+             
             </ul>
           </div>
           <div class="col-12 col-md-4">
-            <h5 class="mb-2 text-white text-center text-md-left">Iscriviti alla newsletter</h5>
+            <h5 class="mb-2 text-white text-center text-md-left">{{ __('ui.iscriviti') }} {{ __('ui.allanewsletter') }}</h5>
             
             
             
@@ -55,7 +53,7 @@
                   <input type="email" class="form-control" id="footerInputEmail1" name="email" class="@error('email') is-invalid @enderror">
                 </div>
                 <div class="col-4 col-md-4 pl-md-0 mt-3 mt-md-0 p-0">
-                  <button type="submit" class="btn btn-reverse btn-border">Iscriviti</button>
+                  <button type="submit" class="btn btn-reverse btn-border">{{ __('ui.iscriviti') }}</button>
                 </div>
               </div>
               <div class="form-group form-check">
@@ -65,8 +63,7 @@
                 
                 <input type="checkbox" class="form-check-input @error('checkbox') is-invalid @enderror" id="checkbox" name="checkbox">
                 <label class="form-check-label" for="checkbox">
-                  <small class="text-white">Accetto al trattamento
-                    dei dati</small>
+                  <small class="text-white">{{ __('ui.dati') }}</small>
                   </label>
                 </div>
               </form>

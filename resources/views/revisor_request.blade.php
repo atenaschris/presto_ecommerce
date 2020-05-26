@@ -27,25 +27,25 @@
       <form method="post" action="{{ route('revisor.submit') }}" >
         @csrf
         <div class="form-group" >
-          <label for="username">Il tuo nome</label>
+          <label for="username">{{ __('ui.nome') }}</label>
           <input type="text" class="form-control" name="username"  id="username" value="{{ Auth::user()->name }}" disabled>
         </div>
         {{-- E-mail --}}
         <div class="form-group" >
-          <label for="email">La tua email</label>
+          <label for="email">Email</label>
           <input type="text" class="form-control" name="email"  id="email" value="{{ Auth::user()->email }}" disabled>
         </div>
         
         {{-- Presentazione --}}
         <div class="form-group">
-          <label for="presentation">Presentati!</label>
+          <label for="presentation">{{ __('ui.presentati') }}!</label>
           <textarea class="form-control" name="presentation" id="presentation" rows="3"></textarea>
         </div>
         
         
         {{-- Description --}}
         <div class="form-group">
-          <label for="description">Motiva perchè vuoi diventare un revisore</label>
+          <label for="description">{{ __('ui.motiva') }}</label>
           <textarea class="form-control" name="description" id="description" rows="3"></textarea>
         </div>
         
@@ -53,7 +53,7 @@
         <div class="text-center">
           
           <button type="submit" class="btn btn-dark btn-lg w-100">
-            Pubblica
+            {{ __('ui.inviarichiesta') }}
           </button>
           
           

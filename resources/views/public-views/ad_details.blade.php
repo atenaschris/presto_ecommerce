@@ -84,7 +84,7 @@
               <path fill-rule="evenodd" d="M.071 4.243a.5.5 0 01.686-.172L8 8.417l7.243-4.346a.5.5 0 01.514.858L8 9.583.243 4.93a.5.5 0 01-.172-.686z" clip-rule="evenodd"/>
               <path d="M6.752 8.932l.432-.252-.504-.864-.432.252.504.864zm-6 3.5l6-3.5-.504-.864-6 3.5.504.864zm8.496-3.5l-.432-.252.504-.864.432.252-.504.864zm6 3.5l-6-3.5.504-.864 6 3.5-.504.864z"/>
             </svg>
-            Contatta il venditore
+            {{ __('ui.contattailvenditore') }}
           </button></a>
           
           <span class="mx-2">
@@ -106,7 +106,7 @@
             </svg>
           </div> 
           <div class="col-8 my-2">
-            <p class="font-weight-bold">Annuncio pubblicato da: <a href="">
+            <p class="font-weight-bold">{{ __('ui.pubblicatoda') }}: <a href="">
               <span class="h6">{{ $ad->user->name }}</span>
             </a></p>
             

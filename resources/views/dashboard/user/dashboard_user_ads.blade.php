@@ -8,8 +8,8 @@
                 
                     
             <h2 class="h3 text-primary ">
-                Hai pubblicato: <span class="text-danger">{{\App\Advertise::userPublishedAdsCount()}}</span>
-                annunci!
+                {{ __('ui.haipubblicato') }}: <span class="text-danger">{{\App\Advertise::userPublishedAdsCount()}}</span>
+                {{ __('ui.annunci') }}!
                 </h2 >
             
             
@@ -39,8 +39,8 @@
                                     <h5 class="card-title">{{$ad->title}}</h5>
                                     <small class="card-text">{{ $ad->category->name }}</small>
                                     <p class="card-text">{{$ad->description}}</p>
-                                    <p>Annuncio pubblicato da {{ $ad->user->name }}</p>
-                                    <p class="card-text h5">Prezzo: <span
+                                    <p>{{ __('ui.pubblicatoda') }} {{ $ad->user->name }}</p>
+                                    <p class="card-text h5">{{ __('ui.prezzo') }}: <span
                                             class="h4 text-primary font-weight-bold">{{ $ad->price }}€</span></p>
                                 </div>
                                 {{-- <ul class="list-group list-group-flush">
@@ -73,7 +73,7 @@
                 @endforeach
             @else
                 
-                <h2>Non hai annunci pubblicati</h2>
+                <h2>{{ __('ui.nonhaiannunci')! }}</h2>
                         
             @endif
             

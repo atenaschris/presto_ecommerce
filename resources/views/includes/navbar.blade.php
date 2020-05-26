@@ -12,18 +12,18 @@
                 <a class="nav-link disabled text-dark" href="#">{{__('ui.chisiamo')}}<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled text-dark" href="#">Cosa facciamo</a>
+                    <a class="nav-link disabled text-dark" href="#">{{ __('ui.chisiamo') }}</a>
                 </li>
                     @guest 
                 
                         <li class="nav-item ">
-                            <a class="nav-link text-dark" href="{{route('revisor.request')}}">Lavora con noi</a>
+                            <a class="nav-link text-dark" href="{{route('revisor.request')}}">{{ __('ui.lavoraconnoi') }}</a>
                         </li>  
                 
                     @else
                         @if(Auth::user()->roles == 0)
                             <li class="nav-item ">
-                                <a class="nav-link text-dark" href="{{route('revisor.request')}}">Lavora con noi</a>
+                                <a class="nav-link text-dark" href="{{route('revisor.request')}}">{{ __('ui.lavoraconnoi') }}</a>
                             </li> 
                         @endif
                     @endguest
@@ -31,7 +31,7 @@
                 
                 <li class="nav-item dropdown no-shadow" >
                     <a class="nav-link dropdown-toggle no-shadow" href="#" id="categoryDropdown" role="button"  data-toggle="modal" data-target="#categoryModal">
-                        Categorie
+                        {{ __('ui.categorie') }}
                     </a>
                 </li>
                 
@@ -98,13 +98,13 @@
                                         </a>
                                         <a href="{{ route('revisor.to.be.revisioned.ads') }}" target="_blank" rel="noopener noreferrer" class="dropdown-item">
                                             
-                                                Annunci da Revisionare 
+                                            {{ __('ui.annunci') }}{{ __('ui.darevisionare') }}
                                                     
                                             </button>
                                         </a>
                                         <a href="{{ route('revisor.undo.ads') }}" target="_blank" rel="noopener noreferrer" class="dropdown-item">
                                             
-                                            Annunci Revisionati 
+                                            {{ __('ui.annunci') }} {{ __('ui.revisionati') }} 
                                                 
                                         </button>
                                     </a>
@@ -118,19 +118,19 @@
                                             </a>
                                             <a href="{{ route('admin.all.ads') }}" target="_blank" rel="noopener noreferrer" class="dropdown-item">
                                                
-                                                    Tutti gli annunci 
+                                                {{ __('ui.tuttigliannunci') }}
                                                      
                                                 </button>
                                             </a>
                                             <a href="{{ route('admin.all.users') }}" target="_blank" rel="noopener noreferrer" class="dropdown-item">
                                                 
-                                                    Tutti gli utenti 
+                                                {{ __('ui.tuttigliutenti') }}
                                                      
                                                 </button>
                                             </a>
                                             <a href="{{ route('admin.all.request') }}" target="_blank" rel="noopener noreferrer" class="dropdown-item">
                                                 
-                                                    Richieste 
+                                                {{ __('ui.richieste') }} 
                                                      
                                                 </button>
                                             </a>
@@ -143,7 +143,7 @@
                                     </a>
                                     <a href="{{ route('user.all.ads') }}" target="_blank" rel="noopener noreferrer" class="dropdown-item">
                                         
-                                            Annunci Pubblicati 
+                                        {{ __('ui.annuncipubblicati') }}
                                             
                                         </button>
                                     </a>
@@ -173,8 +173,7 @@
                         
                 <li>
                     <a href="{{ route('add.ads') }}"> 
-                        <button class=" btn btn-announcement my-2 my-sm-0 ml-4"> <i class="fas fa-plus mr-1"></i> Inserisci
-                        annuncio</button> 
+                        <button class=" btn btn-announcement my-2 my-sm-0 ml-4"> <i class="fas fa-plus mr-1"></i> {{ __('ui.inserisciannuncio') }}</button> 
                     </a>
                 </li>
                
