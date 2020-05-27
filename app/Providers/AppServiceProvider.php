@@ -31,11 +31,21 @@ class AppServiceProvider extends ServiceProvider
       View::share('categories', $categories);
 
       $defaultLangBrowser = Request::server('HTTP_ACCEPT_LANGUAGE');
-
+      
       $dividedLang = substr($defaultLangBrowser, 0, 2);
       
       
-      App::setLocale($dividedLang);
+
+      $flag= "";
+      if($dividedLang == 'en'){
+        $flag = "gb";
+      }else {
+        $flag = $dividedLang;
+      }
+      View::share(compact('flag','dividedLang'));
+
+
+
 
 
 

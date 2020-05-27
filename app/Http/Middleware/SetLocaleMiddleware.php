@@ -20,11 +20,11 @@ class SetLocaleMiddleware
         $default = Request::server('HTTP_ACCEPT_LANGUAGE');
 
         $getLanDef = explode(",", $default);
-
+        
         $locale = session('locale', $getLanDef[0]);
         
         App::setLocale($locale);
-
+       
         return $next($request);
     }
 }

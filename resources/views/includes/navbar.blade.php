@@ -180,23 +180,27 @@
                 <li>
                       
                     <div class="dropdown show ml-3 mt-1">
-                    @if ( ! Config::get('app.locale'))
-                    <div id="languages" class="btn btn-sm dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        IT <span class="flag-icon flag-icon-it"> </span>
-                    @else
+                    
+                        
                     @if (Config::get('app.locale') == 'it')
                     <div id="languages" class="btn btn-sm dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         IT <span class="flag-icon flag-icon-it"> </span>
-                    @elseif(Config::get('app.locale') == 'en-US')
+                    </div>
+                    @elseif(Config::get('app.locale') == 'en')
                     <div id="languages" class="btn btn-sm dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         EN <span class="flag-icon flag-icon-gb"> </span>
+                    </div>
+                    @elseif(Config::get('app.locale') == 'es')
+                    <div id="languages" class="btn btn-sm dropdown-toggle " role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        ES <span class="flag-icon flag-icon-es"></span>
+                    </div>
                     @else
-                    <div id="languages" class="btn btn-sm dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        ES <span class="flag-icon flag-icon-es"> </span>
-                    @endif
-                    @endif
-                        
+                        <div id="languages" class="btn btn-sm dropdown-toggle text-uppercase" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{ $dividedLang }} <span class="flag-icon flag-icon-{{ $flag }}"> </span>
                         </div>
+                   @endif 
+                        
+                        
                         
                       
                         <div class="dropdown-menu dropdown-menu2 dropdown-menu-right" aria-labelledby="dropdownMenuLink">
