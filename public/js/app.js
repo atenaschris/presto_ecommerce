@@ -41082,7 +41082,7 @@ $(function () {
       init: function init() {
         $.ajax({
           type: 'GET',
-          url: '/ads/image',
+          url: '/ads/images',
           data: {
             uniquesecret: uniquesecret
           },

@@ -8,6 +8,6 @@ class AdsImage extends Model
 {
     public function advertise()
     {
-        return $this->belongsTo(Advertise::class);
+        return $this->belongsTo('App\Advertise');
     }
 }

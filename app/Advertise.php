@@ -35,12 +35,17 @@ class Advertise extends Model
         return $array;
     }
 
-    protected $fillable = ["title","description","category_id","price","img"];
+    protected $fillable = ["title","description","category_id","price"];
     
 
     public function category(){
 
         return $this->belongsTo('App\Category');
+    }
+
+    public function adsimage()
+    {
+        return $this->hasMany('App\AdsImage');
     }
 
     public function user()
@@ -63,10 +68,7 @@ class Advertise extends Model
         return Advertise::where('user_id','=',Auth::user()->id)->count();
     }
 
-    public function images()
-    {
-        return $this->hasMany(AdsImage::class);
-    }
+    
 
 
 }

@@ -10,9 +10,7 @@ class RevisorController extends Controller
     public function __construct(){
         
         $this->middleware('auth.revisor');
-     
-        
-        
+
     }
     
     public function index()
@@ -70,7 +68,7 @@ class RevisorController extends Controller
     public function revisioning_Ads()
     {
         $ads = Advertise::where('is_accepted', null)->orderBy('created_at', 'asc')->get();
-        
+       
         return view('dashboard.revisor.dashboard_revisor_ads', compact('ads')); 
     }
     

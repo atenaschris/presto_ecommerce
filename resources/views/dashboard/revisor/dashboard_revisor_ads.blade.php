@@ -27,7 +27,7 @@
                             <a class="custom-link" href="{{route('ad.details',['id'=>$ad->id,'title'=>$title])}}">
                                 <div class="card">
                                     <div class="col-12">
-                                        @foreach ($ad->images as $image)
+                                        @foreach ($ad->adsimage as $image)
                                             <div class="row">
                                             <img src="{{Storage::url($image->file)}}" class="img-fluid card-img-top">
                                             </div>

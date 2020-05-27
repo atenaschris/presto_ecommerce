@@ -32,8 +32,8 @@ class AdvertiseController extends Controller
         $advertise->price = $request->input('price');   
         $advertise->user()->associate($user);
         $advertise->save();
-        
-        $uniquesecret = $request->input('uniquerequest');
+        //immagini
+        $uniquesecret = $request->input('uniquesecret');
         $images = session()->get("images.{$uniquesecret}",[]);
         $removedimages = session()->get("removedimages.{$uniquesecret}", []);
         $images = array_diff($images,$removedimages);
@@ -48,7 +48,7 @@ class AdvertiseController extends Controller
             $i->file = $newfilename;
             $i->advertise_id = $advertise->id;
             $i->save();
-              dd($i); 
+               
         }
         File::deleteDirectory(storage_path("/app/public/temp/{$uniquesecret}"));
         
@@ -74,7 +74,6 @@ class AdvertiseController extends Controller
         session()->push("images.{$uniquesecret}",$filename);   
         
         return response()->json([ 
-            "value" => session()->get("images.{$uniquesecret}"),
             'id'=>$filename
 
             ]);
@@ -97,13 +96,14 @@ class AdvertiseController extends Controller
         {
             
             $uniquesecret = $request->input('uniquesecret');
-            $images = session()->get("images.{$uniquesecret}");
+            $images = session()->get("images.{$uniquesecret}",[]);
             
             $removedimages = session()->get("removedimages.{$uniquesecret}", []);
             $images = array_diff($images,$removedimages);
             $data = []; 
             foreach ($images as $image ) {
                 $data[] = [
+
                     'id'=>$image,
                     'src'=>Storage::url($image),
                     
