@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Request;
 
 class SetLocaleMiddleware
 {
@@ -16,7 +17,11 @@ class SetLocaleMiddleware
      */
     public function handle($request, Closure $next)
     {
-        $locale = session('locale','it');
+        $default = Request::server('HTTP_ACCEPT_LANGUAGE');
+
+        $getLanDef = explode(",", $default);
+
+        $locale = session('locale', $getLanDef[0]);
         
         App::setLocale($locale);
 

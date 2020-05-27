@@ -180,15 +180,31 @@
                 <li>
                       
                     <div class="dropdown show ml-3 mt-1">
-                        <a id="languages" class="btn btn-sm dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          IT <span class="flag-icon flag-icon-it"> </span>
-                        </a>
+                    @if ( ! Config::get('app.locale'))
+                    <div id="languages" class="btn btn-sm dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        IT <span class="flag-icon flag-icon-it"> </span>
+                    @else
+                    @if (Config::get('app.locale') == 'it')
+                    <div id="languages" class="btn btn-sm dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        IT <span class="flag-icon flag-icon-it"> </span>
+                    @elseif(Config::get('app.locale') == 'en-US')
+                    <div id="languages" class="btn btn-sm dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        EN <span class="flag-icon flag-icon-gb"> </span>
+                    @else
+                    <div id="languages" class="btn btn-sm dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        ES <span class="flag-icon flag-icon-es"> </span>
+                    @endif
+                    @endif
+                        
+                        </div>
+                        
                       
                         <div class="dropdown-menu dropdown-menu2 dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-
+                            
+                             
                          @include('includes.formlanguages',['lang'=>'it','nation'=>'it'])
                          @include('includes.formlanguages',['lang'=>'es','nation'=>'es'])
-                         @include('includes.formlanguages',['lang'=>'gb','nation'=>'gb'])
+                         @include('includes.formlanguages',['lang'=>'en','nation'=>'gb'])
                             
                          
                         </div>
