@@ -26,7 +26,7 @@
                         <div class="col-12 py-3 px-3">
                             <a class="custom-link" href="{{route('ad.details',['id'=>$ad->id,'title'=>$title])}}">
                                 <div class="card">
-                                    @if ($ad->img)
+                                   {{--  @if ($ad->img)
 
                                      <img class="img-fluid card-img-top" src="{{Storage::url($ad->img)}}" alt="{{$ad->title}}">
 
@@ -38,7 +38,7 @@
                                         alt="{{$ad->title}}">
 
 
-                                    @endif
+                                    @endif --}}
                                     <div class="card-body">
                                         <h5 class="card-title">{{$ad->title}}</h5>
                                         <small class="card-text">{{ $ad->category->name }}</small>

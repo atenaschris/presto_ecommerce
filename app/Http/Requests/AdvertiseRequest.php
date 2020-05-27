@@ -24,11 +24,12 @@ class AdvertiseRequest extends FormRequest
     public function rules()
     {
         return [
+            
             "title" => "required|max:30",
             "description" => "required",
             "category_id" => "required",
             "price" => "required",
-            "img"=>"image|mimes:jpg,png,jpeg,bmp,webp"
+           
 
         ];
     }

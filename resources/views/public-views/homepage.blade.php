@@ -195,14 +195,15 @@
             @endphp
             <a class="custom-link" href="{{route('ad.details',['id'=>$ad->id,'title'=>$title])}}">
                 <div class="card h-100 featured-card">
-                    
-                    @if ($ad->img)
+                    <img src="https://via.placeholder.com/200x300" class="card-img-top featured-card-img card-img-home"
+                    alt="{{ $ad->title }}">
+                   {{--  @if ($ad->img)
                     <img src="{{ Storage::url($ad->img) }}" class="card-img-top featured-card-img "
                     alt="{{ $ad->title }}">
                     @else
                     <img src="https://via.placeholder.com/200x300" class="card-img-top featured-card-img card-img-home"
                     alt="{{ $ad->title }}">
-                    @endif
+                    @endif --}}
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">{{ $ad->title }}</h5>
                         <p class="card-text">{{substr($ad->description, 0, 30)}}...</p>

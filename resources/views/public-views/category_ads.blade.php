@@ -28,7 +28,8 @@
                 <div class="row">
                     <div class="col-12 col-md-5">
                     <a class="custom-link" href="{{route('ad.details',['id'=>$ad->id,'title'=>$title])}}">
-                            @if ($ad->img)
+                        
+                           {{--  @if ($ad->img)
 
                             <img class="img-fluid corner-radius" src="{{Storage::url($ad->img)}}"
                             alt="{{$ad->title}}">
@@ -42,7 +43,7 @@
                           
                                 
                             @endif
-                           
+                            --}}
                         </a>
                     </div>
                     <div class="col-12 col-md-7 pl-md-0 d-flex flex-column justify-content-center">

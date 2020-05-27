@@ -54,10 +54,7 @@
         </div>
 
         {{-- Image --}}
-        <div class="form-group">
-          <label for="img">{{ __('ui.immagini') }}</label>
-          <input type="file" class="form-control" name="img"  id="image">
-        </div>
+    
         {{-- BUTTON --}}
         <div class="text-center">
           
