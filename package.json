@@ -13,6 +13,7 @@
         "axios": "^0.19",
         "bootstrap": "^4.0.0",
         "cross-env": "^7.0",
+        "dropzone": "^5.7.0",
         "flag-icon-css": "^3.4.6",
         "jquery": "^3.2",
         "laravel-mix": "^5.0.1",
@@ -23,7 +24,5 @@
         "sass-loader": "^8.0.0",
         "vue-template-compiler": "^2.6.11"
     },
-    "dependencies": {
-        "dropzone": "^5.7.0"
-    }
+    "dependencies": {}
 }

@@ -1,7 +1,6 @@
 <?php
 
 return [
-    
     'welcome'=>'Bienvenidos',
     'admindashboard'=>'Dashboard de l \'Admin',
     'chisiamo'=>'Quienés somos',
@@ -58,11 +57,6 @@ return [
     'pubblica'=>'Pùblica',
     'presentati'=>'Presentate',
     'motiva'=>'Motiva porquè quieres aspirar a la posicion de revisor',
-
-
-    
-   
-
-
-
+    'nonrev' => 'No revisado',
+    'vaiarevisiona' => 'Ir a revisar'
 ];

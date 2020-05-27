@@ -41078,7 +41078,25 @@ $(function () {
         _token: csrfToken,
         uniquesecret: uniquesecret
       },
-      addRemoveLinks: true
+      addRemoveLinks: true,
+      init: function init() {
+        $.ajax({
+          type: 'GET',
+          url: '/ads/image',
+          data: {
+            uniquesecret: uniquesecret
+          },
+          dataType: 'json'
+        }).done(function (data) {
+          $.each(data, function (key, value) {
+            var file = {
+              serverId: value.id
+            };
+            myDropzone.options.addedfile.call(myDropzone, file);
+            myDropzone.options.thumbnail.call(myDropzone, file, value.src);
+          });
+        });
+      }
     });
     myDropzone.on('success', function (file, response) {
       file.serverId = response.id;
@@ -41089,8 +41107,8 @@ $(function () {
         url: '/ads/images/remove',
         data: {
           _token: csrfToken,
-          id: file.serverId,
-          uniquesecret: uniquesecret
+          uniquesecret: uniquesecret,
+          id: file.serverId
         },
         dataType: 'json'
       });
@@ -41280,8 +41298,8 @@ $(document).ready(function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\39327\wa\presto_fruttariani\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\39327\wa\presto_fruttariani\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/mdb/wa/presto_fruttariani/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/mdb/wa/presto_fruttariani/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

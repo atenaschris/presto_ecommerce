@@ -32,26 +32,26 @@ class AdvertiseController extends Controller
         $advertise->price = $request->input('price');   
         $advertise->user()->associate($user);
         $advertise->save();
+
         $uniquesecret = $request->input('uniquerequest');
-        $images = session()->get('images.{$uniquesecret}');
-         
-        $removedimages = session()->get('removedimages.{$uniquesecret}', []);
+        $images = session()->get("images.{$uniquesecret}",[]);
+        $removedimages = session()->get("removedimages.{$uniquesecret}", []);
         $images = array_diff($images,$removedimages);
-
-
+        
+        
         foreach ($images as $image) {
-
+            
             $i = new AdsImage();
             $filename = basename($image);
-            $newfilename = 'public/ads/{$advertise->id}/{$filename}';
+            $newfilename = "public/ads/{$advertise->id}/{$filename}";
             $file = Storage::move($image,$newfilename);
             $i->file = $newfilename ;
-            $i->ads_id = $advertise->id;
+            $i->advertise_id = $advertise->id;
             $i->save();
-
-
+            
+            
         }
-        File::deleteDirectory(storage_path('/app/public/temp/{$uniquesecret}'));
+        File::deleteDirectory(storage_path("/app/public/temp/{$uniquesecret}"));
         
         
         
@@ -60,146 +60,143 @@ class AdvertiseController extends Controller
     }
     
     public function add(Request $request){
+
+        $uniquesecret = $request->old('uniquesecret',base_convert(sha1(uniqid(mt_rand())),16,36));
         
-        
-     $uniquesecret = $request->old('uniquesecret',base_convert(sha1(uniqid(mt_rand())),16,36));
-     return view('add_ads',compact('uniquesecret'));
-      
-        
-       
+        return view('add_ads',compact('uniquesecret'));
+ 
     }
+    
 
     public function uploadImages(Request $request)
     {
-       $uniquesecret = $request->input('uniquesecret');
-       $filename = $request->file('file')->store('public/temp/{$uniquesecret}');
-       session()->push('images.{$uniquesecret}',$filename) ;   
-       return response()->json([
-        
-        'id'=>$filename,
-        
-        
-       ]);
-
-    
-    }
-    public function removeimages(Request $request)
-    {
         $uniquesecret = $request->input('uniquesecret');
-        $filename = $request->input('id');
-        session()->push('removedimages.{$uniquesecret}',$filename);
-        Storage::delete($filename);
-
-        return response()->json('OK');
-    
-        
-
-
-    }
-    public function getImages(Request $request)
-    {
-        
-        $uniquesecret = $request->input('uniquesecret');
-        $images = session()->get('images.{$uniquesecret}');
-         
-        $removedimages = session()->get('removedimages.{$uniquesecret}', []);
-        $images = array_diff($images,$removedimages);
-        $data = []; 
-        foreach ($images as $image ) {
-            $data[] = [
-                'id'=>$image,
-                'src'=>Storage::url($image),
-
-            ];
-        
+        $filename = $request->file('file')->store("public/temp/{$uniquesecret}");
+        session()->push("images.{$uniquesecret}",$filename) ;   
+        return response()->json([
+            
+            'id'=>$filename
+ 
+            ]);
+            
+            
         }
-        return response()->json($data);
+        public function removeimages(Request $request)
+        {
+            $uniquesecret = $request->input('uniquesecret');
+            $filename = $request->input('id');
+            session()->push("removedimages.{$uniquesecret}",$filename);
+            Storage::delete($filename);
+            
+            return response()->json('OK');
+            
+            
+            
+            
+        }
+        public function getImages(Request $request)
+        {
+            
+            $uniquesecret = $request->input('uniquesecret');
+            $images = session()->get("images.{$uniquesecret}");
+            
+            $removedimages = session()->get("removedimages.{$uniquesecret}", []);
+            $images = array_diff($images,$removedimages);
+            $data = []; 
+            foreach ($images as $image ) {
+                $data[] = [
+                    'id'=>$image,
+                    'src'=>Storage::url($image),
+                    
+                ];
+                
+            }
+            return response()->json($data);
 
-      
-
+        }
+        
+        
+        
+        public function thankyouads()
+        {
+            return view('thank-you.thank_you_ads');
+        }
+        
+        
+        /**
+        * Display a listing of the resource.
+        *
+        * @return \Illuminate\Http\Response
+        */
+        public function index()
+        {
+            //
+        }
+        
+        /**
+        * Show the form for creating a new resource.
+        *
+        * @return \Illuminate\Http\Response
+        */
+        public function create()
+        {
+            //
+        }
+        
+        /**
+        * Store a newly created resource in storage.
+        *
+        * @param  \Illuminate\Http\Request  $request
+        * @return \Illuminate\Http\Response
+        */
+        public function store(Request $request)
+        {
+            //
+        }
+        
+        /**
+        * Display the specified resource.
+        *
+        * @param  \App\Advertise  $advertise
+        * @return \Illuminate\Http\Response
+        */
+        public function show(Advertise $advertise)
+        {
+            //
+        }
+        
+        /**
+        * Show the form for editing the specified resource.
+        *
+        * @param  \App\Advertise  $advertise
+        * @return \Illuminate\Http\Response
+        */
+        public function edit(Advertise $advertise)
+        {
+            //
+        }
+        
+        /**
+        * Update the specified resource in storage.
+        *
+        * @param  \Illuminate\Http\Request  $request
+        * @param  \App\Advertise  $advertise
+        * @return \Illuminate\Http\Response
+        */
+        public function update(Request $request, Advertise $advertise)
+        {
+            //
+        }
+        
+        /**
+        * Remove the specified resource from storage.
+        *
+        * @param  \App\Advertise  $advertise
+        * @return \Illuminate\Http\Response
+        */
+        public function destroy(Advertise $advertise)
+        {
+            //
+        }
     }
-
-  
     
-    public function thankyouads()
-    {
-        return view('thank-you.thank_you_ads');
-    }
-    
-    
-    /**
-    * Display a listing of the resource.
-    *
-    * @return \Illuminate\Http\Response
-    */
-    public function index()
-    {
-        //
-    }
-    
-    /**
-    * Show the form for creating a new resource.
-    *
-    * @return \Illuminate\Http\Response
-    */
-    public function create()
-    {
-        //
-    }
-    
-    /**
-    * Store a newly created resource in storage.
-    *
-    * @param  \Illuminate\Http\Request  $request
-    * @return \Illuminate\Http\Response
-    */
-    public function store(Request $request)
-    {
-        //
-    }
-    
-    /**
-    * Display the specified resource.
-    *
-    * @param  \App\Advertise  $advertise
-    * @return \Illuminate\Http\Response
-    */
-    public function show(Advertise $advertise)
-    {
-        //
-    }
-    
-    /**
-    * Show the form for editing the specified resource.
-    *
-    * @param  \App\Advertise  $advertise
-    * @return \Illuminate\Http\Response
-    */
-    public function edit(Advertise $advertise)
-    {
-        //
-    }
-    
-    /**
-    * Update the specified resource in storage.
-    *
-    * @param  \Illuminate\Http\Request  $request
-    * @param  \App\Advertise  $advertise
-    * @return \Illuminate\Http\Response
-    */
-    public function update(Request $request, Advertise $advertise)
-    {
-        //
-    }
-    
-    /**
-    * Remove the specified resource from storage.
-    *
-    * @param  \App\Advertise  $advertise
-    * @return \Illuminate\Http\Response
-    */
-    public function destroy(Advertise $advertise)
-    {
-        //
-    }
-}

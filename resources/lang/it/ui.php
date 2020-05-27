@@ -58,5 +58,6 @@ return [
     'immagini'=>'Immagini',
     'pubblica' =>'Pubblica',
     'presentati'=>'Presentati',
-    'motiva' => 'Motiva perchè vuoi diventare revisore'
+    'motiva' => 'Motiva perchè vuoi diventare revisore',
+    'nonrev' => 'Non revisionato'
 ];

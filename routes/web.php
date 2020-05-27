@@ -39,13 +39,9 @@ Route::get('/ads/detail/{id}/{title}','FrontendController@ad_details')->name('ad
 
 Route::get('/category-ads/{id}/{name}','CategoryController@category_ads')->name('category.ads');
 
-Route::get('/newsletter/thank-you', 'NewsletterController@thankyounewsletter'
-    
-)->name('newsletter.thankyou');
+Route::get('/newsletter/thank-you', 'NewsletterController@thankyounewsletter')->name('newsletter.thankyou');
 
-Route::post('/newsletter','NewsletterController@newsletter'
-    
-)->name('newsletter');
+Route::post('/newsletter','NewsletterController@newsletter')->name('newsletter');
 
 // Revisor Routes
 

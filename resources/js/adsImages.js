@@ -9,14 +9,12 @@ $(function(){
 
          url : '/ads/images/upload',
          params : {
+
              _token : csrfToken,
              uniquesecret : uniquesecret
 
          },
-
-        addRemoveLinks:true
-     });
-     
+        addRemoveLinks:true,
      init:function(){
 
       $.ajax({
@@ -31,7 +29,7 @@ $(function(){
        }).done(function(data){
          $.each(data,function(key,value){
            let file = {
-             serverId = value.id
+             serverId : value.id
            };
            myDropzone.options.addedfile.call(myDropzone,file);
            myDropzone.options.thumbnail.call(myDropzone,file,value.src);
@@ -39,6 +37,8 @@ $(function(){
        })
 
      }
+
+    });
 
      myDropzone.on('success',function(file,response){
 
@@ -52,8 +52,8 @@ $(function(){
         url: '/ads/images/remove',
         data: {
           _token:csrfToken,
-          id:file.serverId,
-          uniquesecret: uniquesecret 
+          uniquesecret: uniquesecret, 
+          id: file.serverId
     
         },
 

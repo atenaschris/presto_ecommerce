@@ -57,5 +57,7 @@ return [
     'immagini' => 'Images',
     'pubblica' => 'Publish',
     'presentati' => 'Introduce yourself',
-    'motiva' => 'Motivate why you want to become a revisor'
+    'motiva' => 'Motivate why you want to become a revisor',
+    'nonrev' => 'Not revisioned',
+    'vaiarevisiona' => 'Go to review'
 ];
