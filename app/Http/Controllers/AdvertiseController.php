@@ -2,12 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\AdsImage;
 use App\Category;
 use App\Advertise;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\File;
 use App\Http\Requests\AdvertiseRequest;
+use Illuminate\Support\Facades\Storage;
+use Monolog\Handler\PushoverHandler;
+use Symfony\Component\Console\Input\Input;
 
 class AdvertiseController extends Controller
 {
@@ -23,15 +29,29 @@ class AdvertiseController extends Controller
         $advertise->title = $request->input('title');
         $advertise->description = $request->input('description');
         $advertise->category_id = $request->input('category_id');
-        $advertise->price = $request->input('price');
-        if ($request->file('img') == null){
-            $advertise->img = "";
-        } else {
-            $advertise->img = $request->file('img')->store('public/img');
-        }
+        $advertise->price = $request->input('price');   
         $advertise->user()->associate($user);
         $advertise->save();
-        
+        $uniquesecret = $request->input('uniquerequest');
+        $images = session()->get('images.{$uniquesecret}');
+         
+        $removedimages = session()->get('removedimages.{$uniquesecret}', []);
+        $images = array_diff($images,$removedimages);
+
+
+        foreach ($images as $image) {
+
+            $i = new AdsImage();
+            $filename = basename($image);
+            $newfilename = 'public/ads/{$advertise->id}/{$filename}';
+            $file = Storage::move($image,$newfilename);
+            $i->file = $newfilename ;
+            $i->ads_id = $advertise->id;
+            $i->save();
+
+
+        }
+        File::deleteDirectory(storage_path('/app/public/temp/{$uniquesecret}'));
         
         
         
@@ -39,12 +59,64 @@ class AdvertiseController extends Controller
         return redirect(route('thank.you.ads'))->with('ads.created','ok');
     }
     
-    public function add(){
+    public function add(Request $request){
         
         
+     $uniquesecret = $request->old('uniquesecret',base_convert(sha1(uniqid(mt_rand())),16,36));
+     return view('add_ads',compact('uniquesecret'));
+      
+        
+       
+    }
+
+    public function uploadImages(Request $request)
+    {
+       $uniquesecret = $request->input('uniquesecret');
+       $filename = $request->file('file')->store('public/temp/{$uniquesecret}');
+       session()->push('images.{$uniquesecret}',$filename) ;   
+       return response()->json([
+        
+        'id'=>$filename,
         
         
-        return view('add_ads');
+       ]);
+
+    
+    }
+    public function removeimages(Request $request)
+    {
+        $uniquesecret = $request->input('uniquesecret');
+        $filename = $request->input('id');
+        session()->push('removedimages.{$uniquesecret}',$filename);
+        Storage::delete($filename);
+
+        return response()->json('OK');
+    
+        
+
+
+    }
+    public function getImages(Request $request)
+    {
+        
+        $uniquesecret = $request->input('uniquesecret');
+        $images = session()->get('images.{$uniquesecret}');
+         
+        $removedimages = session()->get('removedimages.{$uniquesecret}', []);
+        $images = array_diff($images,$removedimages);
+        $data = []; 
+        foreach ($images as $image ) {
+            $data[] = [
+                'id'=>$image,
+                'src'=>Storage::url($image),
+
+            ];
+        
+        }
+        return response()->json($data);
+
+      
+
     }
 
   

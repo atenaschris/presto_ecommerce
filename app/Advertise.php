@@ -63,5 +63,10 @@ class Advertise extends Model
         return Advertise::where('user_id','=',Auth::user()->id)->count();
     }
 
+    public function images()
+    {
+        return $this->hasMany(AdsImage::class);
+    }
+
 
 }

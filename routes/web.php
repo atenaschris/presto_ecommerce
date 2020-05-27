@@ -25,6 +25,12 @@ Route::get('/','FrontendController@homepage')->name('homepage');
 
 Route::get('/add-ads','AdvertiseController@add')->name('add.ads');
 
+Route::post('/ads/images/upload','AdvertiseController@uploadImages')->name('ads.images.upload');
+
+Route::delete('/ads/images/remove','AdvertiseController@removeImages')->name('ads.images.remove');
+
+Route::get('/ads/images','AdvertiseController@getImages')->name('ads.images');
+
 Route::get('/submit/thank-you-ads','AdvertiseController@thankyouads')->name('thank.you.ads');
 
 Route::post('/submit','AdvertiseController@submit')->name('submit');

@@ -7,7 +7,7 @@
 
     <div class="col-12">
 
-
+    <h1>{{$uniquesecret}}</h1>
       {{-- Alert --}}
       <div>
         @if ($errors->any())
@@ -24,6 +24,7 @@
       {{-- Title --}}
       <form method="post" action="{{route('submit')}}" enctype="multipart/form-data">
         @csrf
+      <input type="hidden" name="uniquesecret" value="{{$uniquesecret}}">
         <div class="form-group">
           <label for="title">{{ __('ui.titolo') }} <span class="small text-muted">(Max 30)</span></label>
           <input type="text" class="form-control" name="title"  id="title" placeholder="{{ __('ui.titolo') }} "maxlength="30">
@@ -54,6 +55,20 @@
         </div>
 
         {{-- Image --}}
+      <div class="form-group">
+        <label for="drophere">images</label>
+
+        <div id="drophere" class="dropzone">
+            
+        </div>
+
+        @error ('images')
+         <span role="alert" class="invalid-feedback">
+         <strong>{{$message}}</strong>
+         </span>
+        @enderror
+
+      </div>
     
         {{-- BUTTON --}}
         <div class="text-center">

@@ -26,8 +26,20 @@
                         <div class="col-12 py-3 px-3">
                             <a class="custom-link" href="{{route('ad.details',['id'=>$ad->id,'title'=>$title])}}">
                                 <div class="card">
+                                    <div class="col-12">
+                                        @foreach ($ads->images as $image)
+                                            <div class="row">
+                                            <img src="{{Storage::url($image->file)}}" class="img-fluid card-img-top">
+                                            </div>
+                                            <div class="col-12">
+                                                {{$image->id}} <br>
+                                                {{$image->file}} <br>
+                                                {{Storage::url($image->file)}}
+                                            </div>
+                                        @endforeach
+                                    </div>
                                    {{--  @if ($ad->img)
-
+                                   
                                      <img class="img-fluid card-img-top" src="{{Storage::url($ad->img)}}" alt="{{$ad->title}}">
 
 
