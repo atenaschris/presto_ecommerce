@@ -29,7 +29,7 @@
                                     <div class="col-12">
                                         @foreach ($ad->adsimage as $image)
                                             <div class="row">
-                                            <img src="{{Storage::url($image->file)}}" class="img-fluid card-img-top">
+                                            <img src="{{$image->getUrl(300,150)}}" class="img-fluid card-img-top">
                                             </div>
                                             <div class="col-12">
                                                 {{$image->id}} <br>

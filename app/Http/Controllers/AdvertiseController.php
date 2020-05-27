@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use App\Http\Requests\AdvertiseRequest;
+use App\Jobs\ResizeImage;
 use Illuminate\Support\Facades\Storage;
 use Monolog\Handler\PushoverHandler;
 use Symfony\Component\Console\Input\Input;
@@ -45,6 +46,7 @@ class AdvertiseController extends Controller
             $filename = basename($image);
             $newfilename = "public/ads/{$advertise->id}/{$filename}";
             Storage::move($image,$newfilename);
+            dispatch(new ResizeImage($newfilename,300,150));
             $i->file = $newfilename;
             $i->advertise_id = $advertise->id;
             $i->save();
@@ -71,6 +73,7 @@ class AdvertiseController extends Controller
     {
         $uniquesecret = $request->input('uniquesecret');
         $filename = $request->file('file')->store("public/temp/{$uniquesecret}");
+        dispatch(new ResizeImage($filename,120,120));
         session()->push("images.{$uniquesecret}",$filename);   
         
         return response()->json([ 
@@ -105,7 +108,7 @@ class AdvertiseController extends Controller
                 $data[] = [
 
                     'id'=>$image,
-                    'src'=>Storage::url($image),
+                    'src'=> AdsImage::getUrlByFilePath($image, 120,120),
                     
                 ];
                 

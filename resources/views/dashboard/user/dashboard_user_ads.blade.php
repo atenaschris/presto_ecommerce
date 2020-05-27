@@ -9,7 +9,7 @@
                     
             <h2 class="h3 text-primary ">
                 {{ __('ui.haipubblicato') }}: <span class="text-danger">{{\App\Advertise::userPublishedAdsCount()}}</span>
-                {{ __('ui.annunci') }}!
+                {{ __('ui.annunci') }}
                 </h2 >
             
             
@@ -22,9 +22,12 @@
                     <div class="col-12 py-3 px-3">
                         <a class="custom-link" href="{{route('ad.details',['id'=>$ad->id,'title'=>$title])}}">
                             <div class="card">
-                                @if ($ad->img)
+                                @if ($ad->adsimage)
 
-                                <img class="img-fluid card-img-top" src="{{Storage::url($ad->img)}}" alt="{{$ad->title}}">
+                                @foreach ($ad->adsimage as $image)
+                                <img class="img-fluid card-img-top" src="{{Storage::url($image->file)}}">
+                                @endforeach
+                                
 
 
 
@@ -73,7 +76,7 @@
                 @endforeach
             @else
                 
-                <h2>{{ __('ui.nonhaiannunci')! }}</h2>
+                <h2>{{ __('ui.nonhaiannunci')}}</h2>
                         
             @endif
             
