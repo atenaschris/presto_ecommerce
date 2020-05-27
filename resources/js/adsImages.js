@@ -20,9 +20,9 @@ $(function(){
       $.ajax({
        
         type:'GET',
-        url:'/ads/image',
+        url:'/ads/images',
         data: {
-          uniquesecret:uniquesecret
+          uniquesecret: uniquesecret
 
         },
         dataType:'json'

@@ -32,7 +32,7 @@ class AdvertiseController extends Controller
         $advertise->price = $request->input('price');   
         $advertise->user()->associate($user);
         $advertise->save();
-
+        
         $uniquesecret = $request->input('uniquerequest');
         $images = session()->get("images.{$uniquesecret}",[]);
         $removedimages = session()->get("removedimages.{$uniquesecret}", []);
@@ -44,12 +44,11 @@ class AdvertiseController extends Controller
             $i = new AdsImage();
             $filename = basename($image);
             $newfilename = "public/ads/{$advertise->id}/{$filename}";
-            $file = Storage::move($image,$newfilename);
-            $i->file = $newfilename ;
+            Storage::move($image,$newfilename);
+            $i->file = $newfilename;
             $i->advertise_id = $advertise->id;
             $i->save();
-            
-            
+              dd($i); 
         }
         File::deleteDirectory(storage_path("/app/public/temp/{$uniquesecret}"));
         
@@ -60,27 +59,29 @@ class AdvertiseController extends Controller
     }
     
     public function add(Request $request){
-
+        
         $uniquesecret = $request->old('uniquesecret',base_convert(sha1(uniqid(mt_rand())),16,36));
         
         return view('add_ads',compact('uniquesecret'));
- 
+        
     }
     
-
+    
     public function uploadImages(Request $request)
     {
         $uniquesecret = $request->input('uniquesecret');
         $filename = $request->file('file')->store("public/temp/{$uniquesecret}");
-        session()->push("images.{$uniquesecret}",$filename) ;   
-        return response()->json([
-            
+        session()->push("images.{$uniquesecret}",$filename);   
+        
+        return response()->json([ 
+            "value" => session()->get("images.{$uniquesecret}"),
             'id'=>$filename
- 
+
             ]);
             
             
-        }
+    }
+        
         public function removeimages(Request $request)
         {
             $uniquesecret = $request->input('uniquesecret');
@@ -89,11 +90,9 @@ class AdvertiseController extends Controller
             Storage::delete($filename);
             
             return response()->json('OK');
-            
-            
-            
-            
+ 
         }
+        
         public function getImages(Request $request)
         {
             
@@ -112,7 +111,7 @@ class AdvertiseController extends Controller
                 
             }
             return response()->json($data);
-
+            
         }
         
         

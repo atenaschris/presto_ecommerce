@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class AdsImage extends Model
 {
-    public function advertises()
+    public function advertise()
     {
         return $this->belongsTo(Advertise::class);
     }

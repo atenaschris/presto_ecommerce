@@ -4,7 +4,7 @@
 
 <div class="container my-5 pt-3">
   <div class="row">
-
+    <h2>US:{{ $uniquesecret }}</h2>
     <div class="col-12">
 
     
@@ -26,6 +26,7 @@
         @csrf
         
       <input type="hidden" name="uniquesecret" value="{{$uniquesecret}}">
+
         <div class="form-group">
           <label for="title">{{ __('ui.titolo') }} <span class="small text-muted">(Max 30)</span></label>
           <input type="text" class="form-control" name="title"  id="title" placeholder="{{ __('ui.titolo') }} "maxlength="30">
