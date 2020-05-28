@@ -15,11 +15,10 @@ $(document).ready(function() {
         if (window.innerWidth > 1000) {
             if (scrolled > 5) {
                 logo.style.width = "50px";
-                logoName.classList.add("d-none");
+
                 navbar.classList.remove("py-2");
             } else {
                 logo.style.width = "80px";
-                logoName.classList.remove("d-none");
             }
         }
     });
@@ -29,7 +28,7 @@ $(document).ready(function() {
         slidesToScroll: 1,
         arrows: false,
         fade: true,
-        mobileFirst:true,
+        mobileFirst: true,
         asNavFor: ".slider-nav"
     });
     $(".slider-nav").slick({
@@ -37,7 +36,7 @@ $(document).ready(function() {
         slidesToScroll: 1,
         asNavFor: ".slider-for",
         arrows: true,
-        mobileFirst:true,
+        mobileFirst: true,
         centerMode: true,
         focusOnSelect: true
     });
@@ -45,7 +44,7 @@ $(document).ready(function() {
     $(".center").slick({
         centerMode: true,
         centerPadding: "60px",
-        mobileFirst:true,
+        mobileFirst: true,
         slidesToShow: 3,
         focusOnSelect: true,
         responsive: [
@@ -54,7 +53,7 @@ $(document).ready(function() {
                 settings: {
                     arrows: true,
                     centerMode: true,
-                    mobileFirst:true,
+                    mobileFirst: true,
                     centerPadding: "60px",
                     slidesToShow: 1
                 }
@@ -64,7 +63,7 @@ $(document).ready(function() {
                 settings: {
                     arrows: false,
                     centerMode: true,
-                    mobileFirst:true,
+                    mobileFirst: true,
                     centerPadding: "60px",
                     slidesToShow: 1
                 }
@@ -93,11 +92,8 @@ $(document).ready(function() {
                     slidesToShow: 1,
                     arrows: true,
                     autoplay: true
-
                 }
             }
         ]
     });
-
-    
 });
