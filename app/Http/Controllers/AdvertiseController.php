@@ -38,6 +38,8 @@ class AdvertiseController extends Controller
         $images = session()->get("images.{$uniquesecret}",[]);
         $removedimages = session()->get("removedimages.{$uniquesecret}", []);
         $images = array_diff($images,$removedimages);
+
+      
         
         
         foreach ($images as $image) {
@@ -45,8 +47,12 @@ class AdvertiseController extends Controller
             $i = new AdsImage();
             $filename = basename($image);
             $newfilename = "public/ads/{$advertise->id}/{$filename}";
-            Storage::move($image,$newfilename);
+            Storage::move($image, $newfilename);
             dispatch(new ResizeImage($newfilename,300,150));
+            dispatch(new ResizeImage($newfilename,150,150));
+            dispatch(new ResizeImage($newfilename,200,300));
+            
+            
             $i->file = $newfilename;
             $i->advertise_id = $advertise->id;
             $i->save();

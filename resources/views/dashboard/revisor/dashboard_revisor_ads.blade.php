@@ -20,44 +20,26 @@
                 @if ($ads)
                     @foreach ($ads as $ad)
                         @php
-                        $title = str_replace(' ', '-', $ad->title);
+                            $title = str_replace(' ', '-', $ad->title);
                         @endphp
 
                         <div class="col-12 py-3 px-3">
                             <a class="custom-link" href="{{route('ad.details',['id'=>$ad->id,'title'=>$title])}}">
                                 <div class="card">
-                                    <div class="col-12">
-                                        @foreach ($ad->adsimage as $image)
-                                            <div class="row">
-                                            <img src="{{$image->getUrl(300,150)}}" class="img-fluid card-img-top">
-                                            </div>
-                                            <div class="col-12">
-                                                {{$image->id}} <br>
-                                                {{$image->file}} <br>
-                                                {{Storage::url($image->file)}}
-                                            </div>
-                                        @endforeach
-                                    </div>
-                                   {{--  @if ($ad->img)
                                    
-                                     <img class="img-fluid card-img-top" src="{{Storage::url($ad->img)}}" alt="{{$ad->title}}">
-
-
-
-                                    @else
-
-                                      <img class="img-fluid corner-radius" src="https://via.placeholder.com/300x200"
-                                        alt="{{$ad->title}}">
-
-
-                                    @endif --}}
+                                    
                                     <div class="card-body">
                                         <h5 class="card-title">{{$ad->title}}</h5>
                                         <small class="card-text">{{ $ad->category->name }}</small>
                                         <p class="card-text">{{$ad->description}}</p>
                                         <p>{{ __('ui.pubblicatoda') }} {{ $ad->user->name }}</p>
                                         <p class="card-text h5">{{ __('ui.prezzo') }}: <span
-                                                class="h4 text-primary font-weight-bold">{{ $ad->price }}€</span></p>
+                                            class="h4 text-primary font-weight-bold">{{ $ad->price }}€</span></p>
+                                            @foreach ($ad->adsimage as $image)
+                                                
+                                                <img src="{{$image->getUrl(150,150)}}">
+                                              
+                                            @endforeach
                                     </div>
                                     {{-- <ul class="list-group list-group-flush">
                                                     <li class="list-group-item">

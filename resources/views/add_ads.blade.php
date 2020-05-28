@@ -4,7 +4,7 @@
 
 <div class="container my-5 pt-3">
   <div class="row">
-    <h2>US:{{ $uniquesecret }}</h2>
+   
     <div class="col-12">
 
     
