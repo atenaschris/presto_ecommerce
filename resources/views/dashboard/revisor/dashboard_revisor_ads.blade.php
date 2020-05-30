@@ -36,34 +36,40 @@
                                         <p class="card-text h5">{{ __('ui.prezzo') }}: <span
                                             class="h4 text-primary font-weight-bold">{{ $ad->price }}€</span></p>
                                             @foreach ($ad->adsimage as $image)
-                                                
-                                                <img src="{{$image->getUrl(150,150)}}">
+                                                <figure>
+
+                                                    <img src="{{$image->getUrl(150,150)}}">
+
+                                                </figure>
                                               
+                                                <label>Adult</label>
+                                                <div class="progress m-2">
+                                                    <div class="progress-bar" role="progressbar" style="width: {{ $image->adult }}%" aria-valuenow="{{ $image->adult }}" aria-valuemin="0" aria-valuemax="100">{{ $image->adult }}%</div>
+                                                </div>
+                                                <label>Spoof</label>
+                                                <div class="progress m-2">
+                                                    <div class="progress-bar" role="progressbar" style="width: {{ $image->spoof }}%" aria-valuenow="{{ $image->spoof }}" aria-valuemin="0" aria-valuemax="100">{{ $image->spoof }}%</div>
+                                                </div>
+                                                <label>Medical</label>
+                                                <div class="progress m-2">
+                                                    <div class="progress-bar" role="progressbar" style="width: {{ $image->medical }}%" aria-valuenow="{{ $image->medical }}" aria-valuemin="0" aria-valuemax="100">{{ $image->medical }}%</div>
+                                                </div>
+                                                <label>Violence</label>
+                                                <div class="progress m-2">
+                                                    <div class="progress-bar" role="progressbar" style="width: {{ $image->violence }}%" aria-valuenow="{{ $image->violence }}" aria-valuemin="0" aria-valuemax="100">{{ $image->violence }}%</div>
+                                                </div>
+                                                <label>racy</label>
+                                                <div class="progress m-2">
+                                                    <div class="progress-bar" role="progressbar" style="width: {{ $image->racy }}%" aria-valuenow="{{ $image->racy }}" aria-valuemin="0" aria-valuemax="100">{{ $image->racy }}%</div>
+                                                </div>
+                                                </div>    
+                                                @if ($image->labels)
+                                                    @foreach($image->labels as $label)
+                                                    <span>{{ $label }}</span>
+                                                    @endforeach
+                                                @endif
                                             @endforeach
-                                    </div>
-                                    {{-- <ul class="list-group list-group-flush">
-                                                    <li class="list-group-item">
-                                                        <label for="customRange3">Violenza</label>
-                                                        <input type="range" class="custom-range" min="0" max="5" step="0.5" id="customRange3">
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <label for="customRange3">Razzismo</label>
-                                                        <input type="range" class="custom-range" min="0" max="5" step="0.5" id="customRange3">
-                                                        
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <label for="customRange3">Nudità</label>
-                                                        <input type="range" class="custom-range" min="0" max="5" step="0.5" id="customRange3">
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <label for="customRange3">Droga</label>
-                                                        <input type="range" class="custom-range" min="0" max="5" step="0.5" id="customRange3">
-                                                    </li>
-                                                    <li class="list-group-item">
-                                                        <label for="customRange3">Armi</label>
-                                                        <input type="range" class="custom-range" min="0" max="5" step="0.5" id="customRange3">
-                                                    </li>
-                                                </ul> --}}
+                
                                     <div class="row mt-2">
                                         <div class="col-12 col-md-6">
                                             <form action="{{ route('revisor.accepted', ["id" => $ad->id]) }}" method="POST">

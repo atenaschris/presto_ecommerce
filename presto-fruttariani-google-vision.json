@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "presto-fruttariani",
+  "private_key_id": "965ae1f409a07d8a138e9bca9a68c6924de596ba",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDLPPm5Hj0+g7fz\nF0oxci3AZN7Ezo/OqUWtnHoe2ppJ8VbTdZTTtr5/YR0FwkDPdKWccIRGb6quNuYE\nOUv+lB8Xdcgs+mbRqK0HNZHOgUQHgWdWrvSYAigmFNYFpl6ISKIYff004pG7ZB2W\niS7AfBS1+jk3TPrmjxs94n2gOP4dnxabnhERsoAi6RzxEHHBZeRGD/KahnypKCb1\n1ssOvmmifu/cc52fQQTcgx6euVys/iQ3NhgqYIFZmzZQrFWmfDWisEdewFWRGGOh\nAapZBsaZHN4OzFFSlNDqmxzpRx/Ms81MvxxPyJRCgI2nFMIKTieQ50xhETMmcw4s\nCa7W7CCzAgMBAAECggEAWDh/rfuSWjCTCNJzQkNt2LXwfT2s7uhLdrEV0Y7SqoY4\nSlIf6EbLKj/deUJ5H5RizyWIRYrza+worGyysC9bz7Mw0VVgjGHLufVm9VznStrB\nIL+RLOrCwsUIois1nbLpqfgGkY5H9C/hKBckVCmIU/XqIDcqMiqsiJBoN8SFihVd\nnWtgQ4Isx1LKjXg7xLyRXIWxd+SUDgM6uFVg6FbuJVJ2SkKWEdev9jrOFAhjQksR\n5XGApaRn6bm31hIjcsT+l5ha6W5tE/mBwLTgn7aPXoWRVWDzRW2LU/zstpGil37k\nhVl5kGIHb4azaW+bF4kXUM8JHLnLsWdPHvFrRpk/AQKBgQD7u+ISwlvbtaQMC4UU\nvMJYQ6YmzBf0/faOZHBSIub0iO3tVQs4fgBz/JdnU71dTEocWZe5L1Ar2Za7aBmK\nop2jvE7z1Kql+DB0PjklQITaplvgIA3JXnnFsYLPqgsDa8U5hLuasCsNdTiW6KvR\nh6W+KGUyys6UsPxPrA7apfiz9QKBgQDOrrMWXW0+sKhAskMAUiuOFlz/8xe+yl9N\nvLzsIJzMYv3mVoScz6J1GttDZdnO51dpn/a4ngGGnWAJ4m+4QNeApxwMZW3jaMG6\nc9uDeHqWO7VUp72W3sn5pLgdjrpM9l81AMK5ZlmkBCeveLIKpp2fmbFheNyanVHh\nSYy8EvZBBwKBgQDMODUEgPaifG5UczgIhcWoc2EkkmhREYLnK6ZPjA8PjNJwupB6\nyQW3EtEFO1MhkFWDQE+tJSwGFuSIrsAhzyDSB1+JwhqawIkWlLApf3kIJPPeFEL6\n/REPB54WuF1s7g43Rm4n5QlYRqOdEa7qMgCNDxpiJVOIHzjhrbTzPrhPzQKBgQDG\n797PEyQ46D867pqRL4Ze4GWpsunTKeVr5NQPkCB8lnf/Ap3ode7QOwZ7rAhnH8PC\nlkcbUnLziH1NZlfUiQ0k9zSHNgX8kvONrUDIHeoYuuYB0uco1c6g7QyO3rexpp7j\nXJURcVOtDJbKTilJGTC003Gp+XSVmgGbEHlW+gVvdwKBgQDobyjeXtsF9gaGqmyw\nRSIOF9IM+eV0k46hE3a7q0tOvlD5UHPpLh7h1fjdBVfAT2EisjSzwuc07wUIzjE9\n2E6cU17VoZFmNkD0oE6zr8YTZUXopqxX6+0/DCrS7p2HxpP4yC9DFi7H19GIx8iD\nfj54N+LfjHn/l/Ymlp2VUDhADw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "presto-fruttariani@presto-fruttariani.iam.gserviceaccount.com",
+  "client_id": "106686327059260963398",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/presto-fruttariani%40presto-fruttariani.iam.gserviceaccount.com"
+}

@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Storage;
 
 class AdsImage extends Model
 {
+    protected $casts = ['labels' => 'array'];
+
     public function advertise()
     {
         return $this->belongsTo('App\Advertise');

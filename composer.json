@@ -11,6 +11,7 @@
         "php": "^7.2.5",
         "fideloper/proxy": "^4.2",
         "fruitcake/laravel-cors": "^1.0",
+        "google/cloud-vision": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
         "intervention/image": "^2.5",
         "laravel/framework": "^7.0",
@@ -18,6 +19,7 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
         "spatie/image": "^1.7",
+        "spatie/laravel-image-optimizer": "^1.6",
         "teamtnt/laravel-scout-tntsearch-driver": "^8.3",
         "teamtnt/tntsearch": "^2.3"
     },

@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use App\Http\Requests\AdvertiseRequest;
+use App\Jobs\GoogleVisionLabelImage;
+use App\Jobs\GoogleVisionSafeSearchImage;
 use App\Jobs\ResizeImage;
 use Illuminate\Support\Facades\Storage;
 use Monolog\Handler\PushoverHandler;
@@ -18,6 +20,7 @@ use Symfony\Component\Console\Input\Input;
 
 class AdvertiseController extends Controller
 {
+    
     public function __construct()
     {
         $this->middleware('auth');
@@ -52,11 +55,11 @@ class AdvertiseController extends Controller
             dispatch(new ResizeImage($newfilename,150,150));
             dispatch(new ResizeImage($newfilename,200,300));
             
-            
             $i->file = $newfilename;
             $i->advertise_id = $advertise->id;
             $i->save();
-               
+            dispatch(new GoogleVisionSafeSearchImage($i->id));
+            dispatch(new GoogleVisionLabelImage($i->id));
         }
         File::deleteDirectory(storage_path("/app/public/temp/{$uniquesecret}"));
         
