@@ -2,10 +2,10 @@
 
 namespace App\Jobs;
 
+use App\AdsImage;
 use Spatie\Image\Image;
 use Illuminate\Bus\Queueable;
 use Spatie\Image\Manipulations;
-
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -31,7 +31,7 @@ class GoogleVisionRemoveFaces implements ShouldQueue
         if (!$i) {
             return;
         }
-       dd('ciaociaomammat');
+       
        $srcPath = storage_path('/app/' . $i->file);
        $image=file_get_contents($srcPath);
         putenv('GOOGLE_APPLICATION_CREDENTIALS=' . base_path('presto-fruttariani-google-vision.json'));

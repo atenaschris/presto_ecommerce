@@ -12,6 +12,8 @@ use Google\Cloud\Vision\V1\ImageAnnotatorClient;
 
 class GoogleVisionLabelImage implements ShouldQueue
 {
+    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+
     private $ads_image_id;
 
     public function __construct($_ads_image_id)

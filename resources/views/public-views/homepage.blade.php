@@ -195,8 +195,11 @@
             @endphp
             <a class="custom-link" href="{{route('ad.details',['id'=>$ad->id,'title'=>$title])}}">
                 <div class="card h-100 featured-card">
+                   
+                        
                     <img src="{{$ad->adsimage()->first()->getUrl(200,300)}}" class="card-img-top featured-card-img card-img-home"
                     alt="{{ $ad->title }}">
+                   
                    {{--  @if ($ad->img)
                     <img src="{{ Storage::url($ad->img) }}" class="card-img-top featured-card-img "
                     alt="{{ $ad->title }}">
