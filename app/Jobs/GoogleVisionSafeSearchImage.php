@@ -21,11 +21,6 @@ class GoogleVisionSafeSearchImage implements ShouldQueue
         $this->ads_image_id = $_ads_image_id;
     }
 
-    /**
-     * Execute the job.
-     *
-     * @return void
-     */
     public function handle()
     {
         $i = AdsImage::find($this->ads_image_id);
@@ -48,7 +43,7 @@ class GoogleVisionSafeSearchImage implements ShouldQueue
 
        // echo json_encode([$adult, $spoof, $medical, $violence, $racy]);
 
-        $likelyHoodName = ['0', '20', '40', '60', '80', '100'];
+        $likelyHoodName = [ 'not defined','0', '25', '50', '75', '100'];
         $i->adult = $likelyHoodName[$adult];
         $i->spoof = $likelyHoodName[$spoof];
         $i->medical = $likelyHoodName[$medical];

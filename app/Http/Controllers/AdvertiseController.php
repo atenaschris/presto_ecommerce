@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\File;
 use App\Http\Requests\AdvertiseRequest;
 use App\Jobs\GoogleVisionLabelImage;
 use App\Jobs\GoogleVisionSafeSearchImage;
+use App\Jobs\GoogleVisionRemoveFaces;
 use App\Jobs\ResizeImage;
 use Illuminate\Support\Facades\Storage;
 use Monolog\Handler\PushoverHandler;
@@ -51,15 +52,17 @@ class AdvertiseController extends Controller
             $filename = basename($image);
             $newfilename = "public/ads/{$advertise->id}/{$filename}";
             Storage::move($image, $newfilename);
-            dispatch(new ResizeImage($newfilename,300,150));
-            dispatch(new ResizeImage($newfilename,150,150));
-            dispatch(new ResizeImage($newfilename,200,300));
             
             $i->file = $newfilename;
             $i->advertise_id = $advertise->id;
             $i->save();
-            dispatch(new GoogleVisionSafeSearchImage($i->id));
-            dispatch(new GoogleVisionLabelImage($i->id));
+                 GoogleVisionSafeSearchImage::withChain([
+                new GoogleVisionLabelImage($i->id),
+                new GoogleVisionRemoveFaces($i->id),
+                new ResizeImage($newfilename,300,150),
+                new ResizeImage($newfilename,150,150),
+                new ResizeImage($newfilename,200,300)
+            ]) ->dispatch($i->id);
         }
         File::deleteDirectory(storage_path("/app/public/temp/{$uniquesecret}"));
         
