@@ -79,12 +79,17 @@ Route::post('/admin-dashboard/all-request/{id}/rejected', 'AdminController@rejec
 Route::get('/admin-dashboard/all-request', 'AdminController@allrequest')->name('admin.all.request');
 
 Route::post('/admin-dashboard/all-users/{id}/revoked', 'AdminController@revokedPermission')->name('permission.revoked');
- // user routes
+
+
+// user routes
 
  Route::get('/user-dashboard', 'UserController@index')->name('user.home');
  Route::get('/user-dashboard/ads', 'UserController@ads')->name('user.all.ads');
 
+ Route::get('/user/edit/profile/{user}','UserController@edit')->name('user.edit');
+ Route::patch('/user/update/profile/{user}','UserController@update')->name('user.update');
+
  
- //lenguages routes
+ //languages routes
 
  Route::post('/{locale}','FrontEndController@locale')->name('locale');
