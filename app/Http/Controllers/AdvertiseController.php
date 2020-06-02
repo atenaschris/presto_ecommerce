@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use App\Http\Requests\AdvertiseRequest;
+use App\Jobs\AddWatermarkToImage;
 use App\Jobs\GoogleVisionLabelImage;
 use App\Jobs\GoogleVisionSafeSearchImage;
 use App\Jobs\GoogleVisionRemoveFaces;
@@ -59,6 +60,7 @@ class AdvertiseController extends Controller
                  GoogleVisionSafeSearchImage::withChain([
                 new GoogleVisionLabelImage($i->id),
                 new GoogleVisionRemoveFaces($i->id),
+                new AddWatermarkToImage($i->id),
                 new ResizeImage($newfilename,300,150),
                 new ResizeImage($newfilename,150,150),
                 new ResizeImage($newfilename,200,300)
