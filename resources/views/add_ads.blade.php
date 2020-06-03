@@ -73,7 +73,7 @@
         {{-- BUTTON --}}
         <div class="text-center">
           
-          <button id="addSuccess" type="submit" class="btn btn-dark btn-lg w-100" onmouseover="play_aud()">
+          <button  type="submit" class="btn btn-dark btn-lg w-100" >
             {{ __('ui.pubblica') }}
           </button>
           
@@ -87,30 +87,13 @@
       
       
 
-        <audio id="player" controls>
-      
-          <source src="\media\pornhub-community-intro.mp3" type="audio/ogg">
-            
-        </audio>
+        
 
      
     </div>
   </div>
 </div>
 
-<script>
-          let player = document.getElementById("player");
-
-             player.controls = false;
-    
-            function play_aud() {
-      
-              player.play();
-        
-      
-            }
-
-        </script>
 
  
 

@@ -7,39 +7,21 @@
     <div class="col-12 col-lg-6 ">
       <div class="slick-carousel text-center">
         <div class="slider-for p-0">
-          <img src="https://picsum.photos/300/150" alt="" class="img-fluid img-slider">
-          <img src="https://picsum.photos/300/150" alt="" class="img-fluid img-slider">
-          <img src="https://picsum.photos/300/150" alt="" class="img-fluid img-slider">
-          <img src="https://picsum.photos/300/150" alt="" class="img-fluid img-slider">
-          <img src="https://picsum.photos/300/150" alt="" class="img-fluid img-slider">
-          <img src="https://picsum.photos/300/150" alt="" class="img-fluid img-slider">
+          @foreach ($ad->adsimage as $image)
+              
+          <img src="{{$image->getUrl(300,150)}}"  class="img-fluid img-slider">
+          @endforeach
+          
         </div>
       </div> 
       <div class="slick-carousel  d-none d-md-block">
         <ul class="slider-nav p-0">
-          <li>
-            <img src="https://picsum.photos/300/150" alt="" class="img-fluid img-slider">
-          </li>
+          @foreach ($ad->adsimage as $image)
+           <li>
+             <img src="{{$image->getUrl(300,150)}}" alt="" class="img-fluid img-slider">
+             </li>   
+          @endforeach
           
-          <li>
-            <img src="https://picsum.photos/300/150" alt="" class="img-fluid img-slider">
-          </li>
-          
-          <li>
-            <img src="https://picsum.photos/300/150" alt="" class="img-fluid img-slider">
-          </li>
-          
-          <li>
-            <img src="https://picsum.photos/300/150" alt="" class="img-fluid img-slider">
-          </li>
-          
-          <li>
-            <img src="https://picsum.photos/300/150" alt="" class="img-fluid img-slider">
-          </li>
-          
-          <li>
-            <img src="https://picsum.photos/300/150" alt="" class="img-fluid img-slider">
-          </li>
         </ul>
       </div> 
     </div>

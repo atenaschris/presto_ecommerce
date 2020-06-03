@@ -71,7 +71,7 @@ class AdvertiseController extends Controller
         
         
         // $advertise = Advertise::create($request->validated());
-        return redirect(route('thank.you.ads'))->with('ads.created','ok');
+        return redirect('/')->with('ads.created','ok');
     }
     
     public function add(Request $request){

@@ -7,7 +7,7 @@
     </span>
     <span class="w-80">
       <form  action="{{ route('search') }}" method="GET">
-        <input type="text" name="q"  class="form-control-plaintext no-shadow no-focus"  placeholder="{{ __('ui.cerca') }}..."">
+        <input type="text" name="q"  class="form-control-plaintext no-shadow no-focus"  placeholder="{{ __('ui.cerca') }}...">
         <input type="submit" style="position: absolute; left: -9999px"/>
       </form>
     </span>

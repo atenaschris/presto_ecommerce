@@ -31,7 +31,7 @@ Route::delete('/ads/images/remove','AdvertiseController@removeImages')->name('ad
 
 Route::get('/ads/images','AdvertiseController@getImages')->name('ads.images');
 
-Route::get('/submit/thank-you-ads','AdvertiseController@thankyouads')->name('thank.you.ads');
+
 
 Route::post('/submit','AdvertiseController@submit')->name('submit');
 
@@ -39,7 +39,7 @@ Route::get('/ads/detail/{id}/{title}','FrontendController@ad_details')->name('ad
 
 Route::get('/category-ads/{id}/{name}','CategoryController@category_ads')->name('category.ads');
 
-Route::get('/newsletter/thank-you', 'NewsletterController@thankyounewsletter')->name('newsletter.thankyou');
+
 
 Route::post('/newsletter','NewsletterController@newsletter')->name('newsletter');
 
@@ -63,6 +63,8 @@ Route::post('/revisor-dashboard/undo/{id}/accepted','RevisorController@update_ac
 
 Route::post('/revisor-dashboard/undo/{id}/rejected','RevisorController@update_rejected')->name('ads.rejected');
 
+Route::get('/revisor/edit/profile/{user}','RevisorController@edit')->name('revisor.edit');
+
 //Admin routes
 
 Route::get('/admin-dashboard', 'AdminController@index')->name('admin.home');
@@ -80,6 +82,10 @@ Route::get('/admin-dashboard/all-request', 'AdminController@allrequest')->name('
 
 Route::post('/admin-dashboard/all-users/{id}/revoked', 'AdminController@revokedPermission')->name('permission.revoked');
 
+Route::get('/admin/edit/profile/{user}','AdminController@edit')->name('admin.edit');
+
+Route::get('/admin-dashboard/revisioning/ads','AdminController@adminAds')->name('admin.to.be.revisioned.ads');
+
 
 // user routes
 
@@ -87,6 +93,7 @@ Route::post('/admin-dashboard/all-users/{id}/revoked', 'AdminController@revokedP
  Route::get('/user-dashboard/ads', 'UserController@ads')->name('user.all.ads');
 
  Route::get('/user/edit/profile/{user}','UserController@edit')->name('user.edit');
+ 
  Route::patch('/user/update/profile/{user}','UserController@update')->name('user.update');
 
  

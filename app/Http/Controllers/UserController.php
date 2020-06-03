@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Advertise;
 use Illuminate\Http\Request;
+use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -32,29 +34,17 @@ class UserController extends Controller
         return view('dashboard.user.dashboard_edit_profile', compact('user'));
     }
 
-    public function update(User $user)
+    public function update(UserRequest $request)
     { 
-        if(Auth::user()->email == request()) {
         
-       $user->name = request();
-      
+        $user = Auth::user();
+        $user->update($request->validated());
+        $user->password =  Hash::make($request->password);
         $user->save();
-
-        return back();
-        
-    }
-    else{
-        
-
-        $user->name = request('name');
-        $user->email = request('email');
-        $user->password = bcrypt(request('password'));
-
-        $user->save();
-
-        return back();  
-        
-    }
+       
+       
+        return redirect()->back()->with('message','Hai modificato con successo');
+    
     }
 
     // public function update_avatar(Request $request){

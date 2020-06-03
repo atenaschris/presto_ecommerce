@@ -100,40 +100,43 @@
                                             
                                             {{ __('ui.annunci') }}{{ __('ui.darevisionare') }}
                                                     
-                                            </button>
+                                            
                                         </a>
                                         <a href="{{ route('revisor.undo.ads') }}" target="_blank" rel="noopener noreferrer" class="dropdown-item">
                                             
                                             {{ __('ui.annunci') }} {{ __('ui.revisionati') }} 
                                                 
-                                        </button>
-                                    </a>
+                                        
+                                        </a>
+                                        
                     
                                     @elseif(Auth::user()->roles == 2)
-                                            <a href="{{ route('admin.home') }}" target="_blank" rel="noopener noreferrer" class="dropdown-item">
+                                            <a href="{{ route('admin.home') }}" target="_blank" rel="noopener noreferrer" class="dropdown-item text-decoration-none">
                                                 <button type="button" class="btn background-main-color text-white">
                                                     Dashboard <span class="badge badge-light">{{\App\User::requestCount()}}</span>
                                                      <span class="sr-only">unread notifies</span>
                                                 </button>
                                             </a>
-                                            <a href="{{ route('admin.all.ads') }}" target="_blank" rel="noopener noreferrer" class="dropdown-item">
+                                            <a href="{{ route('admin.all.ads') }}" target="_blank" rel="noopener noreferrer" class="dropdown-item text-decoration-none">
                                                
                                                 {{ __('ui.tuttigliannunci') }}
                                                      
-                                                </button>
+                                                
                                             </a>
-                                            <a href="{{ route('admin.all.users') }}" target="_blank" rel="noopener noreferrer" class="dropdown-item">
+                                            <a href="{{ route('admin.all.users') }}" target="_blank" rel="noopener noreferrer" class="dropdown-item text-decoration-none">
                                                 
                                                 {{ __('ui.tuttigliutenti') }}
                                                      
-                                                </button>
-                                            </a>
-                                            <a href="{{ route('admin.all.request') }}" target="_blank" rel="noopener noreferrer" class="dropdown-item">
                                                 
-                                                {{ __('ui.richieste') }} 
-                                                     
-                                                </button>
                                             </a>
+                                            <a href="{{ route('admin.to.be.revisioned.ads') }}" target="_blank" rel="noopener noreferrer" class="dropdown-item text-decoration-none">
+                                                
+                                                Annunci da revisionare
+                                                     
+                                                
+                                            </a>
+                                            
+                                            <a href="{{ route('admin.all.users') }}" target="_blank" rel="noopener noreferrer"></a>
                                     @elseif(Auth::user()->roles == 0)
                                     <a href="{{ route('user.home') }}" target="_blank" rel="noopener noreferrer" class="dropdown-item">
                                         <button type="button" class="btn background-main-color text-white">
@@ -145,8 +148,9 @@
                                         
                                         {{ __('ui.annuncipubblicati') }}
                                             
-                                        </button>
+                                       
                                     </a>
+                                    
                                     @endif
                     
                                         <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();

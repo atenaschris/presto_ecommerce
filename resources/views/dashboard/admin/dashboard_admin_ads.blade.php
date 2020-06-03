@@ -7,7 +7,7 @@
 
 
 
-        @include('includes.dashboard_revisor_nav')
+        @include('includes.dashboard_admin_nav')
         <div class="col-12 col-md-10">
            
                

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Newsletter;
 use App\Mail\NewsletterMail;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Http\Requests\NewsletterRequest;
 
@@ -13,7 +12,8 @@ class NewsletterController extends Controller
 
 {
     function newsletter(NewsletterRequest $request)
-    {   $newsletter=new Newsletter();
+    {   
+        $newsletter=new Newsletter();
         $newsletter->email=$request->input('email');
         $newsletter->checkbox=$request->input('checkbox');
         $newsletter->save();
@@ -22,10 +22,8 @@ class NewsletterController extends Controller
      
 
         Mail::to('admin.presto@presto.com')->send(new NewsletterMail($email));
-        return redirect(route('newsletter.thankyou'));
+
+        return redirect('/')->with('newsletter.ok','subscribed');
     }
-    function thankyounewsletter()
-    {
-        return view('thank-you.thank_you_newsletter');
-    }
+    
 }

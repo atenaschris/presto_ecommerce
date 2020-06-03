@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Advertise;
+use App\Http\Requests\UserRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RevisorController extends Controller
 {
@@ -15,9 +18,9 @@ class RevisorController extends Controller
     
     public function index()
     {
-       
+        $user = Auth::user();
         
-        return view('dashboard.revisor.dashboard_revisor');
+        return view('dashboard.revisor.dashboard_revisor',compact('user'));
     }
     public function accepted($id)
     {
@@ -38,10 +41,10 @@ class RevisorController extends Controller
     }
     
     public function undo_ads(){
-        
+        $user = Auth::user();
        $ads = Advertise::where('is_accepted' , "!=",  null)->get();
        
-       return view('dashboard.revisor.dashboard_undo_ads', compact('ads'));
+       return view('dashboard.revisor.dashboard_undo_ads', compact('ads','user'));
         
     }
 
@@ -67,9 +70,20 @@ class RevisorController extends Controller
 
     public function revisioning_Ads()
     {
+        $user = Auth::user();
         $ads = Advertise::where('is_accepted', null)->orderBy('created_at', 'asc')->get();
        
-        return view('dashboard.revisor.dashboard_revisor_ads', compact('ads')); 
+        return view('dashboard.revisor.dashboard_revisor_ads', compact('ads','user')); 
     }
+
+    public function edit(User $user)
+    {   
+        $user = Auth::user();
+        return view('dashboard.revisor.dashboard_edit_profile', compact('user'));
+    }
+
+   
+
+   
     
 }

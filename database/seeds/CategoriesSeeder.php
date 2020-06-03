@@ -12,7 +12,8 @@ class CategoriesSeeder extends Seeder
      */
     public function run()
     {
-        $categories=['auto','informatica','fotografia','elettrodomestici','arredamento','giardinaggio','musiche e film','sports','telefonia','nautica'];
+        $categories=['auto','informatica','fotografia','elettrodomestici','arredamento','giardinaggio','films','sports','telefonia','nautica'];
+       
          foreach ($categories as $category) {
             DB::table('categories')->insert([
 

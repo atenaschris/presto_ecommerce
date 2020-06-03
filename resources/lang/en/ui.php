@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'welcome'=>'welcome',
+    'welcome'=>'Shopping with happiness!',
     'chisiamo'=>'About us',
     'admindashboard'=>'Admin Dashboard',
     'ultimiannunci'=>'Latest Ads',    

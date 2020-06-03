@@ -7,9 +7,7 @@
             alt="logo footer"></div>
             <div class="col-8 col-md-4">
               <ul class="custom-list text-white p-0 m-3 text-center text-md-left">
-                <a class="custom-link" href="">
-                  <li class="my-2">Chi siamo</li>
-                </a>
+                
                 <a class="custom-link" href="">
                   <li class="my-2">{{ __('ui.chisiamo') }}</li>
                 </a>
