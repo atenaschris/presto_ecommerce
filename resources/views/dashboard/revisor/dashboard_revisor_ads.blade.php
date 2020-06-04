@@ -36,10 +36,10 @@
                                         <p class="card-text h5">{{ __('ui.prezzo') }}: <span
                                             class="h4 text-primary font-weight-bold">{{ $ad->price }}€</span></p>
                                             {{-- Accordion Images --}}
-                                            <div class="accordion" id="accordionExample">
+                                            
                                                 @foreach ($ad->adsimage as $image)
                                                     
-                                                
+                                                <div class="accordion" id="accordionExample">
                                                 <div class="card">
                                                   <div class="card-header" id="headingOne">
                                                     <h2 class="mb-0">
