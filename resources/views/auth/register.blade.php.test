@@ -1,0 +1,89 @@
+@extends('layouts.app')
+
+@section('content')
+
+
+<div
+class="container-fluid masthead-reg d-flex align-items-center justify-content-center my-5"
+>
+  
+    <div class="container">
+        <div class="row">
+            <div class="col-4 offset-4 wrap-contact2 bg-transparent">
+                <form method="POST" action="{{ route('register') }}">
+                    @csrf
+
+                    <div
+                        class="form-group wrap-input2 validate-input"
+                       
+                    >
+                        <input id="name" type="text" class="no-shadow input2 bg-transparent form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                        @error('name')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                            <span
+                            class="focus-input2"
+                            data-placeholder="NAME"
+                            ></span>
+                    </div>
+                    <div
+                            class="form-group wrap-input2 validate-input"
+                       
+                    >
+                    <input id="email" type="email" class=" no-shadow input2 bg-transparent form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+
+                    @error('email')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                        <span
+                        class="focus-input2"
+                        data-placeholder="EMAIL"
+                        ></span>
+                    </div>
+
+                    <div
+                        class="form-group wrap-input2 validate-input"
+                       
+                    >
+                    <input id="password" type="password" class="no-shadow input2 bg-transparent form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+
+                    @error('password')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
+                        <span
+                        class="focus-input2"
+                        data-placeholder="PASSWORD"
+                        ></span>
+                    </div>
+                   
+
+                    <div
+                        class="form-group <wrap-input2 wrap-input2 validate-input"
+                       
+                    >
+                    <input id="password-confirm" type="password" class="no-shadow input2 bg-transparent form-control" name="password_confirmation" required autocomplete="new-password">
+                        <span
+                        class="focus-input2"
+                        data-placeholder="REPEAT PASSWORD"
+                        ></span>
+                    </div>
+
+                    <div class="col-12 text-center mt-5 mb-5">
+                        <button type="submit" class="btn btn-primary">
+                            {{ __('Register') }}
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</div>
+@endsection
