@@ -35,7 +35,7 @@
                              @elseif ( $ad->is_accepted == false && $ad->is_accepted != null)
                              <td>{{ __('ui.reverif') }}</td>                          
                              @else
-                        <td>{{ __('ui.nonrev') }}<br> <a href="{{route('revisor.to.be.revisioned.ads')}}">{{ __('ui.vaiarevisiona') }}..</a> </td> 
+                        <td>{{ __('ui.nonrev') }}<br> <a href="{{route('admin.to.be.revisioned.ads')}}">{{ __('ui.vaiarevisiona') }}..</a> </td> 
                              @endif
                              <td>{{ $ad->user->name }}</td>
                              <td><a href="{{route('ad.details',['id'=>$ad->id,'title'=>$uri])}}">{{ __('ui.dettaglio') }}</a></td>

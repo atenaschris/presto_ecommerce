@@ -63,7 +63,8 @@ class AdvertiseController extends Controller
                 new AddWatermarkToImage($i->id),
                 new ResizeImage($newfilename,300,150),
                 new ResizeImage($newfilename,150,150),
-                new ResizeImage($newfilename,200,300)
+                new ResizeImage($newfilename,200,300),
+                new ResizeImage($newfilename,300,200)
             ]) ->dispatch($i->id);
         }
         File::deleteDirectory(storage_path("/app/public/temp/{$uniquesecret}"));

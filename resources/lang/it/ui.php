@@ -59,5 +59,6 @@ return [
     'pubblica' =>'Pubblica',
     'presentati'=>'Presentati',
     'motiva' => 'Motiva perchè vuoi diventare revisore',
-    'nonrev' => 'Non revisionato'
+    'nonrev' => 'Non revisionato',
+    'cosafacciamo' => 'Cosa facciamo'
 ];

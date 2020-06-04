@@ -33,10 +33,10 @@ class AddWatermarkToImage implements ShouldQueue
         $image=file_get_contents($srcPath);
         $image=Image::load($srcPath);
         $image->watermark(base_path('resources/img/eggplant.png'))
-           ->watermarkPosition('bottom-right')
-           ->watermarkPadding (10, 10, Manipulations::UNIT_PERCENT)
-           ->watermarkWidth(64,Manipulations::UNIT_PIXELS)
-           ->watermarkHeight(64,Manipulations::UNIT_PIXELS);
+           ->watermarkPosition('bottom-center')
+           ->watermarkPadding (15, 15, Manipulations::UNIT_PERCENT)
+           ->watermarkWidth(120,Manipulations::UNIT_PIXELS)
+           ->watermarkHeight(120,Manipulations::UNIT_PIXELS);
         
 
            $image->save($srcPath);

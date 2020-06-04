@@ -12,7 +12,7 @@
                 <a class="nav-link disabled text-dark" href="#">{{__('ui.chisiamo')}}<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled text-dark" href="#">{{ __('ui.chisiamo') }}</a>
+                    <a class="nav-link disabled text-dark" href="#">{{ __('ui.cosafacciamo') }}</a>
                 </li>
                     @guest 
                 

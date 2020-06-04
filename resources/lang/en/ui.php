@@ -59,5 +59,6 @@ return [
     'presentati' => 'Introduce yourself',
     'motiva' => 'Motivate why you want to become a revisor',
     'nonrev' => 'Not revisioned',
-    'vaiarevisiona' => 'Go to review'
+    'vaiarevisiona' => 'Go to review',
+    'cosafacciamo' => 'What we do'
 ];

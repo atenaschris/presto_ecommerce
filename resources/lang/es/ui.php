@@ -58,5 +58,6 @@ return [
     'presentati'=>'Presentate',
     'motiva'=>'Motiva porquè quieres aspirar a la posicion de revisor',
     'nonrev' => 'No revisado',
-    'vaiarevisiona' => 'Ir a revisar'
+    'vaiarevisiona' => 'Ir a revisar',
+    'cosafacciamo' => 'Qué hacemos'
 ];
