@@ -69,6 +69,9 @@ class Advertise extends Model
     }
 
     
-
+    public function url()
+    {
+        return route('ad.details', ['id' => $this->id,'title' => \Str::slug($this->title)]);
+    }
 
 }

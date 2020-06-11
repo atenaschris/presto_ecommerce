@@ -24,7 +24,11 @@ class FrontendController extends Controller
 
     public function ad_details($id){
         $ad = Advertise::withTrashed()->find($id);
-        return view('public-views.ad_details',compact('ad'));
+        if ($ad) {
+            return view('public-views.ad_details',compact('ad'));
+        } else {
+            return redirect(route('homepage'));
+        }
     }
 
     public function search(Request $request)

@@ -216,10 +216,8 @@
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 ">
         @foreach ($ads as $ad)
         <div class="col mb-4 card-home">
-            @php
-            $title = str_replace(' ', '-', $ad->title);
-            @endphp
-            <a class="custom-link" href="{{route('ad.details',['id'=>$ad->id,'title'=>$title])}}">
+
+            <a class="custom-link" href="{{$ad->url()}}">
                 <div class="card h-100 featured-card">
                     
                     
